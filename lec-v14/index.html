@@ -1,0 +1,2369 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Legal Euro Corporate</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --marine:#1B2B4B;--marine-lt:#2A3F6B;--marine-pale:#EEF1F7;
+  --orange:#E8843A;--orange-pale:#FEF3EB;
+  --blanc:#FFFFFF;--fond:#F7F8FA;--gris:#6B7A99;--gris-pale:#E4E8F0;
+  --encre:#1B2B4B;--vert:#2E7D5E;--vert-pale:#EAF5EF;
+  --rouge:#C0392B;--rouge-pale:#FDEEEC;
+  --violet:#6B3FA0;--violet-pale:#F0EBF8;
+  --bleu:#1A6BAA;--bleu-pale:#E8F4FD;
+  --r:8px;--rs:5px;
+}
+body{font-family:'Inter',sans-serif;background:var(--fond);color:var(--encre);font-size:13px;line-height:1.5;height:100vh;overflow:hidden}
+.hdr{height:50px;background:var(--marine);display:flex;align-items:center;justify-content:space-between;padding:0 18px;position:fixed;top:0;left:0;right:0;z-index:500}
+.logo{font-family:'Playfair Display',serif;font-size:16px;color:#fff;display:flex;align-items:center;gap:10px}
+.logo-sep{width:1px;height:14px;background:rgba(255,255,255,.2)}
+.logo-sub{font-family:'Inter',sans-serif;font-size:10px;color:rgba(255,255,255,.35);letter-spacing:.08em;text-transform:uppercase}
+.hdr-pill{background:var(--orange);color:#fff;font-size:10px;font-weight:500;padding:3px 9px;border-radius:20px}
+.hdr-r{display:flex;align-items:center;gap:10px}
+.hdr-u{font-size:10px;color:rgba(255,255,255,.35)}
+.layout{display:flex;height:calc(100vh - 50px);margin-top:50px}
+/* SIDEBAR */
+.sb{width:210px;flex-shrink:0;background:var(--blanc);border-right:1px solid var(--gris-pale);overflow-y:auto;padding:10px 0}
+.sb-lbl{font-size:9px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--gris);margin:10px 0 4px;padding:0 12px}
+.ni{display:flex;align-items:center;gap:8px;padding:7px 12px;cursor:pointer;font-size:12px;color:var(--gris);transition:all .15s;border-left:2px solid transparent;margin-bottom:1px}
+.ni:hover{background:var(--fond);color:var(--encre)}
+.ni.on{background:var(--orange-pale);color:var(--orange);border-left-color:var(--orange);font-weight:500}
+.ni-ico{font-size:12px;flex-shrink:0;width:16px;text-align:center}
+.ni-bdg{margin-left:auto;font-size:10px;background:var(--gris-pale);color:var(--gris);padding:1px 6px;border-radius:10px;min-width:20px;text-align:center}
+.ni.on .ni-bdg{background:rgba(232,132,58,.15);color:var(--orange)}
+.sb-div{height:1px;background:var(--gris-pale);margin:6px 10px}
+/* MAIN */
+.main{flex:1;overflow:hidden;display:flex;flex-direction:column}
+.vue{display:none;flex-direction:column;height:100%;}
+.vue.on{display:flex}
+.scroll{flex:1;overflow-y:auto;padding:18px 20px;display:flex;flex-direction:column;gap:12px}
+/* BOUTONS */
+.btn{display:inline-flex;align-items:center;gap:5px;padding:7px 12px;border-radius:var(--rs);font-family:'Inter',sans-serif;font-size:12px;font-weight:500;cursor:pointer;border:none;transition:all .15s;white-space:nowrap}
+.btn-p{background:var(--orange);color:#fff}.btn-p:hover{opacity:.9}
+.btn-m{background:var(--marine);color:#fff}.btn-m:hover{opacity:.9}
+.btn-g{background:var(--blanc);color:var(--encre);border:1px solid var(--gris-pale)}.btn-g:hover{background:var(--fond)}
+.btn-r{background:var(--rouge-pale);color:var(--rouge);border:1px solid rgba(192,57,43,.15)}
+.btn-sm{padding:4px 9px;font-size:11px}
+.btn:disabled{opacity:.4;cursor:not-allowed}
+/* TOPBAR */
+.tb{display:flex;align-items:center;justify-content:space-between;gap:10px}
+.pg-t{font-family:'Playfair Display',serif;font-size:19px;font-weight:500}
+.tb-r{display:flex;align-items:center;gap:7px}
+.sbar{display:flex;align-items:center;gap:6px;background:var(--blanc);border:1px solid var(--gris-pale);border-radius:var(--rs);padding:5px 10px;width:200px}
+.sbar input{border:none;outline:none;background:transparent;font-family:'Inter',sans-serif;font-size:12px;width:100%}
+/* TABLE */
+.tw{background:var(--blanc);border:1px solid var(--gris-pale);border-radius:var(--r);overflow:hidden}
+table{width:100%;border-collapse:collapse}
+thead{background:var(--fond);border-bottom:1px solid var(--gris-pale)}
+th{text-align:left;padding:7px 10px;font-size:10px;font-weight:600;letter-spacing:.07em;text-transform:uppercase;color:var(--gris);white-space:nowrap}
+td{padding:9px 10px;border-bottom:1px solid var(--fond);vertical-align:middle;font-size:12px}
+tr:last-child td{border-bottom:none}
+tr.dr{cursor:pointer;transition:background .1s}
+tr.dr:hover td{background:var(--orange-pale)}
+.sn{font-weight:500}.sr{font-size:10px;color:var(--gris);margin-top:1px}
+/* BADGES */
+.bdg{display:inline-flex;align-items:center;gap:4px;font-size:10px;font-weight:500;padding:2px 7px;border-radius:20px;white-space:nowrap}
+.bdg::before{content:'';width:5px;height:5px;border-radius:50%;background:currentColor;flex-shrink:0}
+.b-en{background:#FEF3CD;color:#92600A}.b-ec{background:#DBEAFE;color:#1A4470}
+.b-at{background:#F0EBF8;color:#6B3FA0}.b-de{background:var(--marine-pale);color:var(--marine)}
+.b-va{background:var(--vert-pale);color:var(--vert)}.b-af{background:var(--orange-pale);color:var(--orange);border:1px solid rgba(232,132,58,.3)}
+.b-cl{background:var(--fond);color:var(--gris)}.b-bl{background:var(--rouge-pale);color:var(--rouge)}
+.prix{font-size:11px;font-weight:500;color:var(--orange)}
+.top-op{font-size:10px;background:var(--marine-pale);color:var(--marine);padding:2px 6px;border-radius:4px;display:inline-block;max-width:150px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+/* BRIEFING */
+.briefing{background:var(--marine);border-radius:var(--r);padding:14px 18px;color:#fff;display:flex;align-items:center;gap:20px}
+.br-date{font-family:'Playfair Display',serif;font-size:19px}
+.br-sub{font-size:10px;color:rgba(255,255,255,.35);margin-top:2px}
+.br-items{display:flex;gap:22px;margin-left:auto}
+.br-item{text-align:center}
+.br-val{font-family:'Playfair Display',serif;font-size:21px;line-height:1}
+.br-val.o{color:#F4A96A}.br-val.r{color:#FF8A80}
+.br-lbl{font-size:9px;color:rgba(255,255,255,.35);margin-top:1px}
+/* STATS */
+.stats{display:grid;grid-template-columns:repeat(5,1fr);gap:8px}
+.stat{background:var(--blanc);border:1px solid var(--gris-pale);border-radius:var(--r);padding:11px 13px}
+.stat-v{font-family:'Playfair Display',serif;font-size:22px;font-weight:500;line-height:1}
+.stat-l{font-size:10px;color:var(--gris);margin-top:3px}
+.c-o{color:var(--orange)}.c-r{color:var(--rouge)}.c-v{color:var(--vert)}.c-m{color:var(--marine)}
+/* SELECT FILTRES */
+.sel-filtre{font-family:'Inter',sans-serif;font-size:12px;color:var(--encre);background:var(--blanc);border:1px solid var(--gris-pale);border-radius:var(--rs);padding:6px 10px;outline:none;cursor:pointer}
+.sel-filtre:focus{border-color:var(--orange)}
+/* DOSSIER PAGE */
+.dos-page{display:none;flex-direction:column;height:100%;overflow:hidden}
+.dos-page.on{display:flex}
+.dos-hdr{background:var(--blanc);border-bottom:1px solid var(--gris-pale);padding:11px 18px;flex-shrink:0}
+.dos-title-row{display:flex;align-items:center;gap:10px;margin-bottom:6px}
+.dos-soc{font-family:'Playfair Display',serif;font-size:20px;font-weight:500}
+.dos-meta{display:flex;gap:14px;flex-wrap:wrap;align-items:center}
+.dm{display:flex;flex-direction:column;gap:1px}
+.dm-l{font-size:9px;text-transform:uppercase;letter-spacing:.07em;color:var(--gris);font-weight:600}
+.dm-v{font-size:11px;font-weight:500}
+.dm-sep{width:1px;height:26px;background:var(--gris-pale)}
+/* PAGE DOSSIER SCROLL */
+.dos-scroll{flex:1;overflow-y:auto;padding:16px 18px;display:flex;flex-direction:column;gap:14px}
+/* BLOCS */
+.bloc{background:var(--blanc);border:1px solid var(--gris-pale);border-radius:var(--r);padding:14px 16px}
+.bloc-t{font-size:9px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--gris);margin-bottom:10px;padding-bottom:6px;border-bottom:1px solid var(--gris-pale);display:flex;align-items:center;justify-content:space-between}
+.bloc-t span{display:flex;align-items:center;gap:7px}
+/* ALERTES */
+.al{display:flex;gap:7px;padding:8px 10px;border-radius:var(--rs);font-size:11px;line-height:1.5;margin-bottom:5px}
+.al-d{background:var(--rouge-pale);border-left:2px solid var(--rouge);border-radius:0 var(--rs) var(--rs) 0}
+.al-w{background:#FEF3CD;border-left:2px solid var(--orange);border-radius:0 var(--rs) var(--rs) 0}
+.al-i{background:var(--marine-pale);border-left:2px solid var(--marine);border-radius:0 var(--rs) var(--rs) 0}
+.al-v{background:var(--vert-pale);border-left:2px solid var(--vert);border-radius:0 var(--rs) var(--rs) 0}
+/* DRAG DROP */
+.dz{border:1.5px dashed var(--gris-pale);border-radius:var(--r);padding:20px;text-align:center;cursor:pointer;transition:all .2s;background:var(--fond)}
+.dz:hover,.dz.ov{border-color:var(--orange);background:var(--orange-pale)}
+.dz-ico{font-size:26px;margin-bottom:6px}
+.dz-lbl{font-size:12px;font-weight:500;margin-bottom:3px}
+.dz-sub{font-size:11px;color:var(--gris)}
+/* FICHIERS */
+.fi-item{display:flex;align-items:center;gap:8px;padding:6px 9px;background:var(--fond);border-radius:var(--rs);margin-bottom:3px}
+.fi-nom{font-size:11px;font-weight:500;flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.fi-st{font-size:10px;font-weight:600;padding:2px 7px;border-radius:20px}
+.fi-ok{background:var(--vert-pale);color:var(--vert)}
+.fi-wait{background:#FEF3CD;color:#92600A}
+.fi-load{background:var(--marine-pale);color:var(--marine)}
+/* GU CHAMPS */
+.gu-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:8px}
+.gu-f{display:flex;flex-direction:column;gap:3px}
+.gu-f.full{grid-column:1/-1}
+.gu-lbl{display:flex;align-items:center;justify-content:space-between}
+.gu-lbl label{font-size:9px;font-weight:600;text-transform:uppercase;letter-spacing:.07em;color:var(--gris)}
+.gu-st{font-size:9px;font-weight:600;padding:1px 6px;border-radius:10px}
+.gu-auto .gu-st{background:var(--vert-pale);color:var(--vert)}
+.gu-warn .gu-st{background:#FEF3CD;color:#92600A}
+.gu-miss .gu-st{background:var(--rouge-pale);color:var(--rouge)}
+.gu-manual .gu-st{background:var(--bleu-pale);color:var(--bleu)}
+.gu-f input,.gu-f select{font-family:'Inter',sans-serif;font-size:12px;color:var(--encre);border:1px solid var(--gris-pale);border-radius:var(--rs);padding:6px 9px;outline:none;width:100%;background:var(--fond)}
+.gu-f input:focus,.gu-f select:focus{border-color:var(--orange);background:var(--blanc)}
+.gu-auto input,.gu-auto select{border-color:var(--vert);background:var(--vert-pale)}
+.gu-warn input,.gu-warn select{border-color:var(--orange);background:var(--orange-pale)}
+.gu-miss input,.gu-miss select{border-color:var(--rouge);background:var(--rouge-pale)}
+.gu-manual input,.gu-manual select{border-color:var(--bleu);background:var(--bleu-pale)}
+/* PIÈCES */
+.pi-row{display:flex;align-items:center;gap:8px;padding:6px 9px;background:var(--fond);border-radius:var(--rs);margin-bottom:3px;font-size:11px}
+.pi-ico{width:18px;height:18px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:700;flex-shrink:0}
+.pi-sel{font-size:10px;border:1px solid var(--gris-pale);border-radius:var(--rs);padding:2px 5px;background:var(--blanc);outline:none;cursor:pointer}
+/* BE */
+.be-ent{background:var(--fond);border:1px solid var(--gris-pale);border-radius:var(--r);padding:12px 14px;margin-bottom:8px}
+.be-ent-hdr{display:flex;align-items:center;gap:8px;margin-bottom:10px}
+.be-badge{font-size:10px;font-weight:600;padding:3px 9px;border-radius:20px}
+.be-pp{background:var(--vert-pale);color:var(--vert)}
+.be-pm{background:var(--marine-pale);color:var(--marine)}
+.be-grid{display:grid;grid-template-columns:1fr 1fr;gap:7px}
+.be-grid.g3{grid-template-columns:1fr 1fr 1fr}
+.be-grid.g4{grid-template-columns:1fr 1fr 1fr 1fr}
+.be-f{display:flex;flex-direction:column;gap:3px}
+.be-f label{font-size:9px;font-weight:600;text-transform:uppercase;letter-spacing:.06em;color:var(--gris)}
+.be-f input,.be-f select{font-family:'Inter',sans-serif;font-size:12px;color:var(--encre);border:1px solid var(--gris-pale);border-radius:var(--rs);padding:5px 8px;outline:none;width:100%;background:var(--fond)}
+.be-f input:focus,.be-f select:focus{border-color:var(--orange);background:var(--blanc)}
+.be-res-row{display:flex;align-items:center;justify-content:space-between;padding:10px 13px;border-bottom:1px solid var(--fond);font-size:12px}
+.be-res-row:last-child{border-bottom:none}
+.be-pct{font-family:'Playfair Display',serif;font-size:17px;font-weight:500}
+.be-pill{font-size:10px;font-weight:500;padding:2px 8px;border-radius:20px}
+.be-pill.y{background:var(--vert-pale);color:var(--vert)}
+.be-pill.n{background:var(--fond);color:var(--gris)}
+/* FACTURATION */
+.fact-box{background:var(--orange-pale);border:1px solid rgba(232,132,58,.2);border-radius:var(--r);padding:12px 14px}
+.fact-row{display:flex;align-items:center;gap:10px;margin-bottom:6px}
+.fact-lbl{font-size:12px;flex:1}
+.fact-inp{width:100px;font-family:'Inter',sans-serif;font-size:12px;padding:5px 8px;border:1px solid rgba(232,132,58,.3);border-radius:var(--rs);background:var(--blanc);text-align:right;font-weight:500;outline:none}
+.fact-inp:focus{border-color:var(--orange)}
+.fact-note-inp{flex:1;font-family:'Inter',sans-serif;font-size:11px;padding:5px 8px;border:1px solid rgba(232,132,58,.3);border-radius:var(--rs);background:var(--blanc);outline:none}
+.fact-total{display:flex;justify-content:space-between;font-weight:600;color:var(--orange);font-size:14px;border-top:1px solid rgba(232,132,58,.2);padding-top:8px;margin-top:4px}
+.fact-ttc{display:flex;justify-content:space-between;font-size:11px;color:var(--gris);margin-top:3px}
+/* CHAT */
+.chat{background:var(--fond);border:1px solid var(--gris-pale);border-radius:var(--r);overflow:hidden}
+.chat-hdr{padding:7px 12px;background:var(--marine);color:rgba(255,255,255,.8);font-size:11px;display:flex;align-items:center;justify-content:space-between}
+.chat-s{width:6px;height:6px;border-radius:50%;background:#4ade80}
+.chat-msgs{padding:10px;max-height:280px;overflow-y:auto;display:flex;flex-direction:column;gap:6px}
+.chat-msg{font-size:12px;line-height:1.6;padding:8px 10px;border-radius:8px;max-width:88%}
+.msg-u{background:var(--orange-pale);align-self:flex-end;border-bottom-right-radius:2px}
+.msg-a{background:var(--blanc);align-self:flex-start;border-bottom-left-radius:2px;border:1px solid var(--gris-pale)}
+.chat-inp-row{display:flex;gap:6px;padding:8px 10px;border-top:1px solid var(--gris-pale);background:var(--blanc)}
+.chat-inp{flex:1;font-family:'Inter',sans-serif;font-size:12px;border:none;outline:none;background:transparent}
+.chat-inp::placeholder{color:var(--gris-pale)}
+.chat-btn{padding:6px 14px;background:var(--orange);border:none;border-radius:5px;cursor:pointer;font-size:12px;font-weight:500;color:#fff;font-family:'Inter',sans-serif}
+.chat-btn:disabled{opacity:.5;cursor:not-allowed}
+.ld{display:flex;gap:3px;padding:7px 10px;align-self:flex-start}
+.ld span{width:6px;height:6px;border-radius:50%;background:var(--gris-pale);animation:dot 1.2s infinite}
+.ld span:nth-child(2){animation-delay:.2s}.ld span:nth-child(3){animation-delay:.4s}
+@keyframes dot{0%,80%,100%{opacity:.3}40%{opacity:1}}
+/* JAL */
+.jal-out{background:var(--blanc);border:1px solid var(--gris-pale);border-radius:var(--r);padding:14px 16px;font-size:13px;line-height:2;white-space:pre-wrap;font-family:'Playfair Display',serif;min-height:150px}
+/* MODAL */
+.modal-bg{position:fixed;inset:0;background:rgba(27,43,75,.45);z-index:600;display:none;align-items:flex-start;justify-content:center;padding-top:52px}
+.modal-bg.open{display:flex}
+.modal{background:var(--blanc);border-radius:var(--r);width:660px;max-height:calc(100vh - 72px);overflow-y:auto;box-shadow:0 20px 60px rgba(27,43,75,.2);animation:fadeUp .2s ease}
+@keyframes fadeUp{from{transform:translateY(14px);opacity:0}to{transform:none;opacity:1}}
+.mhdr{padding:14px 18px 12px;border-bottom:1px solid var(--gris-pale);display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;background:var(--blanc);z-index:10}
+.mt{font-family:'Playfair Display',serif;font-size:18px;font-weight:500}
+.mbody{padding:14px 18px}
+.mftr{padding:10px 18px;border-top:1px solid var(--gris-pale);display:flex;justify-content:space-between;align-items:center;position:sticky;bottom:0;background:var(--blanc)}
+.cl-btn{width:24px;height:24px;border-radius:4px;border:1px solid var(--gris-pale);background:var(--blanc);cursor:pointer;font-size:13px;display:flex;align-items:center;justify-content:center;color:var(--gris)}
+.cl-btn:hover{background:var(--fond)}
+.fgrid{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-bottom:9px}
+.fg{display:flex;flex-direction:column;gap:3px}
+.fg.full{grid-column:1/-1}
+.fg label{font-size:9px;font-weight:600;text-transform:uppercase;letter-spacing:.07em;color:var(--gris)}
+input,select,textarea{font-family:'Inter',sans-serif;font-size:12px;color:var(--encre);background:var(--fond);border:1px solid var(--gris-pale);border-radius:var(--rs);padding:7px 9px;outline:none;transition:border .15s;width:100%}
+input:focus,select:focus,textarea:focus{border-color:var(--orange);background:var(--blanc)}
+textarea{resize:vertical;min-height:55px}
+.fsect{font-size:9px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--gris);margin:11px 0 7px;padding-bottom:5px;border-bottom:1px solid var(--gris-pale)}
+.si-wrap{display:flex;gap:6px;margin-bottom:7px}
+.si-inp{flex:1;font-family:monospace;font-size:13px;letter-spacing:.1em;padding:7px 10px;border:1px solid var(--gris-pale);border-radius:var(--rs);background:var(--fond);outline:none}
+.si-inp:focus{border-color:var(--orange);background:var(--blanc)}
+.si-ok{background:var(--vert-pale);border:1px solid rgba(46,125,94,.2);border-radius:var(--rs);padding:6px 10px;font-size:11px;color:var(--vert);font-weight:500;display:none;margin-bottom:7px}
+.si-err{background:var(--rouge-pale);border-radius:var(--rs);padding:6px 10px;font-size:11px;color:var(--rouge);display:none;margin-bottom:7px}
+/* CRM */
+.cli-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.cli-card{background:var(--blanc);border:1px solid var(--gris-pale);border-radius:var(--r);padding:12px 14px;cursor:pointer;transition:all .15s;display:flex;align-items:center;gap:11px}
+.cli-card:hover{border-color:var(--orange);transform:translateY(-1px)}
+.cli-av{width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:600;flex-shrink:0}
+/* FACTURATION MOIS */
+.mois-card{background:var(--blanc);border:1px solid var(--gris-pale);border-radius:var(--r);padding:13px 15px;margin-bottom:10px}
+.mois-t{font-family:'Playfair Display',serif;font-size:15px;font-weight:500;margin-bottom:9px;display:flex;justify-content:space-between;align-items:center}
+/* HIST */
+.h-item{display:flex;align-items:flex-start;gap:7px;padding:5px 0;border-bottom:1px solid var(--fond);font-size:11px}
+.h-item:last-child{border-bottom:none}
+.h-dot{width:6px;height:6px;border-radius:50%;background:var(--orange);flex-shrink:0;margin-top:4px}
+.h-txt{flex:1}.h-dt{font-size:10px;color:var(--gris);white-space:nowrap}
+/* CHECKLIST MODULE */
+.ck-row{display:flex;align-items:flex-start;gap:8px;padding:8px 10px;background:var(--blanc);border:1px solid var(--gris-pale);border-radius:var(--rs);margin-bottom:4px}
+.ck-ico{width:20px;height:20px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;flex-shrink:0}
+.ck-recu{background:var(--vert);color:#fff}
+.ck-manq{background:var(--rouge-pale);border:1.5px solid var(--rouge);color:var(--rouge)}
+.ck-signe{background:#FEF3CD;color:#92600A}
+.ck-corriger{background:var(--violet-pale);color:var(--violet)}
+.ck-depose{background:var(--bleu-pale);color:var(--bleu)}
+.ck-txt{flex:1;font-size:11px;line-height:1.5}
+.ck-src{font-size:9px;color:var(--gris);margin-top:1px}
+.ck-sel{font-size:10px;border:1px solid var(--gris-pale);border-radius:var(--rs);padding:2px 5px;background:var(--fond);cursor:pointer;outline:none}
+/* TOAST */
+#toast{position:fixed;bottom:16px;left:50%;transform:translateX(-50%) translateY(20px);background:var(--marine);color:#fff;padding:8px 16px;border-radius:var(--r);font-size:12px;opacity:0;transition:all .3s;z-index:1000;pointer-events:none}
+#toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+.dp-tab{padding:9px 16px;font-size:12px;font-weight:500;border:none;border-bottom:2px solid transparent;background:transparent;color:var(--gris);cursor:pointer;white-space:nowrap;transition:all .15s}
+.dp-tab:hover{color:var(--encre);background:var(--fond)}
+.dp-tab.on{border-bottom-color:var(--orange);color:var(--orange)}
+.chat{background:var(--fond);border:1px solid var(--gris-pale);border-radius:var(--r);overflow:hidden}
+.chat-hdr{padding:7px 12px;background:var(--marine);color:rgba(255,255,255,.8);font-size:11px;display:flex;align-items:center;justify-content:space-between}
+.chat-s{width:6px;height:6px;border-radius:50%;background:#4ade80}
+.chat-msgs{padding:10px;max-height:360px;overflow-y:auto;display:flex;flex-direction:column;gap:6px}
+.chat-msg{font-size:12px;line-height:1.6;padding:8px 10px;border-radius:8px;max-width:90%}
+.msg-u{background:var(--orange-pale);align-self:flex-end;border-bottom-right-radius:2px}
+.msg-a{background:var(--blanc);align-self:flex-start;border-bottom-left-radius:2px;border:1px solid var(--gris-pale)}
+.chat-inp-row{display:flex;gap:6px;padding:8px 10px;border-top:1px solid var(--gris-pale);background:var(--blanc)}
+.chat-inp{flex:1;font-family:'Inter',sans-serif;font-size:12px;border:none;outline:none;background:transparent}
+.chat-inp::placeholder{color:var(--gris-pale)}
+.chat-btn{padding:6px 14px;background:var(--orange);border:none;border-radius:5px;cursor:pointer;font-size:12px;font-weight:500;color:#fff;font-family:'Inter',sans-serif}
+.chat-btn:disabled{opacity:.5;cursor:not-allowed}
+.ld{display:flex;gap:3px;padding:7px 10px;align-self:flex-start}
+.ld span{width:6px;height:6px;border-radius:50%;background:var(--gris-pale);animation:dot 1.2s infinite}
+.ld span:nth-child(2){animation-delay:.2s}.ld span:nth-child(3){animation-delay:.4s}
+@keyframes dot{0%,80%,100%{opacity:.3}40%{opacity:1}}
+::-webkit-scrollbar{width:4px;height:4px}
+::-webkit-scrollbar-track{background:transparent}
+::-webkit-scrollbar-thumb{background:var(--gris-pale);border-radius:4px}
+</style>
+</head>
+<body>
+<header class="hdr">
+  <div class="logo">Legal Euro Corporate<div class="logo-sep"></div><span class="logo-sub">Cabinet de formalités</span></div>
+  <div class="hdr-r"><span class="hdr-u">231 rue Saint-Honoré · Paris 75001</span><span class="hdr-pill">B. GHERARI-NADOTTI</span></div>
+</header>
+<div class="layout">
+<nav class="sb">
+  <div class="sb-lbl">Navigation</div>
+  <div class="ni on" onclick="goV('accueil')" id="ni-accueil"><span class="ni-ico">◈</span>Accueil</div>
+  <div class="ni" onclick="goV('clients')" id="ni-clients"><span class="ni-ico">◉</span>Clients<span class="ni-bdg" id="nb-cli">0</span></div>
+  <div class="ni" onclick="goV('societes')" id="ni-societes"><span class="ni-ico">🏢</span>Sociétés<span class="ni-bdg" id="nb-soc">0</span></div>
+  <div class="ni" onclick="goV('dossiers')" id="ni-dossiers"><span class="ni-ico">▤</span>Dossiers<span class="ni-bdg" id="nb-dos">0</span></div>
+  <div class="ni" onclick="goV('facturation')" id="ni-facturation"><span class="ni-ico">◎</span>Facturation</div>
+  <div class="sb-div"></div>
+  <div class="sb-lbl">Outils</div>
+  <div class="ni" onclick="goV('checklist')" id="ni-checklist"><span class="ni-ico">☐</span>Checklist GU</div>
+  <div class="ni" onclick="goV('be')" id="ni-be"><span class="ni-ico">≡</span>Simulateur BE</div>
+  <div class="sb-div"></div>
+  <div class="sb-lbl">Statuts</div>
+  <div class="ni" onclick="goV('dossiers');fSt('entree')"><span class="ni-ico">→</span>Entrée<span class="ni-bdg" id="nb-e">0</span></div>
+  <div class="ni" onclick="goV('dossiers');fSt('cours')"><span class="ni-ico">↻</span>En cours<span class="ni-bdg" id="nb-ec">0</span></div>
+  <div class="ni" onclick="goV('dossiers');fSt('attente')"><span class="ni-ico">⊙</span>En attente<span class="ni-bdg" id="nb-at">0</span></div>
+  <div class="ni" onclick="goV('dossiers');fSt('depose')"><span class="ni-ico">↑</span>Déposé<span class="ni-bdg" id="nb-de">0</span></div>
+  <div class="ni" onclick="goV('dossiers');fSt('afacturer')"><span class="ni-ico">◎</span>À facturer<span class="ni-bdg" id="nb-af">0</span></div>
+  <div class="ni" onclick="goV('dossiers');fSt('bloque')"><span class="ni-ico">×</span>Bloqué<span class="ni-bdg" id="nb-bl">0</span></div>
+  <div class="sb-div"></div>
+  <div class="ni" onclick="goV('greffes')" id="ni-greffes"><span class="ni-ico">⚖</span>Greffes de France</div>
+  <div class="ni" onclick="goV('params')" id="ni-params"><span class="ni-ico">⚙</span>Paramètres</div>
+</nav>
+<div class="main">
+<!-- ACCUEIL -->
+<div class="vue on" id="v-accueil"><div class="scroll">
+  <!-- Bandeau briefing -->
+  <div class="briefing">
+    <div><div class="br-date" id="br-date">-</div><div class="br-sub">Bonjour Bella — briefing du jour</div></div>
+    <div class="br-items">
+      <div class="br-item"><div class="br-val r" id="br-bl">0</div><div class="br-lbl">Bloqués</div></div>
+      <div class="br-item"><div class="br-val o" id="br-af">0</div><div class="br-lbl">À facturer</div></div>
+      <div class="br-item"><div class="br-val" id="br-act">0</div><div class="br-lbl">Actifs</div></div>
+      <div class="br-item"><div class="br-val o" id="br-ca">0 €</div><div class="br-lbl">CA en cours HT</div></div>
+    </div>
+    <div style="display:flex;gap:7px;margin-left:16px">
+      <button class="btn btn-p btn-sm" onclick="openMCli()">+ Nouveau client</button>
+      <button class="btn btn-p btn-sm" onclick="openMDos()">+ Nouveau dossier</button>
+    </div>
+  </div>
+  <!-- 6 colonnes de statuts -->
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px">
+    <div><div style="font-size:10px;font-weight:600;color:var(--gris);text-transform:uppercase;letter-spacing:.08em;margin-bottom:6px">📥 À déposer / En cours</div><div class="tw"><table><tbody id="acc-cours"></tbody></table></div></div>
+    <div><div style="font-size:10px;font-weight:600;color:var(--bleu);text-transform:uppercase;letter-spacing:.08em;margin-bottom:6px">⏳ En cours de validation</div><div class="tw"><table><tbody id="acc-depose"></tbody></table></div></div>
+    <div><div style="font-size:10px;font-weight:600;color:var(--rouge);text-transform:uppercase;letter-spacing:.08em;margin-bottom:6px">✗ Rejetés</div><div class="tw"><table><tbody id="acc-rejetes"></tbody></table></div></div>
+    <div><div style="font-size:10px;font-weight:600;color:var(--rouge);text-transform:uppercase;letter-spacing:.08em;margin-bottom:6px">⊙ Bloqués</div><div class="tw"><table><tbody id="acc-bl"></tbody></table></div></div>
+    <div><div style="font-size:10px;font-weight:600;color:var(--orange);text-transform:uppercase;letter-spacing:.08em;margin-bottom:6px">📂 En attente de documents</div><div class="tw"><table><tbody id="acc-at"></tbody></table></div></div>
+    <div><div style="font-size:10px;font-weight:600;color:var(--orange);text-transform:uppercase;letter-spacing:.08em;margin-bottom:6px">◎ À facturer</div><div class="tw"><table><tbody id="acc-af"></tbody></table></div></div>
+  </div>
+  <div><div style="font-size:10px;font-weight:600;color:var(--gris);text-transform:uppercase;letter-spacing:.08em;margin-bottom:6px">Historique récent</div><div class="tw" style="padding:10px 12px"><div id="acc-hist"></div></div></div>
+</div></div>
+<!-- CLIENTS -->
+<div class="vue" id="v-clients">
+<div class="scroll">
+  <div class="tb"><div class="pg-t">Clients</div><div class="tb-r"><div class="sbar"><input id="cli-q" placeholder="Rechercher…" oninput="renderCLI()"></div><button class="btn btn-p" onclick="openMCli()">+ Nouveau client</button></div></div>
+  <div class="cli-grid" id="cli-grid"></div>
+</div>
+</div>
+<!-- SOCIÉTÉS -->
+<div class="vue" id="v-societes"><div class="scroll">
+  <div class="tb">
+    <div class="pg-t">Sociétés</div>
+    <div class="tb-r">
+      <div class="sbar"><input id="soc-q" placeholder="Rechercher une société…" oninput="renderSOC()"></div>
+      <button class="btn btn-p" onclick="openMSoc()">+ Nouvelle société</button>
+    </div>
+  </div>
+  <div id="soc-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:8px"></div>
+</div></div>
+
+<!-- DOSSIERS -->
+<div class="vue" id="v-dossiers">
+<div class="scroll">
+  <div class="stats">
+    <div class="stat"><div class="stat-v" id="st-tot">0</div><div class="stat-l">Dossiers actifs</div></div>
+    <div class="stat"><div class="stat-v c-o" id="st-af">0</div><div class="stat-l">À facturer</div></div>
+    <div class="stat"><div class="stat-v c-r" id="st-bl2">0</div><div class="stat-l">Bloqués</div></div>
+    <div class="stat"><div class="stat-v c-m" id="st-at2">0</div><div class="stat-l">En attente</div></div>
+    <div class="stat"><div class="stat-v c-v" id="st-ca">0 €</div><div class="stat-l">CA total HT</div></div>
+  </div>
+  <div class="tb">
+    <div class="pg-t" id="dos-titre">Tous les dossiers</div>
+    <div class="tb-r">
+      <select class="sel-filtre" id="sel-cat" onchange="renderDOS()">
+        <option value="">— Toutes catégories —</option>
+        <option value="0">Constitution / Immatriculation</option>
+        <option value="1">Modification statutaire</option>
+        <option value="2">Cessation d'activité</option>
+        <option value="3">Dépôt des comptes</option>
+        <option value="4">Dépôt d'actes</option>
+        <option value="5">Mainlevée / Radiation d'office</option>
+        <option value="6">Audit / Dossiers complexes</option>
+      </select>
+      <select class="sel-filtre" id="sel-st" onchange="renderDOS()">
+        <option value="">— Tous statuts —</option>
+        <option value="entree">Entrée</option>
+        <option value="cours">En cours</option>
+        <option value="attente">En attente documents</option>
+        <option value="depose">Déposé</option>
+        <option value="valide">Validé</option>
+        <option value="afacturer">À facturer</option>
+        <option value="clos">Clôturé</option>
+        <option value="bloque">Bloqué</option>
+      </select>
+      <div class="sbar"><input id="dos-q" placeholder="Rechercher…" oninput="renderDOS()"></div>
+      <button class="btn btn-g btn-sm" onclick="exportCSV()">Export CSV</button>
+      <button class="btn btn-p" onclick="openMDos()">+ Nouveau dossier</button>
+    </div>
+  </div>
+  <div class="tw">
+    <table>
+      <thead><tr>
+        <th>Société / Forme</th><th>SIREN / Greffe</th><th>Client</th>
+        <th>Formalité</th><th>Statut</th><th>Montant HT</th><th>Date acte</th>
+      </tr></thead>
+      <tbody id="dos-tbody"></tbody>
+    </table>
+    <div id="dos-empty" style="display:none;text-align:center;padding:40px;color:var(--gris-pale);font-size:12px">Aucun dossier correspondant</div>
+  </div>
+</div>
+</div>
+<!-- FACTURATION -->
+<div class="vue" id="v-facturation">
+<div class="scroll">
+  <div class="tb"><div class="pg-t">Facturation</div><div style="display:flex;gap:7px"><button class="btn btn-p" onclick="openMDos()">+ Nouveau dossier</button><button class="btn btn-g btn-sm" onclick="exportFactCSV()">Export CSV</button></div></div>
+  <div id="fact-mois"></div>
+</div>
+</div>
+<!-- CHECKLIST MODULE -->
+<div class="vue" id="v-checklist">
+<div class="scroll">
+  <div class="pg-t">Checklist Guichet Unique</div>
+  <div class="al al-i">Source : JSS Guide des Formalités 2025 · Pièces GU en PDF uniquement · Max 10 Mo par fichier</div>
+  <div style="display:grid;grid-template-columns:280px 1fr;gap:14px">
+    <div>
+      <div class="fg" style="margin-bottom:10px">
+        <label>Forme juridique</label>
+        <select id="ck-fo" onchange="renderCK()">
+          <option value="">— Toutes formes —</option>
+          <option>SAS / SASU</option><option>SARL / EURL</option><option>SA</option>
+          <option>SCI</option><option>SNC</option><option>SCP</option><option>GIE</option>
+        </select>
+      </div>
+      <div class="fg">
+        <label>Type de formalité</label>
+        <select id="ck-ty" onchange="renderCK()">
+          <option value="">— Choisir —</option>
+          <optgroup label="Constitution">
+            <option>Constitution SAS / SASU</option><option>Constitution SARL / EURL</option>
+            <option>Constitution SCI</option><option>Constitution SA</option><option>Constitution SNC</option><option>Constitution SCP</option>
+          </optgroup>
+          <optgroup label="Modification dirigeant">
+            <option>Changement de président SAS</option><option>Changement de gérant SARL / EURL</option>
+            <option>Changement de gérant SCI</option><option>Changement d'administrateur SA</option>
+          </optgroup>
+          <optgroup label="Modification structure">
+            <option>Transfert de siège (même ressort)</option><option>Transfert de siège (hors ressort)</option>
+            <option>Augmentation de capital</option><option>Réduction de capital (pertes)</option>
+            <option>Réduction de capital (non motivée)</option>
+            <option>Modification de l'objet social</option><option>Changement de dénomination</option>
+            <option>Prorogation de durée</option><option>Changement de date de clôture</option>
+          </optgroup>
+          <optgroup label="Cession">
+            <option>Cession de parts SARL / SCI</option><option>Cession d'actions SAS</option>
+          </optgroup>
+          <optgroup label="Transformation">
+            <option>Transformation SARL en SAS</option><option>Transformation SA en SAS</option>
+            <option>TUP (art. 1844-5)</option>
+          </optgroup>
+          <optgroup label="Dissolution">
+            <option>Dissolution / Liquidation</option><option>Clôture de liquidation</option>
+          </optgroup>
+          <optgroup label="Autres">
+            <option>Dépôt des comptes annuels</option><option>Déclaration BE (RBE)</option>
+            <option>Ouverture établissement secondaire</option><option>Fermeture établissement secondaire</option>
+            <option>Mise en activité</option><option>Mise en sommeil</option>
+            <option>Mainlevée / Déradiation</option>
+          </optgroup>
+        </select>
+      </div>
+    </div>
+    <div id="ck-res"><div style="text-align:center;padding:40px;color:var(--gris-pale);font-size:12px">Sélectionnez une formalité pour afficher la checklist</div></div>
+  </div>
+</div>
+</div>
+<!-- SIMULATEUR BE -->
+<div class="vue" id="v-be">
+<div class="scroll">
+  <div class="tb">
+    <div class="pg-t">Simulateur Bénéficiaires Effectifs</div>
+    <div class="tb-r">
+      <button class="btn btn-g btn-sm" onclick="resetBE()">Réinitialiser</button>
+      <button class="btn btn-p btn-sm" onclick="addBENode()">+ Ajouter entité</button>
+      <button class="btn btn-m" onclick="calcBE()">Calculer les BE</button>
+    </div>
+  </div>
+  <div class="al al-i">Seuil légal : &gt;25% capital OU droits de vote. Démembrement : NP = capital / Usufruit = droits de vote AGO. Délai de mise à jour : 30 jours après tout changement.</div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px">
+    <div>
+      <div class="fg" style="margin-bottom:10px"><label>Société cible</label><input id="be-soc-g" placeholder="Dénomination de la société dont on déclare les BE"></div>
+      <div id="be-nodes-g"></div>
+    </div>
+    <div>
+      <div style="font-size:10px;font-weight:600;color:var(--gris);text-transform:uppercase;letter-spacing:.08em;margin-bottom:7px">Résultat — Seuil légal &gt; 25%</div>
+      <div id="be-res-g" class="tw"><div style="text-align:center;padding:30px;color:var(--gris-pale);font-size:12px">Renseignez la structure et calculez</div></div>
+      <div id="be-exp-g" style="display:none;margin-top:8px;display:flex;gap:7px">
+        <button class="btn btn-p" style="flex:1;justify-content:center" onclick="exportBEG()">Exporter tableau BE (CSV)</button>
+        <button class="btn btn-g btn-sm" onclick="cpBEG()">Copier</button>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+<!-- PARAMS -->
+<div class="vue" id="v-params">
+<div class="scroll">
+  <div class="pg-t">Paramètres</div>
+  <div style="max-width:440px;display:flex;flex-direction:column;gap:10px;margin-top:4px">
+    <div class="tw" style="padding:14px">
+      <div style="font-size:12px;font-weight:500;margin-bottom:10px">Clés API</div>
+      <div class="fg" style="margin-bottom:8px"><label>Clé API Anthropic</label><input type="password" id="k-ant" placeholder="sk-ant-api03-…"></div>
+      <div class="fg"><label>Clé API Pappers — "clé Bella PAPPERS"</label><input type="password" id="k-pap" placeholder="Votre clé Pappers"></div>
+      <button class="btn btn-p" style="margin-top:10px" onclick="saveKeys()">Enregistrer les clés</button>
+    </div>
+    <div class="tw" style="padding:14px">
+      <div style="font-size:12px;font-weight:500;margin-bottom:10px">Cabinet</div>
+      <div class="fg" style="margin-bottom:7px"><label>Dénomination</label><input id="cab-n" value="Legal Euro Corporate SAS"></div>
+      <div class="fg" style="margin-bottom:7px"><label>SIREN</label><input id="cab-s" value="928 365 790"></div>
+      <div class="fg"><label>Adresse</label><input id="cab-a" value="231 rue Saint-Honoré, 75001 Paris"></div>
+    </div>
+    <div class="tw" style="padding:14px">
+      <div style="font-size:12px;font-weight:500;margin-bottom:7px">Données</div>
+      <div style="display:flex;gap:7px">
+        <button class="btn btn-g btn-sm" onclick="exportData()">Exporter sauvegarde JSON</button>
+        <button class="btn btn-r btn-sm" onclick="if(confirm('Réinitialiser toutes les données ?')){localStorage.clear();location.reload()}">Réinitialiser</button>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+<!-- PAGE DOSSIER - 8 ONGLETS -->
+<div class="dos-page" id="dos-page">
+  <div class="dos-hdr">
+    <div class="dos-title-row">
+      <button class="btn btn-g btn-sm" onclick="retourDossiers()">← Dossiers</button>
+      <div class="dos-soc" id="dp-soc">-</div>
+      <div style="font-size:11px;color:var(--gris);background:var(--fond);padding:2px 8px;border-radius:4px" id="dp-fo">-</div>
+      <div style="margin-left:auto;display:flex;gap:6px;align-items:center">
+        <span id="dp-bdg-st"></span><span id="dp-bdg-cat"></span>
+        <button class="btn btn-g btn-sm" onclick="editDCur()">Modifier le dossier</button>
+      </div>
+    </div>
+    <div class="dos-meta">
+      <div class="dm"><div class="dm-l">SIREN</div><div class="dm-v" id="dp-siren">—</div></div>
+      <div class="dm-sep"></div>
+      <div class="dm"><div class="dm-l">Greffe RCS</div><div class="dm-v" id="dp-greffe">—</div></div>
+      <div class="dm-sep"></div>
+      <div class="dm"><div class="dm-l">Client</div><div class="dm-v" id="dp-client">—</div></div>
+      <div class="dm-sep"></div>
+      <div class="dm"><div class="dm-l">Formalité</div><div class="dm-v" id="dp-formalite">—</div></div>
+      <div class="dm-sep"></div>
+      <div class="dm"><div class="dm-l">Date acte</div><div class="dm-v" id="dp-da">—</div></div>
+      <div class="dm-sep"></div>
+      <div class="dm"><div class="dm-l">Mois fact.</div><div class="dm-v" id="dp-mois">—</div></div>
+    </div>
+    <!-- ONGLETS -->
+    <div style="display:flex;border-top:1px solid var(--gris-pale);margin:8px -18px -11px;overflow-x:auto" id="dp-tabs">
+      <button class="dp-tab on" onclick="showDTab(0)" id="dt-0">Formalité</button>
+      <button class="dp-tab" onclick="showDTab(1)" id="dt-1">Guichet unique</button>
+      <button class="dp-tab" onclick="showDTab(2)" id="dt-2">Bénéficiaires effectifs</button>
+      <button class="dp-tab" onclick="showDTab(3)" id="dt-3">Checklist</button>
+      <button class="dp-tab" onclick="showDTab(4)" id="dt-4">Annonce légale</button>
+      <button class="dp-tab" onclick="showDTab(5)" id="dt-5">Facturation</button>
+      <button class="dp-tab" onclick="showDTab(6)" id="dt-6">Chronologie</button>
+      <button class="dp-tab" onclick="showDTab(7)" id="dt-7">Claude</button>
+    </div>
+  </div>
+
+  <!-- PANNEAUX -->
+  <div style="flex:1;overflow-y:auto">
+
+    <!-- ONGLET 0: FORMALITÉ -->
+    <div class="dp-panel" id="dp-p0" style="padding:16px 18px;display:flex;flex-direction:column;gap:12px">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+        <div class="bloc">
+          <div class="bloc-t"><span>Instructions client</span><button class="btn btn-g btn-sm" onclick="editInstDos()">Modifier</button></div>
+          <div id="dp-inst" style="font-size:12px;line-height:1.7;white-space:pre-wrap;min-height:50px">—</div>
+        </div>
+        <div class="bloc">
+          <div class="bloc-t"><span>Suivi greffe</span><button class="btn btn-g btn-sm" onclick="editSuiviGreffe()">Modifier</button></div>
+          <div id="dp-suivi-greffe"><div style="font-size:11px;color:var(--gris-pale)">Aucun suivi — cliquez Modifier</div></div>
+        </div>
+      </div>
+      <!-- Alertes - nécessaire pour renderDosBlocs -->
+      <div id="dp-alertes" style="display:none"></div>
+      <div class="bloc">
+        <div class="bloc-t">
+          <span>📂 Import des actes — Analyse IA</span>
+          <div style="display:flex;gap:7px">
+            <button class="btn btn-g btn-sm" onclick="document.getElementById('dp-file').click()">+ Ajouter</button>
+            <button class="btn btn-m btn-sm" id="dp-analyse-btn" onclick="analyseAllDocs()" style="display:none">Analyser avec l'IA</button>
+          </div>
+        </div>
+        <div class="al al-i" style="margin-bottom:9px">Déposez vos actes — l'IA lit les documents et remplit le GU, les BE, la checklist automatiquement · PDF max 10 Mo</div>
+        <div class="dz" id="dp-dz" onclick="document.getElementById('dp-file').click()" ondragover="dov(event)" ondragleave="dlv(event)" ondrop="ddropDos(event)">
+          <div class="dz-ico">📂</div>
+          <div class="dz-lbl">Glissez vos statuts, PV, Kbis ici</div>
+          <div class="dz-sub">ou cliquez pour sélectionner</div>
+        </div>
+        <input type="file" id="dp-file" multiple accept=".pdf,.jpg,.jpeg,.png,.webp" style="display:none" onchange="handleDocFiles(this.files)">
+        <div id="dp-files-list" style="margin-top:8px"></div>
+        <div id="dp-ia-result" style="margin-top:8px"></div>
+      </div>
+      <!-- KBIS & RBE -->
+      <div class="bloc">
+        <div class="bloc-t">
+          <span>📄 Kbis & RBE à jour</span>
+          <div style="display:flex;gap:7px">
+            <button class="btn btn-g btn-sm" onclick="document.getElementById('dp-kbis-file').click()">Déposer Kbis</button>
+            <button class="btn btn-g btn-sm" onclick="document.getElementById('dp-rbe-file').click()">Déposer RBE</button>
+          </div>
+        </div>
+        <input type="file" id="dp-kbis-file" accept=".pdf" style="display:none" onchange="handleKbisRbe(this.files,'kbis')">
+        <input type="file" id="dp-rbe-file" accept=".pdf" style="display:none" onchange="handleKbisRbe(this.files,'rbe')">
+        <div id="dp-kbis-rbe"><div style="font-size:11px;color:var(--gris-pale)">Aucun document officiel déposé</div></div>
+      </div>
+    </div>
+
+    <!-- ONGLET 1: GUICHET UNIQUE -->
+    <div class="dp-panel" id="dp-p1" style="display:none;padding:16px 18px">
+      <div class="bloc">
+        <div class="bloc-t">
+          <span>Guichet unique — Formulaire de dépôt</span>
+          <div style="display:flex;gap:6px;align-items:center">
+            <span style="font-size:10px;color:var(--gris)"><span style="color:var(--vert)">■</span> Auto <span style="color:var(--orange);margin-left:5px">■</span> À confirmer <span style="color:var(--rouge);margin-left:5px">■</span> Manquant <span style="color:var(--bleu);margin-left:5px">■</span> Modifié</span>
+            <button class="btn btn-g btn-sm" onclick="exportGU()">Exporter</button>
+          </div>
+        </div>
+        <div id="dp-gu"></div>
+        <div style="margin-top:12px;text-align:right">
+          <button class="btn btn-p" onclick="saveGUManual()">Enregistrer les modifications</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ONGLET 2: BÉNÉFICIAIRES EFFECTIFS -->
+    <div class="dp-panel" id="dp-p2" style="display:none;padding:16px 18px">
+      <div class="bloc">
+        <div class="bloc-t">
+          <span>Bénéficiaires effectifs — seuil légal &gt;25%</span>
+          <div style="display:flex;gap:7px">
+            <button class="btn btn-g btn-sm" onclick="addBEDos()">+ Ajouter entité</button>
+            <button class="btn btn-m btn-sm" onclick="calcBEDos()">Calculer</button>
+            <button class="btn btn-g btn-sm" onclick="exportBEDos()">Export CSV</button>
+          </div>
+        </div>
+        <div class="al al-i" style="margin-bottom:10px">Seuil légal : &gt;25% capital OU droits de vote · Délai de mise à jour : 30 jours</div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px">
+          <div id="dp-be-nodes"></div>
+          <div>
+            <div style="font-size:10px;font-weight:600;color:var(--gris);text-transform:uppercase;letter-spacing:.08em;margin-bottom:7px">Résultat calculé</div>
+            <div id="dp-be-res" class="tw"><div style="text-align:center;padding:20px;color:var(--gris-pale);font-size:12px">Ajoutez les entités et calculez<br>ou demandez à Claude dans le chat</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ONGLET 3: CHECKLIST -->
+    <div class="dp-panel" id="dp-p3" style="display:none;padding:16px 18px">
+      <div class="bloc">
+        <div class="bloc-t">
+          <span>Checklist — Pièces du dossier · JSS 2025</span>
+          <button class="btn btn-g btn-sm" onclick="addPiDos()">+ Ajouter une pièce</button>
+        </div>
+        <div class="al al-w" style="margin-bottom:9px">Pièces GU : <strong>PDF uniquement</strong> · Max <strong>10 Mo</strong> par fichier</div>
+        <div id="dp-checklist"></div>
+      </div>
+    </div>
+
+    <!-- ONGLET 4: ANNONCE LÉGALE -->
+    <div class="dp-panel" id="dp-p4" style="display:none;padding:16px 18px">
+      <div class="bloc">
+        <div class="bloc-t">
+          <span>Annonce légale</span>
+          <div style="display:flex;gap:7px">
+            <button class="btn btn-p btn-sm" onclick="cpJALDos()">Copier pour Busyplace</button>
+            <button class="btn btn-g btn-sm" onclick="cpJALDos()">Legal2Digital</button>
+            <button class="btn btn-g btn-sm" onclick="clearJAL()">Effacer</button>
+          </div>
+        </div>
+        <div style="font-size:11px;color:var(--gris);margin-bottom:8px;background:var(--fond);padding:7px 10px;border-radius:var(--rs)">Demandez à Claude dans le chat : "rédige l'annonce légale" — elle apparaît ici automatiquement. Vous pouvez aussi modifier manuellement.</div>
+        <div id="dp-jal-out" class="jal-out" contenteditable="true" style="outline:none;min-height:150px" oninput="saveJALTxt()">Demandez à Claude de rédiger l'annonce légale dans le chat.</div>
+        <div style="margin-top:8px;display:flex;justify-content:flex-end">
+          <button class="btn btn-g btn-sm" onclick="saveJALTxt();toast('Annonce légale enregistrée')">Enregistrer les modifications</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ONGLET 5: FACTURATION -->
+    <div class="dp-panel" id="dp-p5" style="display:none;padding:16px 18px">
+      <div class="bloc">
+        <div class="bloc-t"><span>Facturation</span></div>
+        <div style="max-width:480px">
+          <div class="fact-box">
+            <div class="fact-row"><span class="fact-lbl">Honoraires LEC HT (€)</span><input class="fact-inp" id="dp-hon" type="number" oninput="saveFact()"></div>
+            <div class="fact-row"><span class="fact-lbl">Frais de greffe (€)</span><input class="fact-inp" id="dp-gr2" type="number" oninput="saveFact()"></div>
+            <div class="fact-row"><span class="fact-lbl">Frais JAL (€)</span><input class="fact-inp" id="dp-jalf" type="number" oninput="saveFact()"></div>
+            <div class="fact-row"><span class="fact-lbl">Autres frais (€)</span><input class="fact-inp" id="dp-aut" type="number" oninput="saveFact()"></div>
+            <div class="fact-row"><span class="fact-lbl" style="font-size:11px;color:var(--gris)">Note facturation</span><input class="fact-note-inp" id="dp-nf" oninput="saveFact()" placeholder="ex. Forfait, Sur devis…"></div>
+            <div class="fact-total"><span>Total HT</span><span id="dp-tot-ht">0 €</span></div>
+            <div class="fact-ttc"><span>Total TTC (20%)</span><span id="dp-tot-ttc">0 €</span></div>
+          </div>
+          <div style="margin-top:8px;text-align:right">
+            <button class="btn btn-g btn-sm" onclick="saveFact();toast('Facturation enregistrée')">Enregistrer</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ONGLET 6: CHRONOLOGIE -->
+    <div class="dp-panel" id="dp-p6" style="display:none;padding:16px 18px">
+      <div class="bloc">
+        <div class="bloc-t"><span>Chronologie du dossier</span><span style="font-size:10px;color:var(--gris)">Cliquez pour cocher / décocher</span></div>
+        <div id="dp-tl"></div>
+      </div>
+    </div>
+
+    <!-- ONGLET 7: CLAUDE -->
+    <div class="dp-panel" id="dp-p7" style="display:none;padding:16px 18px">
+      <div class="bloc">
+        <div class="bloc-t"><span>Claude — Assistant juridique expert</span></div>
+        <div style="font-size:11px;color:var(--gris);background:var(--fond);padding:7px 10px;border-radius:var(--rs);margin-bottom:10px">
+          Commandes : <strong>"rédige l'annonce légale"</strong> → écrit dans l'onglet Annonce légale · <strong>"calcule les BE"</strong> · <strong>"génère la checklist"</strong> · ou posez votre question juridique
+        </div>
+        <div class="chat">
+          <div class="chat-hdr"><span>Legal Euro Corporate · Expert droit des sociétés · Connaît tout le contexte du dossier</span><div class="chat-s"></div></div>
+          <div class="chat-msgs" id="dp-chat-msgs"></div>
+          <div class="chat-inp-row">
+            <input class="chat-inp" id="dp-chat-inp" placeholder="Posez votre question ou donnez une instruction…" onkeydown="if(event.key==='Enter'&&!event.shiftKey)sendChat()">
+            <button class="chat-btn" id="dp-chat-btn" onclick="sendChat()">Envoyer</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+</div><!-- fin main -->
+</div><!-- fin layout -->
+<!-- VUE GREFFES -->
+<div class="vue" id="v-greffes"><div class="scroll">
+  <div class="tb"><div class="pg-t">Annuaire des Greffes</div></div>
+  <div class="al al-i">Tribunaux de Commerce · Cliquez sur l'email pour le copier</div>
+  <div class="sbar" style="width:100%;max-width:300px"><input id="gref-q" placeholder="Ville ou département…" oninput="renderGreffes()"></div>
+  <div id="gref-grid" style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-top:8px"></div>
+</div></div>
+
+<!-- MODALS -->
+<div class="modal-bg" id="m-dos">
+  <div class="modal">
+    <div class="mhdr"><div><div class="mt" id="m-dos-t">Nouveau dossier</div></div><button class="cl-btn" onclick="closeMDos()">×</button></div>
+    <div class="mbody">
+      <input type="hidden" id="eid">
+      <!-- ZONE IMPORT DOCUMENTS -->
+      <div id="imp-zone-wrap">
+        <div style="font-size:10px;font-weight:600;color:var(--marine);text-transform:uppercase;letter-spacing:.08em;margin-bottom:6px">📂 Importer des actes pour remplissage automatique</div>
+        <div class="dz" id="imp-dz" onclick="document.getElementById('imp-file').click()" ondragover="event.preventDefault();this.classList.add('ov')" ondragleave="this.classList.remove('ov')" ondrop="event.preventDefault();this.classList.remove('ov');handleImpFiles(event.dataTransfer.files)" style="padding:14px">
+          <div style="font-size:12px;font-weight:500;margin-bottom:3px">Glissez vos statuts, PV ou Kbis ici</div>
+          <div style="font-size:11px;color:var(--gris)">L'IA analyse et remplit tout le formulaire automatiquement</div>
+          <button class="btn btn-p btn-sm" style="margin-top:8px" onclick="event.stopPropagation();document.getElementById('imp-file').click()">Sélectionner des fichiers</button>
+        </div>
+        <input type="file" id="imp-file" multiple accept=".pdf,.jpg,.jpeg,.png,.webp" style="display:none" onchange="handleImpFiles(this.files)">
+        <div id="imp-files-list" style="margin-top:6px"></div>
+        <div id="imp-result" style="margin-top:6px"></div>
+      </div>
+      <div class="si-wrap" style="margin-top:10px"><input class="si-inp" id="si-inp" placeholder="Tapez le SIREN pour auto-remplir (9 chiffres)" oninput="onSI(this.value)" maxlength="11"><button class="btn btn-m btn-sm" onclick="searchSI()">Rechercher</button></div>
+      <div class="si-ok" id="si-ok"></div><div class="si-err" id="si-err"></div>
+      <div class="fsect">Société</div>
+      <div class="fgrid">
+        <div class="fg full"><label>Dénomination *</label><input id="f-soc"></div>
+        <div class="fg"><label>Forme juridique</label><select id="f-fo"><option value="">—</option><option>SAS</option><option>SASU</option><option>SARL</option><option>EURL</option><option>SA</option><option>SCI</option><option>SNC</option><option>SCP</option><option>SISA</option><option>GIE</option><option>Autre</option></select></div>
+        <div class="fg"><label>SIREN</label><input id="f-si" maxlength="11"></div>
+        <div class="fg"><label>Greffe RCS</label><input id="f-gr"></div>
+        <div class="fg"><label>Capital social</label><input id="f-cap"></div>
+        <div class="fg"><label>Dirigeant</label><input id="f-dir"></div>
+        <div class="fg full"><label>Siège social</label><input id="f-sie"></div>
+        <div class="fg"><label>Client / Mandant *</label><input id="f-cli" list="cli-dl"><datalist id="cli-dl"></datalist></div>
+        <div class="fg"><label>Mois de facturation</label>
+          <select id="f-mois"><option value="2026-05">Mai 2026</option><option value="2026-06">Juin 2026</option><option value="2026-07">Juillet 2026</option><option value="2026-08">Août 2026</option><option value="2026-09">Septembre 2026</option><option value="2026-10">Octobre 2026</option><option value="2026-11">Novembre 2026</option><option value="2026-12">Décembre 2026</option></select>
+        </div>
+        <div class="fg"><label>Date de l'acte</label><input type="date" id="f-da"></div>
+        <div class="fg"><label>Date d'effet</label><input type="date" id="f-de"></div>
+      </div>
+      <div class="fsect">Catégorie & Formalité</div>
+      <div class="fgrid">
+        <div class="fg"><label>Catégorie *</label>
+          <select id="f-cat">
+            <option value="0">Constitution / Immatriculation</option><option value="1">Modification statutaire</option>
+            <option value="2">Cessation d'activité</option><option value="3">Dépôt des comptes</option>
+            <option value="4">Dépôt d'actes</option><option value="5">Mainlevée / Radiation d'office</option>
+            <option value="6">Audit / Dossiers complexes</option>
+          </select>
+        </div>
+        <div class="fg"><label>Type de formalité *</label>
+          <select id="f-ty" onchange="onTy()">
+            <option value="">— Choisir —</option>
+            <optgroup label="Constitution"><option>Constitution SAS / SASU</option><option>Constitution SARL / EURL</option><option>Constitution SCI</option><option>Constitution SA</option><option>Constitution SNC</option><option>Constitution SCP</option><option>Constitution GIE</option></optgroup>
+            <optgroup label="Modification"><option>Changement de président SAS</option><option>Changement de gérant SARL</option><option>Changement de gérant SCI</option><option>Changement d'administrateur SA</option><option>Transfert de siège (même ressort)</option><option>Transfert de siège (hors ressort)</option><option>Transfert établissement principal</option><option>Ouverture établissement secondaire</option><option>Fermeture établissement secondaire</option><option>Augmentation de capital (numéraire)</option><option>Augmentation de capital (apports en nature)</option><option>Réduction de capital (pertes)</option><option>Réduction de capital (rachat)</option><option>Modification de l'objet social</option><option>Changement de dénomination</option><option>Modification des statuts (général)</option><option>Prorogation de durée</option><option>Changement de date de clôture</option><option>Transformation SARL en SAS</option><option>Transformation SA en SAS</option><option>Fusion</option><option>Prise d'activité / fonds de commerce</option><option>Suspension d'activité / location-gérance</option><option>Désignation CAC</option><option>Ajout d'associé</option><option>Mise à jour RBE</option></optgroup>
+            <optgroup label="Cessation"><option>Dissolution / Liquidation</option><option>Clôture de liquidation</option><option>TUP (art. 1844-5 C.civ.)</option><option>Dissolution par TUP — validation préfectorale</option><option>Mise en sommeil</option><option>Radiation</option></optgroup>
+            <optgroup label="Dépôt comptes"><option>Dépôt des comptes annuels</option><option>Dépôt des comptes — confidentialité</option></optgroup>
+            <optgroup label="Dépôt actes"><option>Dépôt d'actes divers</option><option>Attestation de financement</option></optgroup>
+            <optgroup label="Mainlevée"><option>Mainlevée greffe</option><option>Mainlevée de radiation d'office</option><option>Déradiation</option></optgroup>
+            <optgroup label="Autres"><option>Déclaration BE (RBE)</option><option>Mission CEE / complexe</option><option>Reconstitution gouvernance</option><option>Mise en activité</option><option>Autre</option></optgroup>
+          </select>
+        </div>
+        <div class="fg"><label>Statut</label>
+          <select id="f-st"><option value="entree">Entrée</option><option value="cours">En cours</option><option value="attente">En attente documents</option><option value="depose">Déposé</option><option value="valide">Validé</option><option value="afacturer">À facturer</option><option value="clos">Clôturé</option><option value="bloque">Bloqué</option></select>
+        </div>
+      </div>
+      <div class="fsect">Instructions client</div>
+      <div class="fg"><textarea id="f-inst" placeholder="Instructions exactes du client…" rows="3"></textarea></div>
+      <div class="fsect">Facturation — Grille LEC 2026 (auto-rempli selon formalité)</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:8px">
+        <div class="fg"><label>Honoraires LEC HT (€)</label><input type="number" id="f-hon" oninput="calcF()"></div>
+        <div class="fg"><label>Frais de greffe (€)</label><input type="number" id="f-gr2" oninput="calcF()"></div>
+        <div class="fg"><label>Frais JAL (€)</label><input type="number" id="f-jal" oninput="calcF()"></div>
+        <div class="fg"><label>Autres frais (€)</label><input type="number" id="f-aut" oninput="calcF()"></div>
+        <div class="fg full"><label>Note facturation</label><input id="f-nf" placeholder="ex. Sans frais de greffe, Forfait, Sur devis…"></div>
+        <div class="fg full"><label>Total HT</label><input id="f-tot" readonly style="background:var(--orange-pale);color:var(--orange);font-weight:600;font-size:14px"></div>
+      </div>
+      <div class="fsect">Notes internes</div>
+      <div class="fg"><textarea id="f-no" rows="3" placeholder="Points de vigilance, blocages…"></textarea></div>
+    </div>
+    <div class="mftr">
+      <button class="btn btn-r btn-sm" id="del-btn" style="display:none" onclick="delD()">Supprimer ce dossier</button>
+      <div style="display:flex;gap:7px"><button class="btn btn-g" onclick="closeMDos()">Annuler</button><button class="btn btn-p" onclick="saveD()">Enregistrer</button></div>
+    </div>
+  </div>
+</div>
+<div class="modal-bg" id="m-soc">
+  <div class="modal" style="width:520px">
+    <div class="mhdr"><div class="mt" id="m-soc-t">Nouvelle société</div><button class="cl-btn" onclick="closeMSoc()">×</button></div>
+    <div class="mbody">
+      <input type="hidden" id="soc-eid">
+      <div class="fgrid">
+        <div class="fg full"><label>Dénomination *</label><input id="sc-nom"></div>
+        <div class="fg"><label>Forme juridique</label>
+          <select id="sc-fo"><option value="">—</option><option>SAS</option><option>SASU</option><option>SARL</option><option>EURL</option><option>SA</option><option>SCI</option><option>SNC</option><option>SCP</option><option>SISA</option><option>GIE</option><option>Autre</option></select>
+        </div>
+        <div class="fg"><label>SIREN</label><input id="sc-si" maxlength="11" placeholder="9 chiffres"></div>
+        <div class="fg"><label>Greffe RCS</label><input id="sc-gr" placeholder="ex. Paris"></div>
+        <div class="fg"><label>Capital social</label><input id="sc-cap" placeholder="ex. 10 000 €"></div>
+        <div class="fg"><label>Date de création</label><input type="date" id="sc-dc"></div>
+        <div class="fg full"><label>Siège social</label><input id="sc-sie" placeholder="Adresse complète"></div>
+        <div class="fg full"><label>Objet social</label><textarea id="sc-obj" rows="2" placeholder="Activité principale…"></textarea></div>
+        <div class="fg"><label>Mandataire (client)</label><input id="sc-cli" list="sc-cli-dl" placeholder="Jean-Baptiste, Vivy…"><datalist id="sc-cli-dl"></datalist></div>
+        <div class="fg"><label>Téléphone société</label><input id="sc-tel"></div>
+        <div class="fg full"><label>Email société</label><input id="sc-em" type="email"></div>
+        <div class="fg full"><label>Notes internes</label><textarea id="sc-no" rows="2"></textarea></div>
+      </div>
+    </div>
+    <div class="mftr">
+      <button class="btn btn-r btn-sm" id="soc-del-btn" style="display:none" onclick="delSoc()">Supprimer</button>
+      <div style="display:flex;gap:7px"><button class="btn btn-g" onclick="closeMSoc()">Annuler</button><button class="btn btn-p" onclick="saveSoc()">Enregistrer</button></div>
+    </div>
+  </div>
+</div>
+<div class="modal-bg" id="m-cli">
+  <div class="modal" style="width:420px">
+    <div class="mhdr"><div class="mt">Nouveau client</div><button class="cl-btn" onclick="closeMCli()">×</button></div>
+    <div class="mbody">
+      <div class="fgrid">
+        <div class="fg full"><label>Nom / Cabinet *</label><input id="c-nom"></div>
+        <div class="fg"><label>Type</label><select id="c-ty"><option>Avocat</option><option>Expert-comptable</option><option>Dirigeant direct</option><option>Notaire</option><option>Autre</option></select></div>
+        <div class="fg"><label>Email</label><input id="c-em" type="email"></div>
+        <div class="fg"><label>Téléphone</label><input id="c-tel"></div>
+        <div class="fg full"><label>Notes</label><textarea id="c-no" rows="2"></textarea></div>
+      </div>
+    </div>
+    <div class="mftr"><div></div><div style="display:flex;gap:7px"><button class="btn btn-g" onclick="closeMCli()">Annuler</button><button class="btn btn-p" onclick="saveCli()">Créer</button></div></div>
+  </div>
+</div>
+<div class="modal-bg" id="m-suivi">
+  <div class="modal" style="width:500px">
+    <div class="mhdr"><div class="mt">Suivi Greffe</div><button class="cl-btn" onclick="document.getElementById('m-suivi').classList.remove('open')">×</button></div>
+    <div class="mbody">
+      <div class="fgrid">
+        <div class="fg"><label>N° de récépissé</label><input id="sg-rec" placeholder="ex. 2026-00123"></div>
+        <div class="fg"><label>Date de dépôt</label><input type="date" id="sg-dep"></div>
+        <div class="fg"><label>Statut greffe</label>
+          <select id="sg-st">
+            <option value="">— En attente —</option>
+            <option value="en_cours">En cours d'examen</option>
+            <option value="accepte">Accepté ✓</option>
+            <option value="rejete">Rejeté ✗</option>
+            <option value="regularisation">En régularisation</option>
+          </select>
+        </div>
+        <div class="fg"><label>Date retour greffe</label><input type="date" id="sg-ret"></div>
+        <div class="fg full"><label>Motif de rejet / Observations</label><textarea id="sg-obs" rows="3" placeholder="Motif de rejet ou observations du greffe…"></textarea></div>
+        <div class="fg"><label>Date limite de dépôt</label><input type="date" id="sg-dlim"></div>
+      </div>
+    </div>
+    <div class="mftr"><div></div><button class="btn btn-p" onclick="saveSuiviGreffe()">Enregistrer</button></div>
+  </div>
+</div>
+<div id="toast"></div>
+<script>
+// ═══ CONSTANTES ═══
+const TL_ETAPES=['Ouverture du dossier','Instructions client reçues','Documents reçus','Analyse IA effectuée','Vérification anti-rejet','GU prérempli et validé','Annonce légale (JAL) publiée','Dépôt GU / Greffe','Suivi validation greffe','Facture émise','Dossier clôturé'];
+const CATS=['Constitution / Immatriculation','Modification statutaire','Cessation d\'activité','Dépôt des comptes','Dépôt d\'actes','Mainlevée / Radiation d\'office','Audit / Dossiers complexes'];
+const CC=['#2E7D5E','#1A6BAA','#C0392B','#E8843A','#92600A','#6B3FA0','#555555'];
+const ST={entree:{l:'Entrée',c:'b-en'},cours:{l:'En cours',c:'b-ec'},attente:{l:'En attente docs',c:'b-at'},depose:{l:'Déposé',c:'b-de'},valide:{l:'Validé',c:'b-va'},afacturer:{l:'À facturer',c:'b-af'},clos:{l:'Clôturé',c:'b-cl'},bloque:{l:'Bloqué',c:'b-bl'}};
+
+// Grille tarifaire LEC 2026 EXACTE
+const GR={
+'Constitution SAS / SASU':{hon:199,jal:199,gr:58.86},
+'Constitution SARL / EURL':{hon:199,jal:148,gr:58.86},
+'Constitution SCI':{hon:199,jal:162,gr:38.86},
+'Constitution SNC':{hon:199,jal:142,gr:58.86},
+'Constitution SA':{hon:199,jal:220,gr:192.01},
+'Constitution SCP':{hon:199,jal:399,gr:58.86},
+'Constitution GIE':{hon:199,jal:191,gr:88.28},
+'Changement de président SAS':{hon:199,jal:220,gr:192.01},
+'Changement de gérant SARL':{hon:199,jal:220,gr:192.01},
+'Changement de gérant SCI':{hon:199,jal:220,gr:192.01},
+'Changement d\'administrateur SA':{hon:199,jal:220,gr:192.01},
+'Changement de dirigeant + DBE':{hon:249,jal:220,gr:235.36},
+'Désignation CAC':{hon:199,jal:220,gr:192.01},
+'Ajout d\'associé':{hon:199,jal:220,gr:192.01},
+'Transfert de siège (même ressort)':{hon:199,jal:0,gr:76.01},
+'Transfert de siège (hors ressort)':{hon:199,jal:260,gr:269.86},
+'Transfert établissement principal':{hon:150,jal:0,gr:62.08},
+'Ouverture établissement secondaire':{hon:199,jal:0,gr:103.02},
+'Fermeture établissement secondaire':{hon:150,jal:0,gr:76.00},
+'Augmentation de capital (numéraire)':{hon:199,jal:220,gr:192.01},
+'Augmentation de capital (apports en nature)':{hon:199,jal:220,gr:192.01},
+'Réduction de capital (pertes)':{hon:199,jal:220,gr:192.01},
+'Réduction de capital (rachat)':{hon:199,jal:220,gr:207.95,note:'+ Certificat de non-opposition 60€'},
+'Modification de l\'objet social':{hon:199,jal:220,gr:192.01},
+'Changement de dénomination':{hon:199,jal:220,gr:192.01},
+'Modification des statuts (général)':{hon:199,jal:220,gr:192.01},
+'Prorogation de durée':{hon:199,jal:220,gr:192.01},
+'Changement de date de clôture':{hon:199,jal:0,gr:0},
+'Transformation SARL en SAS':{hon:199,jal:220,gr:212.08,note:'+ Enregistrement Trésor Public 125€'},
+'Transformation SA en SAS':{hon:199,jal:220,gr:212.08},
+'TUP (art. 1844-5 C.civ.)':{hon:199,jal:280,gr:192.01,note:'+ Certificat de non-opposition 60€'},
+'Dissolution par TUP — validation préfectorale':{hon:199,jal:280,gr:192.01},
+'Fusion':{hon:0,jal:0,gr:0,note:'Sur devis'},
+'Dissolution / Liquidation':{hon:199,jal:153,gr:192.01},
+'Clôture de liquidation':{hon:199,jal:111,gr:15.79,note:'Si boni : + 2,5% droits enregistrement'},
+'Dissolution + clôture de liquidation':{hon:350,jal:264,gr:207.80},
+'Dépôt des comptes annuels':{hon:99,jal:0,gr:45.87},
+'Dépôt des comptes — confidentialité':{hon:99,jal:0,gr:45.87},
+'Dépôt d\'actes divers':{hon:99,jal:0,gr:15.76},
+'Attestation de financement':{hon:99,jal:0,gr:15.76},
+'Mainlevée greffe':{hon:199,jal:0,gr:68.04},
+'Mainlevée de radiation d\'office':{hon:199,jal:0,gr:68.04},
+'Déradiation':{hon:199,jal:0,gr:68.04},
+'Déclaration BE (RBE)':{hon:150,jal:0,gr:45.37},
+'Mise à jour RBE':{hon:150,jal:0,gr:45.37},
+'Mise en sommeil':{hon:199,jal:0,gr:59.28},
+'Mise en activité':{hon:150,jal:0,gr:45.37},
+'Prise d\'activité / fonds de commerce':{hon:199,jal:0,gr:68.04},
+'Suspension d\'activité / location-gérance':{hon:199,jal:0,gr:68.04},
+'Reconstitution gouvernance':{hon:0,jal:0,gr:0,note:'Sur devis'},
+'Mission CEE / complexe':{hon:0,jal:0,gr:0,note:'Sur devis — convention spécifique'},
+'Autre':{hon:199,jal:0,gr:0},
+};
+
+// Pièces par formalité — Source JSS Guide Formalités 2025
+const CK_DATA={
+"Constitution SAS / SASU":{ob:["Statuts datés et signés par tous les associés, certifiés conformes","Acte nommant le Président (si non statutaire)","Liste des souscripteurs","Attestation de dépôt des fonds à la banque","Titre de jouissance du local (moins de 3 mois)","Déclaration de non-condamnation avec FILIATION — signée EN ORIGINAL (moins de 3 mois)","CNI recto-verso ou passeport — COULEUR — mention manuscrite","Choix régime fiscal (IR/IS) et régime TVA","Annonce légale — avis de constitution","Déclaration des bénéficiaires effectifs (RBE)"],co:["Rapport du CAC sur les apports en nature (si applicable)","Lettre d'acceptation de fonction du CAC (si applicable)"],ar:"CNI : COULEUR, recto-verso, mention manuscrite obligatoire. Déclaration NC : FILIATION obligatoire (père + nom jeune fille mère), moins de 3 mois, EN ORIGINAL."},
+"Constitution SARL / EURL":{ob:["Statuts datés et signés, certifiés conformes","Attestation de dépôt des fonds à la banque","Titre de jouissance du local (moins de 3 mois)","Déclaration de non-condamnation avec FILIATION — EN ORIGINAL (moins de 3 mois)","CNI recto-verso ou passeport — COULEUR — mention manuscrite","Choix régime fiscal (IR/IS) et régime TVA","Annonce légale — avis de constitution","Déclaration des bénéficiaires effectifs (RBE)"],co:["Rapport du CAC sur les apports en nature (si applicable)"],ar:"FILIATION obligatoire dans la NC. CNI couleur recto-verso."},
+"Constitution SCI":{ob:["Statuts datés et signés par tous les associés, certifiés conformes","PV d'AG si gérant non statutaire","Titre de jouissance du local (moins de 3 mois)","Déclaration de non-condamnation avec FILIATION — EN ORIGINAL (moins de 3 mois)","CNI recto-verso ou passeport — COULEUR — mention manuscrite","Choix régime fiscal (IR/IS)","Catégorie d'activité et libellé court","Annonce légale — avis de constitution","Déclaration des bénéficiaires effectifs (RBE)"],co:["Attestation mise à disposition si gérant propriétaire","Copie bail si gérant locataire"],ar:"Plus de 4 associés = vacation supplémentaire. FILIATION obligatoire dans la NC."},
+"Constitution SA":{ob:["Statuts datés et signés, certifiés conformes","Liste des actionnaires fondateurs","Attestation de dépôt des fonds (50% minimum libéré)","Titre de jouissance du local (moins de 3 mois)","Déclaration de non-condamnation avec FILIATION de chaque dirigeant — EN ORIGINAL","CNI recto-verso ou passeport chaque dirigeant — COULEUR — mention manuscrite","PV de l'AG constitutive","Rapport du commissaire aux apports (si apports en nature)","Annonce légale — avis de constitution","Déclaration des bénéficiaires effectifs (RBE)"],co:["Lettre d'acceptation du CAC"],ar:"Capital minimum : 37 000 €. Au moins 50% libéré à la constitution. FILIATION obligatoire."},
+"Constitution SNC":{ob:["Statuts datés et signés par tous les associés, certifiés conformes","Titre de jouissance du local (moins de 3 mois)","Déclaration de non-condamnation avec FILIATION de chaque gérant — EN ORIGINAL","CNI recto-verso ou passeport chaque gérant — COULEUR — mention manuscrite","Annonce légale — avis de constitution","Déclaration des bénéficiaires effectifs (RBE)"],co:[],ar:"Tous les associés sont commerçants et responsables solidairement. FILIATION obligatoire."},
+"Constitution SCP":{ob:["Statuts datés et signés par tous les associés, certifiés conformes","Titre de jouissance du local (moins de 3 mois)","Déclaration de non-condamnation avec FILIATION — EN ORIGINAL","CNI recto-verso ou passeport — COULEUR — mention manuscrite","Agrément de l'ordre professionnel compétent","Annonce légale — avis de constitution","Déclaration des bénéficiaires effectifs (RBE)"],co:[],ar:"Agrément préalable de l'ordre professionnel obligatoire avant immatriculation."},
+"Constitution GIE":{ob:["Convention constitutive datée et signée, certifiée conforme","Titre de jouissance du local (moins de 3 mois)","Déclaration de non-condamnation avec FILIATION des administrateurs — EN ORIGINAL","CNI recto-verso ou passeport — COULEUR — mention manuscrite","Annonce légale — avis de constitution"],co:["Rapport du commissaire aux apports (si apports en nature)"],ar:"Le GIE ne réalise pas de bénéfices pour lui-même."},
+"Changement de président SAS":{ob:["Statuts mis à jour certifiés conformes","PV nommant le nouveau Président — certifié conforme","CNI recto-verso ou passeport nouveau Président — COULEUR — mention manuscrite","Déclaration de non-condamnation avec FILIATION — EN ORIGINAL (moins de 3 mois)","Annonce légale — avis de modification","Déclaration des bénéficiaires effectifs (RBE)"],co:["Lettre de démission ancien Président"],ar:"FILIATION obligatoire. CNI refusée si N&B, recto seul ou expirée."},
+"Changement de gérant SARL":{ob:["Statuts mis à jour certifiés conformes","PV nommant le nouveau Gérant — certifié conforme","CNI recto-verso ou passeport nouveau Gérant — COULEUR — mention manuscrite","Déclaration de non-condamnation avec FILIATION — EN ORIGINAL (moins de 3 mois)","Adresse à jour des associés","Annonce légale — avis de modification","Déclaration des bénéficiaires effectifs (RBE)"],co:["Lettre de démission ancien Gérant"],ar:"FILIATION obligatoire. CNI couleur recto-verso."},
+"Changement de gérant SCI":{ob:["Statuts mis à jour certifiés conformes","PV nommant le nouveau Gérant — certifié conforme","CNI recto-verso ou passeport nouveau Gérant — COULEUR — mention manuscrite","Déclaration de non-condamnation avec FILIATION — EN ORIGINAL (moins de 3 mois)","Annonce légale — avis de modification","Déclaration des bénéficiaires effectifs (RBE)"],co:["Lettre de démission ancien Gérant"],ar:"FILIATION obligatoire dans la NC."},
+"Changement d'administrateur SA":{ob:["PV du CA ou AG certifié conforme nommant le nouvel administrateur","CNI recto-verso ou passeport — COULEUR — mention manuscrite","Déclaration de non-condamnation avec FILIATION — EN ORIGINAL (moins de 3 mois)","Annonce légale — avis de modification"],co:["Lettre de démission ancien administrateur"],ar:"FILIATION obligatoire. Vérifier conditions d'âge et détention d'actions."},
+"Transfert de siège (même ressort)":{ob:["PV / Décision certifié conforme","Statuts mis à jour certifiés conformes","Justificatif du nouveau siège (moins de 3 mois)"],co:["Annonce légale si modification simultanée"],ar:"Même ressort : pas de JAL obligatoire sauf modification simultanée."},
+"Transfert de siège (hors ressort)":{ob:["PV / Décision certifié conforme","Statuts mis à jour certifiés conformes","Justificatif du nouveau siège (moins de 3 mois)","Annonce légale dans l'ancien ressort","Annonce légale dans le nouveau ressort","Déclaration des bénéficiaires effectifs (RBE)"],co:[],ar:"2 publications JAL OBLIGATOIRES. Frais de greffe majorés."},
+"Transfert établissement principal":{ob:["PV / Décision certifié conforme","Justificatif du nouveau local (moins de 3 mois)"],co:["Annonce légale si changement de ressort"],ar:"Délai : 1 mois après le transfert effectif."},
+"Ouverture établissement secondaire":{ob:["PV / Décision certifié conforme","Justificatif du local (moins de 3 mois)","Extrait Kbis de moins de 3 mois"],co:["Annonce légale selon formalité principale"],ar:"Délai : 1 mois après ouverture effective."},
+"Fermeture établissement secondaire":{ob:["PV / Décision certifié conforme","Extrait Kbis de moins de 3 mois"],co:[],ar:"Délai : 1 mois après fermeture effective."},
+"Augmentation de capital (numéraire)":{ob:["PV / Décision certifié conforme","Statuts mis à jour mentionnant le NOUVEAU capital — certifiés conformes","Attestation de dépôt des fonds (date ≥ date de décision)","Annonce légale — avis de modification"],co:["Rapport du CAC sur la libération des apports"],ar:"Statuts doivent mentionner le NOUVEAU capital. Attestation bancaire : date ≥ date de décision."},
+"Augmentation de capital (apports en nature)":{ob:["PV / Décision certifié conforme","Statuts mis à jour certifiés conformes","Rapport du commissaire aux apports","Annonce légale — avis de modification"],co:["Rapport du CAC"],ar:"Rapport commissaire aux apports OBLIGATOIRE pour les apports en nature."},
+"Réduction de capital (pertes)":{ob:["PV / Décision certifié conforme","Statuts mis à jour certifiés conformes","Annonce légale — avis de modification"],co:["Rapport du CAC (si applicable)"],ar:"Réduction motivée par les pertes : pas de délai d'opposition des créanciers."},
+"Réduction de capital (rachat)":{ob:["PV / Décision certifié conforme","Statuts mis à jour certifiés conformes","Annonce légale — avis de modification","Certificat de non-opposition (après délai de 20 jours)"],co:["Rapport du CAC"],ar:"Délai opposition créanciers : 20 jours après JAL. Certificat de non-opposition OBLIGATOIRE avant dépôt GU. CNO ~60€."},
+"Modification de l'objet social":{ob:["PV / Décision certifié conforme","Statuts mis à jour mentionnant le NOUVEL objet — certifiés conformes","Annonce légale — avis de modification"],co:[],ar:"Le nouvel objet doit être complet et précis. Vérifier cohérence avec code NAF."},
+"Changement de dénomination":{ob:["PV / Décision certifié conforme","Statuts mis à jour certifiés conformes","Annonce légale — avis de modification"],co:[],ar:"Vérifier la disponibilité du nouveau nom (INPI)."},
+"Modification des statuts (général)":{ob:["PV / Décision certifié conforme","Statuts mis à jour certifiés conformes","Annonce légale (si mention modifiée au RCS)"],co:[],ar:"Vérifier si la modification entraîne une JAL obligatoire selon les mentions modifiées."},
+"Prorogation de durée":{ob:["PV / Décision certifié conforme","Statuts mis à jour certifiés conformes","Annonce légale — avis de modification"],co:[],ar:"Doit intervenir AVANT expiration de la durée statutaire. Si expiration dépassée : procédure judiciaire."},
+"Changement de date de clôture":{ob:["PV / Décision certifié conforme","Statuts mis à jour certifiés conformes"],co:["Annonce légale si premier changement"],ar:"Pas de JAL sauf si premier changement dans les 6 mois suivant la constitution."},
+"Transformation SARL en SAS":{ob:["PV AGE de transformation certifié conforme","Nouveaux statuts SAS certifiés conformes","Rapport du commissaire à la transformation","CNI recto-verso ou passeport nouveau Président — COULEUR — mention manuscrite","Déclaration de non-condamnation avec FILIATION nouveau Président — EN ORIGINAL","Annonce légale — avis de transformation","Attestation enregistrement Trésor Public (125€)"],co:["Pouvoir si dépôt par LEC"],ar:"Rapport commissaire à la transformation OBLIGATOIRE sauf si CAC en place depuis 2 ans. Enregistrement Trésor 125€ PRÉALABLE au dépôt GU."},
+"Transformation SA en SAS":{ob:["PV AGE de transformation certifié conforme","Nouveaux statuts SAS certifiés conformes","Rapport du commissaire à la transformation","CNI recto-verso ou passeport nouveau Président — COULEUR — mention manuscrite","Déclaration de non-condamnation avec FILIATION — EN ORIGINAL","Annonce légale — avis de transformation"],co:[],ar:"Rapport commissaire à la transformation OBLIGATOIRE."},
+"Fusion":{ob:["Traité de fusion signé par toutes les parties certifié conforme","PV des AG des sociétés fusionnantes certifiés conformes","Rapport du commissaire à la fusion","Annonces légales (avant et après fusion)","Statuts mis à jour de la société absorbante"],co:["Rapport des CAC sur la fusion","Rapport du commissaire aux apports"],ar:"Délai opposition créanciers : 30 jours après publication JAL. Opération complexe — prévoir 3 à 6 mois."},
+"Prise d'activité / fonds de commerce":{ob:["Acte d'acquisition ou de cession du fonds certifié conforme","Annonce légale — avis de prise d'activité","Justificatif du local d'exploitation (moins de 3 mois)"],co:["Contrat de location-gérance (si applicable)"],ar:"Publication obligatoire dans un JAL dans les 15 jours de l'acquisition."},
+"Suspension d'activité / location-gérance":{ob:["Contrat de location-gérance certifié conforme","Annonce légale — avis de location-gérance","PV / Décision certifié conforme"],co:[],ar:"Publication obligatoire dans un JAL dans les 15 jours. Responsabilité du bailleur pendant 6 mois."},
+"Désignation CAC":{ob:["PV / Décision de désignation certifié conforme","Lettre d'acceptation de mission du CAC","Déclaration d'indépendance et d'absence d'incompatibilité du CAC","Annonce légale — avis de modification"],co:[],ar:"Le CAC doit être inscrit sur la liste de la Compagnie Régionale des CAC."},
+"Ajout d'associé":{ob:["PV / Décision certifié conforme","Statuts mis à jour certifiés conformes","CNI recto-verso ou passeport nouvel associé — COULEUR — mention manuscrite","Déclaration de non-condamnation avec FILIATION (si gérant) — EN ORIGINAL","Annonce légale — avis de modification","Déclaration des bénéficiaires effectifs (RBE)"],co:["Acte de cession de parts (si cession)"],ar:"Vérifier les clauses d'agrément dans les statuts avant tout ajout d'associé."},
+"Mise à jour RBE":{ob:["Formulaire INPI de déclaration BE mis à jour","CNI recto-verso ou passeport de chaque BE modifié","Pouvoir pour LEC"],co:["Organigramme de détention mis à jour"],ar:"Délai : 30 jours après tout changement. Seuil : >25% capital OU droits de vote."},
+"Dissolution / Liquidation":{ob:["PV d'AG mixte de dissolution certifié conforme","CNI recto-verso ou passeport du Liquidateur — COULEUR — mention manuscrite","Déclaration de non-condamnation avec FILIATION du Liquidateur — EN ORIGINAL (moins de 3 mois)","Pouvoir du Liquidateur","Annonce légale — avis de dissolution"],co:["N° sécurité sociale si gérant majoritaire","Noms des caisses de retraite"],ar:"DEUX formalités distinctes : (1) Dissolution + nomination liquidateur — (2) Clôture liquidation. Dispense enregistrement depuis 01/01/2020."},
+"Clôture de liquidation":{ob:["PV de clôture de liquidation certifié conforme","Comptes de liquidation certifiés conformes","Pouvoir du Liquidateur","Annonce légale — avis de clôture de liquidation","Attestation de vigilance URSSAF","Attestation de régularité fiscale"],co:["3 exemplaires originaux si boni de liquidation"],ar:"Si boni : + 2,5% droits d'enregistrement. Attestation vigilance URSSAF obligatoire depuis oct. 2024."},
+"TUP (art. 1844-5 C.civ.)":{ob:["Décision de l'associé unique certifiée conforme","Annonce légale — avis de dissolution par TUP","Certificat de non-opposition (après délai de 30 jours)"],co:[],ar:"Délai opposition créanciers : 30 jours après publication JAL. CNO OBLIGATOIRE avant dépôt GU."},
+"Dissolution par TUP — validation préfectorale":{ob:["Décision de l'associé unique certifiée conforme","Annonce légale — avis de dissolution par TUP","Arrêté préfectoral de validation","Certificat de non-opposition"],co:[],ar:"Validation préfectorale obligatoire pour certaines sociétés."},
+"Mise en sommeil":{ob:["PV / Décision certifié conforme de mise en sommeil","Déclaration de cessation temporaire d'activité"],co:[],ar:"Durée maximale de sommeil : 2 ans. Au-delà, radiation d'office possible."},
+"Radiation":{ob:["PV / Décision de radiation certifié conforme","Justificatif de cessation définitive d'activité"],co:["Attestation de radiation URSSAF"],ar:"La radiation entraîne la perte de la personnalité morale."},
+"Dépôt des comptes annuels":{ob:["Bilan, compte de résultat et annexe — certifiés conformes","PV AGO approuvant les comptes avec affectation du résultat — certifié conforme"],co:["Rapport de gestion (sociétés cotées ou comptes consolidés)","Rapport du CAC (si applicable)","Déclaration de confidentialité (micro et petites entreprises)"],ar:"Les SARL (associé unique = gérant) dispensées du rapport de gestion (art. L.232-22 C.com)."},
+"Dépôt des comptes — confidentialité":{ob:["Bilan simplifié certifié conforme","Déclaration de confidentialité signée","PV AGO approuvant les comptes"],co:["Compte de résultat (peut rester confidentiel pour petites entreprises)"],ar:"Confidentialité réservée aux micro-entreprises et petites entreprises au sens comptable."},
+"Dépôt d'actes divers":{ob:["Acte à déposer certifié conforme","Bordereau de dépôt complété"],co:[],ar:"Vérifier que l'acte correspond à une obligation de dépôt au RCS."},
+"Attestation de financement":{ob:["Attestation de financement signée par l'établissement financier","Justificatif de l'opération financée"],co:[],ar:"Document requis pour certaines opérations immobilières ou de rachat."},
+"Mainlevée greffe":{ob:["Acte de mainlevée certifié conforme","Justificatif du paiement de la dette ou levée de l'obstacle","Extrait Kbis de moins de 3 mois"],co:[],ar:"Vérifier que la cause de la mention a bien disparu avant de demander la mainlevée."},
+"Mainlevée de radiation d'office":{ob:["Acte de mainlevée certifié conforme","Justificatif du motif de radiation","Statuts à jour certifiés conformes","CNI recto-verso ou passeport dirigeant — COULEUR — mention manuscrite","Déclaration de non-condamnation avec FILIATION — EN ORIGINAL","Justificatif de siège (moins de 3 mois)"],co:["Déclaration BE si non faite"],ar:"Vérifier que la société n'est pas définitivement radiée. Régulariser le RBE."},
+"Déradiation":{ob:["Demande de déradiation motivée","Justificatifs de régularisation","Déclaration de non-condamnation avec FILIATION du dirigeant — EN ORIGINAL","CNI recto-verso ou passeport dirigeant — COULEUR"],co:[],ar:"La déradiation remet la société dans son état antérieur à la radiation."},
+"Déclaration BE (RBE)":{ob:["Formulaire INPI de déclaration des bénéficiaires effectifs","CNI recto-verso ou passeport de CHAQUE bénéficiaire effectif","Pouvoir pour LEC"],co:["Organigramme de détention (structure multi-niveaux)","Statuts des sociétés intermédiaires (détention indirecte)"],ar:"Seuil : >25% capital OU droits de vote. Si aucun associé >25% : déclarer le représentant légal. Mise à jour dans les 30 jours."},
+"Mission CEE / complexe":{ob:["Convention d'honoraires signée","Attestation de volume CEE","Documents justificatifs des opérations CEE"],co:["Rapport d'audit indépendant"],ar:"Mission spécifique — tarification sur devis. Convention préalable obligatoire."},
+"Reconstitution gouvernance":{ob:["Ordonnance du tribunal ou décision judiciaire","PV de reconstitution des organes certifié conforme","Déclaration de non-condamnation avec FILIATION de chaque dirigeant — EN ORIGINAL","CNI recto-verso ou passeport de chaque dirigeant — COULEUR"],co:["Rapport d'expert judiciaire"],ar:"Procédure judiciaire préalable obligatoire."},
+"Mise en activité":{ob:["PV / Décision de mise en activité certifié conforme","Justificatif du début d'activité","Titre de jouissance du local (moins de 3 mois)"],co:["Annonce légale si première mise en activité"],ar:"Délai : 1 mois après début effectif d'activité."},
+"Autre":{ob:["PV / Décision certifié conforme","Justificatifs selon la nature de la formalité"],co:[],ar:"Formalité non standardisée — vérifier les pièces spécifiques auprès du greffe compétent."},
+};
+
+// ═══ DONNÉES ═══
+let DOS,CLI,HIST,SOC=[];
+let curDosId=null,dosFiles=[],dosBENodes=[],dosBERes=null,dosBECtr=1;
+let gBENodes=[],gBERes=null,gBECtr=100;
+let apiKey=localStorage.getItem('lec_ak')||'';
+let papKey=localStorage.getItem('lec_pk')||'';
+
+function initPieces(ty){return(CK_DATA[ty]?.ob||[]).map(l=>({l,st:'manquant',src:'JSS 2025'})).concat((CK_DATA[ty]?.co||[]).map(l=>({l,st:'manquant',src:'JSS 2025 — conditionnel'})));}
+
+function initDOS(){return[
+{id:1,soc:'Vivy',fo:'SA',si:'',gr:'',cap:'',dir:'',sie:'',cli:'Vivy',cat:1,ty:'Établissements secondaires',st:'entree',da:'',de:'',mois:'2026-05',hon:199,gr2:0,jal:0,aut:0,nf:'Sans frais de greffe',inst:'Ouverture établissements secondaires SA Vivy.',no:'',pi:[],gu:{},be:[],notes:''},
+{id:2,soc:'Vivy',fo:'SA',si:'',gr:'',cap:'',dir:'',sie:'',cli:'Vivy',cat:1,ty:'Désignation CAC',st:'entree',da:'',de:'',mois:'2026-05',hon:199,gr2:0,jal:0,aut:0,nf:'Forfait',inst:'Désignation CAC SA Vivy.',no:'',pi:[],gu:{},be:[],notes:''},
+{id:3,soc:'Bella Ciao',fo:'',si:'',gr:'',cap:'',dir:'',sie:'',cli:'Jean-Baptiste',cat:1,ty:'Transfert établissement principal',st:'entree',da:'',de:'',mois:'2026-05',hon:150,gr2:62.08,jal:0,aut:0,nf:'',inst:'Transfert établissement principal Bella Ciao.',no:'',pi:[],gu:{},be:[],notes:''},
+{id:4,soc:'SCI Cosy',fo:'SCI',si:'',gr:'',cap:'',dir:'',sie:'',cli:'Jean-Baptiste',cat:5,ty:'Mainlevée greffe',st:'bloque',da:'',de:'',mois:'2026-05',hon:199,gr2:68.04,jal:0,aut:0,nf:'Surplus échanges greffes + INPI',inst:'Mainlevée SCI Cosy.',no:'Bloqué — échanges greffes + INPI en cours.',pi:[],gu:{},be:[],notes:'Bloqué — échanges greffes + INPI.'},
+{id:5,soc:'Gab-Fy',fo:'',si:'',gr:'',cap:'',dir:'',sie:'',cli:'Jean-Baptiste',cat:1,ty:'Réduction de capital (pertes)',st:'entree',da:'',de:'',mois:'2026-05',hon:199,gr2:192.01,jal:220,aut:0,nf:'',inst:'Réduction capital + mise à jour Kbis Gab-Fy.',no:'',pi:[],gu:{},be:[],notes:''},
+{id:6,soc:'Mon Emile Invest',fo:'SAS',si:'921 325 007',gr:'Marseille',cap:'',dir:'',sie:'',cli:'Jean-Baptiste',cat:5,ty:'Mainlevée greffe',st:'entree',da:'',de:'',mois:'2026-05',hon:199,gr2:68.04,jal:0,aut:0,nf:'',inst:'Mainlevée au greffe Mon Emile Invest SAS.',no:'VIGILANCE : mismatch statuts vs PV. Vérifier radiation RNE préalable.',pi:[],gu:{},be:[],notes:'VIGILANCE : mismatch statuts vs PV.'},
+{id:7,soc:'NAKERA HOLDING',fo:'SCI',si:'',gr:'',cap:'',dir:'',sie:'',cli:'Jean-Baptiste',cat:0,ty:'Constitution SCI',st:'entree',da:'',de:'',mois:'2026-05',hon:199,gr2:38.86,jal:162,aut:0,nf:'',inst:'Constitution SCI NAKERA HOLDING.',no:'',pi:initPieces('Constitution SCI'),gu:{},be:[],notes:''},
+{id:8,soc:'ALLIANCE TEAM',fo:'',si:'',gr:'',cap:'',dir:'',sie:'',cli:'Philippe',cat:3,ty:'Dépôt des comptes annuels',st:'attente',da:'',de:'',mois:'2026-05',hon:99,gr2:45.87,jal:0,aut:0,nf:'Facture directe client',inst:'Dépôt comptes 2024/2025 ALLIANCE TEAM.',no:'En attente attestation.',pi:initPieces('Dépôt des comptes annuels'),gu:{},be:[],notes:'En attente attestation.'},
+{id:9,soc:'CMF',fo:'',si:'',gr:'',cap:'',dir:'',sie:'',cli:'Jean-Baptiste',cat:1,ty:'Prise d\'activité / fonds de commerce',st:'cours',da:'',de:'',mois:'2026-05',hon:199,gr2:68.04,jal:0,aut:0,nf:'',inst:'Prise d\'activité suite acquisition fonds de commerce CMF mai 2024.',no:'Formalité complexe.',pi:[],gu:{},be:[],notes:'Formalité complexe.'},
+{id:10,soc:'3F',fo:'',si:'',gr:'',cap:'',dir:'',sie:'',cli:'Jean-Baptiste',cat:1,ty:'Attestation de financement',st:'attente',da:'',de:'',mois:'2026-05',hon:99,gr2:15.76,jal:0,aut:0,nf:'Sans frais de greffe',inst:'Attestation financement 3F.',no:'En attente attestation.',pi:[],gu:{},be:[],notes:'En attente attestation.'},
+{id:11,soc:'SOCAMA',fo:'SA',si:'300 189 420',gr:'Ajaccio',cap:'',dir:'Mme MONDOLONI',sie:'',cli:'Denis',cat:6,ty:'Reconstitution gouvernance',st:'attente',da:'',de:'',mois:'2026-05',hon:0,gr2:0,jal:0,aut:0,nf:'Sur devis — 71 formalités',inst:'Reconstitution gouvernance SOCAMA CORSE — 34 ans non déclarés. Ordonnance RG 25/00025 du 02/04/2025.',no:'En attente client Denis.',pi:[],gu:{},be:[],notes:'71 formalités — ordonnance tribunal.'},
+{id:12,soc:'Menuiserie Sainte Baume',fo:'',si:'',gr:'',cap:'',dir:'',sie:'',cli:'Olivier',cat:6,ty:'Autre',st:'bloque',da:'',de:'',mois:'2026-05',hon:0,gr2:0,jal:0,aut:0,nf:'Surplus échanges greffe',inst:'',no:'Bloqué — échanges greffe.',pi:[],gu:{},be:[],notes:'Bloqué — échanges greffe.'},
+{id:13,soc:'CMF',fo:'',si:'',gr:'',cap:'',dir:'',sie:'',cli:'Jean-Baptiste',cat:1,ty:'Suspension d\'activité / location-gérance',st:'attente',da:'',de:'',mois:'2026-05',hon:199,gr2:68.04,jal:0,aut:0,nf:'',inst:'Suspension activité — location-gérance fonds CMF. En attente JAL / retour avocat.',no:'Formalité complexe.',pi:[],gu:{},be:[],notes:'En attente retour avocat.'},
+{id:14,soc:'Adar / Côte à Côte',fo:'',si:'',gr:'',cap:'',dir:'',sie:'',cli:'Jean-Baptiste',cat:2,ty:'Dissolution par TUP — validation préfectorale',st:'attente',da:'',de:'',mois:'2026-05',hon:199,gr2:192.01,jal:280,aut:0,nf:'Facturation majorée — validation préfectorale',inst:'Dissolution TUP Adar / Côte à Côte — validation préfectorale requise.',no:'En attente retour Préfet.',pi:[],gu:{},be:[],notes:'En attente retour Préfet.'},
+{id:15,soc:'SCI Le Phare A ON',fo:'SCI',si:'',gr:'',cap:'',dir:'',sie:'',cli:'Jean-Baptiste',cat:0,ty:'Constitution SCI',st:'depose',da:'',de:'',mois:'2026-05',hon:199,gr2:38.86,jal:162,aut:0,nf:'',inst:'Constitution SCI Le Phare A ON.',no:'Déposé GU.',pi:initPieces('Constitution SCI').map(p=>({...p,st:'depose'})),gu:{},be:[],notes:'Déposé GU.'},
+{id:16,soc:'SCP Bollet',fo:'SCP',si:'',gr:'',cap:'',dir:'',sie:'',cli:'Jean-Baptiste',cat:1,ty:'Ajout d\'associé',st:'afacturer',da:'',de:'',mois:'2026-05',hon:199,gr2:192.01,jal:220,aut:0,nf:'',inst:'Ajout associé + RBE SCP Bollet.',no:'Validé — à facturer.',pi:[],gu:{},be:[],notes:'Validé — à facturer.'},
+{id:17,soc:'NovaWork',fo:'SAS',si:'',gr:'Paris',cap:'',dir:'',sie:'',cli:'Jean-Baptiste',cat:2,ty:'Dissolution / Liquidation',st:'afacturer',da:'',de:'',mois:'2026-05',hon:199,gr2:192.01,jal:153,aut:0,nf:'',inst:'Dissolution / liquidation amiable NovaWork SAS.',no:'Validé — à facturer.',pi:initPieces('Dissolution / Liquidation').map(p=>({...p,st:'recu'})),gu:{},be:[],notes:'Validé — à facturer.'},
+{id:18,soc:'Brunel Holding',fo:'SARL',si:'',gr:'Paris',cap:'',dir:'',sie:'',cli:'Jean-Baptiste',cat:1,ty:'Transformation SARL en SAS',st:'afacturer',da:'',de:'',mois:'2026-05',hon:199,gr2:212.08,jal:220,aut:125,nf:'+ Enreg. Trésor 125€',inst:'Transformation SARL en SAS Brunel Holding.',no:'Validé — à facturer.',pi:[],gu:{},be:[],notes:'Validé — à facturer.'},
+{id:19,soc:'Azzura',fo:'SAS',si:'',gr:'',cap:'',dir:'',sie:'',cli:'Jean-Baptiste',cat:0,ty:'Constitution SAS / SASU',st:'afacturer',da:'',de:'',mois:'2026-05',hon:199,gr2:58.86,jal:199,aut:0,nf:'Surplus calcul BE',inst:'Constitution société Azzura.',no:'Validé — à facturer. Surplus calcul BE.',pi:initPieces('Constitution SAS / SASU').map(p=>({...p,st:'recu'})),gu:{},be:[],notes:'Validé — à facturer.'},
+{id:20,soc:'SCI Pompette',fo:'SCI',si:'',gr:'',cap:'',dir:'',sie:'',cli:'Jean-Baptiste',cat:0,ty:'Constitution SCI',st:'afacturer',da:'',de:'',mois:'2026-05',hon:199,gr2:38.86,jal:162,aut:0,nf:'Surplus calcul BE',inst:'Constitution SCI Pompette.',no:'Validé — à facturer. Surplus calcul BE.',pi:initPieces('Constitution SCI').map(p=>({...p,st:'recu'})),gu:{},be:[],notes:'Validé — à facturer.'},
+{id:21,soc:'ZEN NICE',fo:'',si:'',gr:'',cap:'',dir:'',sie:'',cli:'Jean-Baptiste',cat:1,ty:'Changement de date de clôture',st:'afacturer',da:'',de:'',mois:'2026-05',hon:199,gr2:0,jal:0,aut:0,nf:'',inst:'Modification première date clôture ZEN NICE.',no:'Validé — à facturer.',pi:[],gu:{},be:[],notes:'Validé — à facturer.'},
+{id:22,soc:'Mon Emile Invest',fo:'SAS',si:'921 325 007',gr:'Marseille',cap:'',dir:'',sie:'',cli:'Jean-Baptiste',cat:3,ty:'Dépôt des comptes annuels',st:'afacturer',da:'',de:'',mois:'2026-05',hon:99,gr2:45.87,jal:0,aut:0,nf:'',inst:'Dépôt comptes 2024/2025 Mon Emile Invest SAS.',no:'Validé — à facturer.',pi:initPieces('Dépôt des comptes annuels').map(p=>({...p,st:'recu'})),gu:{},be:[],notes:'Validé — à facturer.'},
+{id:23,soc:'AD GREEN',fo:'SAS',si:'',gr:'Marseille',cap:'',dir:'David ATTOUN',sie:'',cli:'David ATTOUN',cat:6,ty:'Mission CEE / complexe',st:'bloque',da:'',de:'',mois:'2026-05',hon:0,gr2:0,jal:0,aut:0,nf:'Convention honoraires spécifique',inst:'Mission CEE — impossibilité récupérer le volume. Blocage PNCEE. ~2,2 TWh annulés.',no:'Bloqué PNCEE. Convention honoraires signée.',pi:[],gu:{},be:[],notes:'Bloqué PNCEE.'},
+{id:24,soc:'[À compléter]',fo:'',si:'',gr:'',cap:'',dir:'',sie:'',cli:'',cat:5,ty:'Mainlevée de radiation d\'office',st:'entree',da:'',de:'',mois:'2026-05',hon:199,gr2:68.04,jal:0,aut:0,nf:'',inst:'',no:'Dossier modèle — à compléter.',pi:initPieces('Mainlevée de radiation d\'office'),gu:{},be:[],notes:'Dossier modèle.'},
+];}
+
+function initCLI(){return[
+{id:1,nom:'Jean-Baptiste',ty:'Avocat',em:'',tel:'',no:'Cabinet Dupont — client principal'},
+{id:2,nom:'Vivy',ty:'Dirigeant direct',em:'',tel:'',no:'SA Vivy'},
+{id:3,nom:'Philippe',ty:'Autre',em:'',tel:'',no:'ALLIANCE TEAM'},
+{id:4,nom:'Denis',ty:'Autre',em:'',tel:'',no:'SOCAMA CORSE'},
+{id:5,nom:'Olivier',ty:'Autre',em:'',tel:'',no:'Menuiserie Sainte Baume'},
+{id:6,nom:'David ATTOUN',ty:'Dirigeant direct',em:'',tel:'',no:'AD GREEN — Mission CEE'},
+];}
+
+// Init
+SOC=JSON.parse(localStorage.getItem('lec_soc_v1')||'null')||[];
+  DOS=JSON.parse(localStorage.getItem('lec_v10')||'null')||initDOS();
+CLI=JSON.parse(localStorage.getItem('lec_cli_v7')||'null')||initCLI();
+HIST=JSON.parse(localStorage.getItem('lec_hist_v6')||'[]');
+
+function save(){localStorage.setItem('lec_soc_v1',JSON.stringify(SOC));
+    localStorage.setItem('lec_v10',JSON.stringify(DOS));localStorage.setItem('lec_cli_v7',JSON.stringify(CLI));localStorage.setItem('lec_hist_v6',JSON.stringify(HIST.slice(0,60)));upAll();}
+function addH(t){HIST.unshift({t,dt:new Date().toLocaleString('fr-FR',{day:'2-digit',month:'2-digit',hour:'2-digit',minute:'2-digit'})});}
+function totHT(d){return(d.hon||0)+(d.gr2||0)+(d.jal||0)+(d.aut||0);}
+
+// ═══ NAVIGATION ═══
+function goV(n){
+  document.querySelectorAll('.vue').forEach(v=>v.classList.remove('on'));
+  document.querySelectorAll('.ni').forEach(ni=>ni.classList.remove('on'));
+  document.getElementById('dos-page').classList.remove('on');
+  const v=document.getElementById('v-'+n);if(v)v.classList.add('on');
+  const ni=document.getElementById('ni-'+n);if(ni)ni.classList.add('on');
+  if(n==='accueil'){renderAcc();upAll();}
+  if(n==='clients')renderCLI();
+  if(n==='dossiers')renderDOS();
+  if(n==='facturation')renderFact();
+  if(n==='be')renderBEGlobal();
+  if(n==='societes'){renderSOC();}
+  if(n==='greffes')renderGreffes();
+  if(n==='checklist')renderCK();
+  if(n==='societes'){renderSOC();}
+  if(n==='greffes')renderGreffes();
+  if(n==='checklist')renderCK();
+}
+
+function showDTab(n){
+  document.querySelectorAll('.dp-panel').forEach(p=>p.style.display='none');
+  document.querySelectorAll('.dp-tab').forEach(t=>t.classList.remove('on'));
+  const panel=document.getElementById('dp-p'+n);
+  if(panel)panel.style.display='flex';
+  const tab=document.getElementById('dt-'+n);
+  if(tab)tab.classList.add('on');
+  // Panel flex ou block selon le contenu
+  if(panel){
+    if(n===0)panel.style.flexDirection='column';
+    else panel.style.display='block';
+  }
+}
+function retourDossiers(){
+  document.getElementById('dos-page').classList.remove('on');
+  document.querySelectorAll('.vue').forEach(v=>v.classList.remove('on'));
+  document.getElementById('v-dossiers').classList.add('on');
+  document.getElementById('ni-dossiers').classList.add('on');
+  curDosId=null;renderDOS();
+}
+
+// ═══ STATS ═══
+function upAll(){
+  const act=DOS.filter(d=>d.st!=='clos');
+  const ca=act.reduce((s,d)=>s+totHT(d),0);
+  _t('st-tot',act.length);_t('st-af',DOS.filter(d=>d.st==='afacturer').length);
+  _t('st-bl2',DOS.filter(d=>d.st==='bloque').length);_t('st-at2',DOS.filter(d=>d.st==='attente').length);
+  _t('st-ca',ca.toLocaleString('fr-FR')+'€');
+  _t('nb-dos',act.length);_t('nb-cli',CLI.length);_t('nb-soc',SOC.length);
+  _t('nb-e',DOS.filter(d=>d.st==='entree').length);_t('nb-ec',DOS.filter(d=>d.st==='cours').length);
+  _t('nb-at',DOS.filter(d=>d.st==='attente').length);_t('nb-de',DOS.filter(d=>d.st==='depose').length);
+  _t('nb-af',DOS.filter(d=>d.st==='afacturer').length);_t('nb-bl',DOS.filter(d=>d.st==='bloque').length);
+  const d=new Date();
+  const j=['dimanche','lundi','mardi','mercredi','jeudi','vendredi','samedi'];
+  const m=['janvier','février','mars','avril','mai','juin','juillet','août','septembre','octobre','novembre','décembre'];
+  _t('br-date',`${j[d.getDay()]} ${d.getDate()} ${m[d.getMonth()]} ${d.getFullYear()}`);
+  _t('br-bl',DOS.filter(d=>d.st==='bloque').length);_t('br-af',DOS.filter(d=>d.st==='afacturer').length);
+  _t('br-act',act.length);_t('br-ca',ca.toLocaleString('fr-FR')+' €');
+}
+
+// ═══ ACCUEIL ═══
+function renderAcc(){
+  const mk=(id,list)=>{const tb=document.getElementById(id);if(!tb)return;tb.innerHTML=list.length?list.slice(0,6).map(d=>`<tr class="dr" onclick="openDos(${d.id})"><td><div class="sn">${e(d.soc)}</div><div class="sr">${e(d.cli)}</div></td><td style="font-size:10px;color:var(--gris)">${e(d.ty.substring(0,24))}</td><td class="prix">${totHT(d)?totHT(d).toLocaleString('fr-FR')+' €':d.nf?e(d.nf.substring(0,12)):'—'}</td></tr>`).join(''):'<tr><td colspan="3" style="text-align:center;padding:12px;color:var(--gris-pale);font-size:11px">Aucun</td></tr>';};
+  mk('acc-af',DOS.filter(d=>d.st==='afacturer'));
+  mk('acc-bl',DOS.filter(d=>d.st==='bloque'));
+  mk('acc-at',DOS.filter(d=>d.st==='attente'));
+  mk('acc-cours',DOS.filter(d=>d.st==='cours'||d.st==='entree'));
+  mk('acc-depose',DOS.filter(d=>d.st==='depose'||d.st==='valide'));
+  mk('acc-rejetes',DOS.filter(d=>(d.sg||{}).st==='rejete'||(d.sg||{}).st==='regularisation'));
+  const hl=document.getElementById('acc-hist');if(hl)hl.innerHTML=HIST.length?HIST.slice(0,6).map(h=>`<div class="h-item"><div class="h-dot"></div><div class="h-txt">${e(h.t)}</div><div class="h-dt">${e(h.dt)}</div></div>`).join(''):'<div style="font-size:11px;color:var(--gris-pale)">Aucune action récente</div>';
+}
+function renderCLI(){
+  const q=(document.getElementById('cli-q')?.value||'').toLowerCase();
+  const list=CLI.filter(c=>!q||(c.nom||'').toLowerCase().includes(q));
+  const g=document.getElementById('cli-grid');if(!g)return;
+  const av=n=>{const w=n.trim().split(' ');return w.length>=2?w[0][0]+w[w.length-1][0]:n.slice(0,2).toUpperCase();};
+  const cols=['background:var(--marine-pale);color:var(--marine)','background:var(--vert-pale);color:var(--vert)','background:#FEF3CD;color:#92600A','background:var(--orange-pale);color:var(--orange)','background:var(--violet-pale);color:var(--violet)','background:var(--bleu-pale);color:var(--bleu)'];
+  g.innerHTML=list.map((c,i)=>{
+    const nd=DOS.filter(d=>d.cli===c.nom&&d.st!=='clos').length;
+    const ca=DOS.filter(d=>d.cli===c.nom&&d.st!=='clos').reduce((s,d)=>s+totHT(d),0);
+    return `<div class="cli-card" onclick="filterClient('${e(c.nom)}')"><div class="cli-av" style="${cols[i%6]}">${av(c.nom)}</div><div style="flex:1"><div style="font-size:13px;font-weight:500">${e(c.nom)}</div><div style="font-size:11px;color:var(--gris)">${e(c.ty)}</div><div style="display:flex;gap:5px;margin-top:4px"><span style="font-size:10px;background:var(--orange-pale);color:var(--orange);padding:2px 7px;border-radius:10px">${nd} dossier(s)</span>${ca>0?`<span style="font-size:10px;background:var(--fond);color:var(--gris);padding:2px 7px;border-radius:10px">${ca.toLocaleString('fr-FR')} €</span>`:''}</div></div><span style="color:var(--gris-pale);font-size:14px">›</span></div>`;
+  }).join('');
+}
+function filterClient(nom){goV('dossiers');document.getElementById('dos-q').value=nom;renderDOS();}
+function openMCli(){document.getElementById('m-cli').classList.add('open');}
+function closeMCli(){document.getElementById('m-cli').classList.remove('open');}
+function saveCli(){const nom=document.getElementById('c-nom').value.trim();if(!nom){toast('Nom obligatoire');return;}CLI.push({id:Date.now(),nom,ty:document.getElementById('c-ty').value,em:document.getElementById('c-em').value.trim(),tel:document.getElementById('c-tel').value.trim(),no:document.getElementById('c-no').value.trim()});save();closeMCli();renderCLI();toast('Client créé');addH('Nouveau client : '+nom);}
+
+// ═══ TABLEAU DOSSIERS ═══
+function fSt(s){document.getElementById('sel-st').value=s;renderDOS();}
+function renderDOS(){
+  const cat=document.getElementById('sel-cat')?.value||'';
+  const st=document.getElementById('sel-st')?.value||'';
+  const q=(document.getElementById('dos-q')?.value||'').toLowerCase();
+  let list=[...DOS];
+  if(cat!=='')list=list.filter(d=>String(d.cat)===cat);
+  if(st!=='')list=list.filter(d=>d.st===st);
+  if(q)list=list.filter(d=>[d.soc,d.cli,d.ty,CATS[d.cat]].some(x=>(x||'').toLowerCase().includes(q)));
+  const tb=document.getElementById('dos-tbody');const em=document.getElementById('dos-empty');if(!tb)return;
+  if(!list.length){tb.innerHTML='';em.style.display='block';return;}
+  em.style.display='none';
+  tb.innerHTML=list.map(d=>{
+    const s=ST[d.st]||ST.entree;const cc=CC[d.cat]||'#888';
+    return `<tr class="dr" onclick="openDos(${d.id})">
+      <td><div class="sn">${e(d.soc)}</div><div class="sr">${e(d.fo||'')} <span style="font-size:10px;padding:1px 6px;border-radius:4px;background:${cc}22;color:${cc};font-weight:500">${CATS[d.cat]?.split(' /')[0]?.substring(0,12)}</span></div></td>
+      <td><div style="font-size:11px;font-family:monospace">${e(d.si||'—')}</div><div class="sr">${e(d.gr||'')}</div></td>
+      <td style="font-size:11px">${e(d.cli)}</td>
+      <td><span class="top-op">${e(d.ty)}</span></td>
+      <td><span class="bdg ${s.c}">${s.l}</span></td>
+      <td class="prix">${totHT(d)?totHT(d).toLocaleString('fr-FR')+' € HT':d.nf?`<span style="font-size:10px;color:var(--gris)">${e(d.nf.substring(0,16))}</span>`:'—'}</td>
+      <td style="font-size:11px;color:var(--gris)">${d.da?fD(d.da):'—'}</td>
+    </tr>`;
+  }).join('');
+}
+
+// ═══ OUVRIR DOSSIER ═══
+function openDos(id){
+  const d=DOS.find(x=>x.id===id);if(!d)return;
+  curDosId=id;dosFiles=[];
+  document.querySelectorAll('.vue').forEach(v=>v.classList.remove('on'));
+  document.querySelectorAll('.ni').forEach(ni=>ni.classList.remove('on'));
+  document.getElementById('dos-page').classList.add('on');
+  renderDosBandeau(d);
+  renderDosBlocs(d);
+}
+
+function renderDosBandeau(d){
+  _t('dp-soc',d.soc);_t('dp-fo',d.fo||'—');
+  _t('dp-siren',d.si||'—');_t('dp-greffe',d.gr||'—');
+  _t('dp-client',d.cli||'—');_t('dp-formalite',d.ty||'—');
+  _t('dp-da',d.da?fD(d.da):'—');
+  const ML={'2026-05':'Mai 2026','2026-06':'Juin 2026','2026-07':'Juillet 2026','2026-08':'Août 2026','2026-09':'Septembre 2026','2026-10':'Octobre 2026','2026-11':'Novembre 2026','2026-12':'Décembre 2026'};
+  _t('dp-mois',ML[d.mois]||d.mois||'—');
+  const cc=CC[d.cat]||'#888';
+  document.getElementById('dp-bdg-st').innerHTML=`<span class="bdg ${ST[d.st]?.c||'b-en'}">${ST[d.st]?.l||d.st}</span>`;
+  document.getElementById('dp-bdg-cat').innerHTML=`<span style="font-size:10px;padding:2px 8px;border-radius:4px;background:${cc}22;color:${cc};font-weight:500">${CATS[d.cat]}</span>`;
+}
+
+function renderDosBlocs(d){
+  // Bloc instructions + alertes
+  _t('dp-inst',d.inst||'Aucune instruction renseignée');
+  renderSuiviGreffe(d);
+  renderKbisRbe(d);
+  const al=[];
+  if(d.st==='bloque')al.push({c:'al-d',t:'Dossier bloqué — '+d.notes});
+  if(d.st==='attente')al.push({c:'al-w',t:'En attente de documents du client'});
+  const manq=(d.pi||[]).filter(p=>p.st==='manquant'||p.st==='corriger').length;
+  if(manq>0)al.push({c:'al-w',t:manq+' pièce(s) manquante(s) ou à corriger'});
+  if(d.st==='afacturer')al.push({c:'al-v',t:'Dossier validé — facture à envoyer'});
+  if(d.no)al.push({c:'al-i',t:d.no});
+  // Alertes détectées par l'IA lors de l'analyse des documents
+  (d.ia_alertes||[]).forEach(a=>al.push({c:a.niveau==='danger'?'al-d':a.niveau==='warn'?'al-w':'al-i',t:'[IA] '+a.texte}));
+  document.getElementById('dp-alertes').innerHTML=al.length?al.map(a=>`<div class="al ${a.c}">${e(a.t)}</div>`).join(''):'<div style="font-size:11px;color:var(--gris-pale)">Aucune alerte</div>';
+  // GU
+  renderDosGU(d);
+  // BE
+  dosBENodes=d.be&&d.be.length?d.be:[];
+  dosBECtr=dosBENodes.length?Math.max(...dosBENodes.map(n=>n.id))+1:1;
+  renderDOSBENodes();
+  // Checklist
+  renderDosChecklist(d);
+  // JAL
+  // Restaurer l'annonce légale sauvegardée
+  const jalEl2=document.getElementById('dp-jal-out');
+  if(jalEl2)jalEl2.textContent=d.jal_txt||'Demandez à Claude de rédiger l\'annonce légale dans le chat ci-dessous.';
+  // Facturation
+  document.getElementById('dp-hon').value=d.hon||'';
+  document.getElementById('dp-gr2').value=d.gr2||'';
+  document.getElementById('dp-jalf').value=d.jal||'';
+  document.getElementById('dp-aut').value=d.aut||'';
+  document.getElementById('dp-nf').value=d.nf||'';
+  calcDPFact();
+  // Chronologie
+  renderDPChrono(d);
+  showDTab(0);
+  // Chat - toujours réinitialiser à chaque ouverture de dossier
+  const msgs=document.getElementById('dp-chat-msgs');
+  if(msgs)msgs.innerHTML=`<div class="chat-msg msg-a">Dossier <strong>${e(d.soc)}</strong> — ${e(d.ty)}.<br>Commandes disponibles : "rédige l'annonce légale" · "calcule les BE" · "génère la checklist" · ou posez votre question juridique.</div>`;
+  // Fichiers
+  // dp-files-list géré par handleDocFiles - ne pas réinitialiser
+  document.getElementById('dp-ia-result').innerHTML='<div style="text-align:center;padding:30px;color:var(--gris-pale);font-size:12px">Déposez des documents pour lancer l\'analyse IA</div>';
+  // dp-analyse-wrap géré par handleDocFiles
+}
+
+function editInstDos(){
+  const d=DOS.find(x=>x.id===curDosId);if(!d)return;
+  const v=prompt('Instructions client :',d.inst||'');
+  if(v!==null){d.inst=v;save();_t('dp-inst',v||'Aucune instruction renseignée');}
+}
+function editDCur(){if(curDosId)editD(curDosId);}
+
+// ═══ GU DANS LE DOSSIER ═══
+function guF(id,lbl,req,d,ph,type){
+  const gu=d.gu||{};const entry=gu[id]||{};const val=entry.val||'';const src=entry.src||'miss';
+  const cls=src==='auto'?'gu-auto':src==='warn'?'gu-warn':src==='manual'?'gu-manual':'gu-miss';
+  const stl=src==='auto'?'Auto':src==='warn'?'À confirmer':src==='manual'?'Modifié':'Manquant';
+  return `<div class="gu-f ${cls}">
+    <div class="gu-lbl"><label>${e(lbl)}${req?'<span style="color:var(--rouge)"> *</span>':''}</label><span class="gu-st">${stl}</span></div>
+    ${type==='date'?`<input type="date" id="${id}" value="${e(val)}" onchange="setGUField(${d.id},'${id}',this.value)">`:`<input id="${id}" value="${e(val)}" placeholder="${e(ph||'')}" oninput="setGUField(${d.id},'${id}',this.value)">`}
+  </div>`;
+}
+function guS(id,lbl,opts,req,d){
+  const gu=d.gu||{};const entry=gu[id]||{};const val=entry.val||'';const src=entry.src||'miss';
+  const cls=src==='auto'?'gu-auto':src==='warn'?'gu-warn':src==='manual'?'gu-manual':'gu-miss';
+  const stl=src==='auto'?'Auto':src==='warn'?'À confirmer':src==='manual'?'Modifié':'Manquant';
+  return `<div class="gu-f ${cls}">
+    <div class="gu-lbl"><label>${e(lbl)}${req?'<span style="color:var(--rouge)"> *</span>':''}</label><span class="gu-st">${stl}</span></div>
+    <select id="${id}" onchange="setGUField(${d.id},'${id}',this.value)"><option value="">—</option>${opts.map(o=>`<option ${val===o?'selected':''}>${o}</option>`).join('')}</select>
+  </div>`;
+}
+
+function renderDosGU(d){
+  const el=document.getElementById('dp-gu');if(!el)return;
+  let h='<div class="gu-grid">';
+  h+=guF('gu-denom','Dénomination sociale',true,d,'','')+guS('gu-fo','Forme juridique',['SAS','SASU','SARL','EURL','SA','SCI','SNC','SCP','SISA','GIE'],true,d);
+  h+=guF('gu-siren','SIREN (9 chiffres)',true,d,'ex. 921 325 007','')+guF('gu-rcs','Greffe RCS',true,d,'ex. Paris','');
+  h+=guF('gu-capital','Capital social (€)',false,d,'ex. 10 000','');
+  h+='</div><div class="gu-grid">';
+  h+=guF('gu-siege','Adresse du siège social',true,d,'','');
+  h+='</div><div class="gu-grid">';
+  h+=guF('gu-objet','Objet social (texte statutaire)',false,d,'ex. Acquisition, administration, gestion…','');
+  h+=guF('gu-date-acte','Date de l\'acte',true,d,'','date')+guF('gu-date-effet','Date d\'effet',false,d,'','date');
+  h+='</div>';
+  h+='<div style="font-size:10px;font-weight:600;color:var(--gris);text-transform:uppercase;letter-spacing:.08em;margin:10px 0 7px;padding-top:8px;border-top:1px solid var(--gris-pale)">Dirigeant principal</div>';
+  h+='<div class="gu-grid">';
+  h+=guF('gu-dir-nom','Nom (MAJUSCULES)',true,d,'','')+guF('gu-dir-pren','Prénom(s)',true,d,'','');
+  h+=guS('gu-dir-qual','Qualité',['Président','Gérant','DG','Administrateur','Co-gérant','Liquidateur'],true,d);
+  h+=guF('gu-dir-ddn','Date de naissance',false,d,'','date')+guF('gu-dir-lieu','Lieu de naissance',false,d,'','');
+  h+=guF('gu-dir-nat','Nationalité',false,d,'Française','')+guF('gu-dir-adr','Adresse personnelle',true,d,'','');
+  h+='</div>';
+  h+='<div style="font-size:10px;font-weight:600;color:var(--gris);text-transform:uppercase;letter-spacing:.08em;margin:10px 0 7px;padding-top:8px;border-top:1px solid var(--gris-pale)">Options fiscales</div>';
+  h+='<div class="gu-grid">';
+  h+=guS('gu-fiscal','Régime fiscal',['IS — Impôt sur les sociétés','IR — Impôt sur le revenu','Foncier (SCI)','Micro-entreprise'],false,d);
+  h+=guS('gu-tva','Régime TVA',['Franchise en base de TVA','Réel simplifié','Réel normal','Non assujetti'],false,d);
+  h+='</div>';
+  el.innerHTML=h;
+}
+
+function setGUField(did,fid,val){
+  const d=DOS.find(x=>x.id===did);if(!d)return;
+  if(!d.gu)d.gu={};
+  const old=d.gu[fid];d.gu[fid]={val,src:old?.src==='auto'?'manual':old?.src||'manual'};
+  save();
+}
+
+function exportGU(){
+  const d=DOS.find(x=>x.id===curDosId);if(!d)return;
+  const gu=d.gu||{};
+  const g=k=>gu[k]?.val||'[À COMPLÉTER]';
+  let txt=`RÉCAPITULATIF GUICHET UNIQUE\n${d.soc} — ${d.ty}\n${new Date().toLocaleDateString('fr-FR')}\n${'─'.repeat(50)}\n\n`;
+  txt+=`SOCIÉTÉ\nDénomination : ${g('gu-denom')}\nForme : ${g('gu-fo')}\nSIREN : ${g('gu-siren')}\nGreffe RCS : ${g('gu-rcs')}\nCapital : ${g('gu-capital')}\nSiège : ${g('gu-siege')}\n\n`;
+  txt+=`FORMALITÉ\nDate acte : ${g('gu-date-acte')}\nDate effet : ${g('gu-date-effet')}\nRégime fiscal : ${g('gu-fiscal')}\nRégime TVA : ${g('gu-tva')}\n\n`;
+  txt+=`DIRIGEANT\nNom : ${g('gu-dir-nom')}\nPrénom : ${g('gu-dir-pren')}\nQualité : ${g('gu-dir-qual')}\nDate naissance : ${g('gu-dir-ddn')}\nLieu : ${g('gu-dir-lieu')}\nNationalité : ${g('gu-dir-nat')}\nAdresse : ${g('gu-dir-adr')}\n\n`;
+  txt+=`PIÈCES DU DOSSIER\n`;
+  (d.pi||[]).forEach(p=>txt+=`[${p.st.toUpperCase()}] ${p.l}\n`);
+  navigator.clipboard.writeText(txt).then(()=>toast('Récapitulatif GU copié — collez dans votre éditeur'));
+}
+
+// ═══ ANALYSE IA DOCUMENTS ═══
+function dov(ev){ev.preventDefault();document.getElementById('dp-dz')?.classList.add('ov');}
+function dlv(ev){document.getElementById('dp-dz')?.classList.remove('ov');}
+function ddropDos(ev){ev.preventDefault();dlv(ev);handleDocFiles(ev.dataTransfer.files);}
+
+function handleDocFiles(files){
+  Array.from(files).forEach(f=>{if(!dosFiles.find(x=>x.name===f.name))dosFiles.push(f);});
+  document.getElementById('dp-files-list').innerHTML=dosFiles.map((f,i)=>`<div class="fi-item"><div style="font-size:16px">📄</div><div class="fi-nom">${e(f.name)}</div><div style="font-size:10px;color:var(--gris)">${fSz(f.size)}</div><span class="fi-st ${f._ok?'fi-ok':'fi-wait'}" id="fs-${i}">${f._ok?'Analysé':'En attente'}</span></div>`).join('');
+  if(dosFiles.length)document.getElementById('dp-analyse-wrap').style.display='flex';
+}
+
+async function analyseAllDocs(){
+  if(!apiKey){toast('Clé API Anthropic requise — allez dans Paramètres');return;}
+  if(!dosFiles.length){toast('Aucun fichier à analyser');return;}
+  const d=DOS.find(x=>x.id===curDosId);if(!d)return;
+  document.getElementById('dp-ia-result').innerHTML='<div style="padding:16px;font-size:12px;color:var(--gris)">Analyse en cours…</div>';
+
+  const SYS=`Tu es juriste expert en droit des sociétés français pour Legal Euro Corporate (cabinet de Bella GHERARI-NADOTTI). Analyse ce document juridique pour le dossier "${d.soc}" — formalité prévue : "${d.ty}".
+
+Extrait toutes les informations disponibles et réponds UNIQUEMENT en JSON valide, sans backticks, sans markdown :
+{
+  "type_doc": "PV_AG|KBIS|STATUTS|CNI|JAL_ATTESTATION|ACTE_CESSION|AUTRE",
+  "societe": {
+    "denomination": null,
+    "forme": null,
+    "siren": null,
+    "rcs": null,
+    "capital": null,
+    "siege": null,
+    "objet": null
+  },
+  "dirigeants": [
+    {"nom": null, "prenom": null, "qualite": null, "ddn": null, "lieu_naissance": null, "nationalite": null, "adresse": null, "action": "entrant|sortant|maintenu"}
+  ],
+  "operation": {
+    "type_formalite": null,
+    "date_acte": null,
+    "date_effet": null
+  },
+  "regime_fiscal": null,
+  "regime_tva": null,
+  "associes": [
+    {"nom": null, "prenom": null, "nb_parts": null, "pct_capital": null, "nature_propriete": "pp|np|usufruit"}
+  ],
+  "pieces_presentes": [],
+  "alertes": [{"niveau": "danger|warn|info", "texte": ""}],
+  "resume": "",
+  "confiance": "haute|moyenne|faible"
+}`;
+
+  let results=[];
+  for(let i=0;i<Math.min(dosFiles.length,3);i++){
+    const f=dosFiles[i];
+    try{
+      const b64=await f2b64(f);const ext=f.name.split('.').pop().toLowerCase();
+      let content;
+      if(ext==='pdf')content=[{type:'document',source:{type:'base64',media_type:'application/pdf',data:b64}},{type:'text',text:'Analyse ce document.'}];
+      else content=[{type:'image',source:{type:'base64',media_type:'image/'+ext.replace('jpg','jpeg'),data:b64}},{type:'text',text:'Analyse ce document.'}];
+      const resp=await fetch('/.netlify/functions/claude',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({apiKey,model:'claude-sonnet-4-5',max_tokens:2000,system:SYS,messages:[{role:'user',content}]})});
+      const data=await resp.json();if(data.error)throw new Error(data.error.message);
+      const r=JSON.parse(data.content.find(c=>c.type==='text')?.text.replace(/```json|```/g,'').trim());
+      r._fn=f.name;results.push(r);dosFiles[i]._ok=true;
+      // Auto-remplir le dossier
+      if(!d.gu)d.gu={};
+      const s=r.societe||{};const op=r.operation||{};
+      if(s.denomination){d.soc=s.denomination;d.gu['gu-denom']={val:s.denomination,src:'auto'};}
+      if(s.forme){d.fo=s.forme;d.gu['gu-fo']={val:s.forme,src:'auto'};}
+      if(s.siren){d.si=s.siren;d.gu['gu-siren']={val:s.siren,src:'auto'};}
+      if(s.rcs){d.gr=s.rcs;d.gu['gu-rcs']={val:s.rcs,src:'auto'};}
+      if(s.capital){d.cap=s.capital;d.gu['gu-capital']={val:s.capital,src:'auto'};}
+      if(s.siege){d.sie=s.siege;d.gu['gu-siege']={val:s.siege,src:'auto'};}
+      if(s.objet)d.gu['gu-objet']={val:s.objet,src:'auto'};
+      if(op.date_acte){d.da=op.date_acte;d.gu['gu-date-acte']={val:op.date_acte,src:'auto'};}
+      if(op.date_effet){d.de=op.date_effet;d.gu['gu-date-effet']={val:op.date_effet,src:'auto'};}
+      if(r.regime_fiscal)d.gu['gu-fiscal']={val:r.regime_fiscal,src:'auto'};
+      if(r.regime_tva)d.gu['gu-tva']={val:r.regime_tva,src:'auto'};
+      // Dirigeants
+      const dirs=r.dirigeants||[];if(dirs.length>0){
+        const dir=dirs[0];
+        if(dir.nom){d.dir=(dir.prenom?dir.prenom+' ':'')+dir.nom;d.gu['gu-dir-nom']={val:dir.nom,src:'auto'};}
+        if(dir.prenom)d.gu['gu-dir-pren']={val:dir.prenom,src:'auto'};
+        if(dir.qualite)d.gu['gu-dir-qual']={val:dir.qualite,src:'auto'};
+        if(dir.ddn)d.gu['gu-dir-ddn']={val:dir.ddn,src:'auto'};
+        if(dir.lieu_naissance)d.gu['gu-dir-lieu']={val:dir.lieu_naissance,src:'auto'};
+        if(dir.nationalite)d.gu['gu-dir-nat']={val:dir.nationalite,src:'auto'};
+        if(dir.adresse)d.gu['gu-dir-adr']={val:dir.adresse,src:'auto'};
+      }
+      // Sauvegarder les alertes IA dans le dossier
+      if(r.alertes&&r.alertes.length){
+        if(!d.ia_alertes)d.ia_alertes=[];
+        r.alertes.forEach(a=>{if(!d.ia_alertes.find(x=>x.texte===a.texte))d.ia_alertes.push(a);});
+      }
+      // Cocher pièces automatiquement
+      (r.pieces_presentes||[]).forEach(pp=>{
+        (d.pi||[]).forEach(pi=>{if(pi.l.toLowerCase().includes(pp.toLowerCase().substring(0,10))&&pi.st==='manquant')pi.st='recu';});
+      });
+      // Créer BE depuis associés
+      if(r.associes&&r.associes.length>0&&(!d.be||!d.be.length)){
+        d.be=r.associes.filter(a=>a.nom).map((a,i)=>({id:i+1,ty:'pp',nom:a.nom||'',pren:a.prenom||'',ddn:'',lieu:'',nat:'Française',adr:'',siren:'',rcs:'',fo:'',pct:parseFloat(a.pct_capital)||0,np:0,us:0,det:'direct',prop:a.nature_propriete||'pp',date_q:'',src:'auto',li:[]}));
+      }
+      // JAL selon type
+      if(op.type_formalite){const sel=document.getElementById('dp-jal-type');if(sel){if(op.type_formalite.includes('dissolution'))sel.value='diss';else if(op.type_formalite.includes('SAS')||op.type_formalite.includes('SASU'))sel.value='const_sas';else if(op.type_formalite.includes('SARL')||op.type_formalite.includes('EURL'))sel.value='const_sarl';else if(op.type_formalite.includes('SCI'))sel.value='const_sci';else if(op.type_formalite.includes('dir'))sel.value='dir';}}
+    }catch(err){results.push({_fn:f.name,error:err.message});}
+  }
+  save();
+  // Mettre à jour les fichiers dans la liste
+  handleDocFiles([]);
+  // Afficher résultats
+  let h='<div style="font-size:10px;font-weight:600;color:var(--gris);text-transform:uppercase;letter-spacing:.08em;margin-bottom:8px">Résultats d\'analyse IA</div>';
+  results.forEach(r=>{
+    if(r.error){h+=`<div class="al al-d" style="margin-bottom:6px">${e(r._fn)} — Erreur : ${e(r.error)}</div>`;return;}
+    h+=`<div style="margin-bottom:10px"><div style="font-size:10px;font-weight:600;color:var(--gris);margin-bottom:5px">${e(r._fn)} · ${e(r.type_doc||'—')} · Confiance : ${e(r.confiance||'—')}</div>`;
+    if(r.resume)h+=`<div style="background:var(--fond);border-radius:var(--rs);padding:8px 10px;font-size:11px;line-height:1.6;margin-bottom:6px">${e(r.resume)}</div>`;
+    (r.alertes||[]).forEach(a=>{h+=`<div class="al al-${a.niveau?.[0]||'i'}" style="margin-bottom:4px">${e(a.texte)}</div>`;});
+    h+='</div>';
+  });
+  const nbOk=results.filter(r=>!r.error).length;
+  if(nbOk>0)h+=`<div class="al al-v">✓ GU, BE, checklist et annonce légale mis à jour automatiquement</div>`;
+  document.getElementById('dp-ia-result').innerHTML=h;
+  // Rerender tous les blocs
+  const dR=DOS.find(x=>x.id===curDosId);
+  if(dR){
+    renderDosBandeau(dR);
+    renderDosGU(dR);
+    // Calculer BE automatiquement si des associés ont été extraits
+    dosBENodes=dR.be&&dR.be.length?dR.be:dosBENodes;
+    dosBECtr=dosBENodes.length?Math.max(...dosBENodes.map(n=>n.id))+1:1;
+    renderDOSBENodes();
+    if(dosBENodes.length>0)calcBEDos();
+    renderDosChecklist(dR);
+    renderJALDos();
+  }
+  addH('Documents analysés — '+DOS.find(x=>x.id===curDosId)?.soc);
+  toast(nbOk+' document(s) analysé(s) — GU, BE, checklist mis à jour automatiquement');
+}
+
+// ═══ BE DANS LE DOSSIER ═══
+function addBEDos(){
+  const id=dosBECtr++;
+  dosBENodes.push({id,ty:'pp',nom:'',pren:'',ddn:'',lieu:'',nat:'Française',adr:'',siren:'',rcs:'',fo:'',pct:0,np:0,us:0,det:'direct',prop:'pp',date_q:'',src:'manuel',li:[]});
+  const d=DOS.find(x=>x.id===curDosId);if(d){d.be=dosBENodes;save();}
+  renderDOSBENodes();
+}
+
+function renderDOSBENodes(){
+  const w=document.getElementById('dp-be-nodes');if(!w)return;
+  w.innerHTML=dosBENodes.map((n,i)=>renderBENodeHTML(n,i,'dos')).join('');
+}
+
+function renderBENodeHTML(n,i,ctx){
+  const isPP=n.ty==='pp';
+  return `<div class="be-ent">
+    <div class="be-ent-hdr">
+      <span class="be-badge ${isPP?'be-pp':'be-pm'}">${isPP?'Personne physique':'Personne morale'}</span>
+      <span style="font-size:9px;color:${n.src==='auto'?'var(--vert)':'var(--bleu)'};background:${n.src==='auto'?'var(--vert-pale)':'var(--bleu-pale)'};padding:1px 7px;border-radius:10px;font-weight:600">${n.src==='auto'?'Auto':'Manuel'}</span>
+      <select style="font-size:11px;padding:3px 7px;border:1px solid var(--gris-pale);border-radius:var(--rs);background:var(--fond);margin-left:auto" onchange="setBENodeTy(${i},'${ctx}',this.value)"><option value="pp" ${isPP?'selected':''}>PP</option><option value="pm" ${!isPP?'selected':''}>PM</option></select>
+      <button class="btn btn-r btn-sm" onclick="delBENodeDos(${n.id})" style="font-size:10px;padding:3px 7px">×</button>
+    </div>
+    ${isPP?`<div class="be-grid">
+      <div class="be-f"><label>Nom</label><input value="${e(n.nom)}" oninput="setBENom(${i},'${ctx}',this.value,'nom')"></div>
+      <div class="be-f"><label>Prénom(s)</label><input value="${e(n.pren||'')}" oninput="setBENom(${i},'${ctx}',this.value,'pren')"></div>
+      <div class="be-f"><label>Date de naissance</label><input type="date" value="${e(n.ddn||'')}" oninput="setBENom(${i},'${ctx}',this.value,'ddn')"></div>
+      <div class="be-f"><label>Lieu de naissance</label><input value="${e(n.lieu||'')}" oninput="setBENom(${i},'${ctx}',this.value,'lieu')"></div>
+      <div class="be-f"><label>Nationalité</label><input value="${e(n.nat||'Française')}" oninput="setBENom(${i},'${ctx}',this.value,'nat')"></div>
+      <div class="be-f"><label>Adresse personnelle</label><input value="${e(n.adr||'')}" oninput="setBENom(${i},'${ctx}',this.value,'adr')"></div>
+    </div>`:`<div class="be-grid">
+      <div class="be-f"><label>Dénomination</label><input value="${e(n.nom)}" oninput="setBENom(${i},'${ctx}',this.value,'nom')"></div>
+      <div class="be-f"><label>Forme juridique</label><input value="${e(n.fo||'')}" oninput="setBENom(${i},'${ctx}',this.value,'fo')" placeholder="SAS, SARL, SCI…"></div>
+      <div class="be-f"><label>SIREN</label><input value="${e(n.siren||'')}" oninput="setBENom(${i},'${ctx}',this.value,'siren')" maxlength="11"></div>
+      <div class="be-f"><label>RCS / Greffe</label><input value="${e(n.rcs||'')}" oninput="setBENom(${i},'${ctx}',this.value,'rcs')"></div>
+      <div class="be-f"><label>Adresse / Siège</label><input value="${e(n.adr||'')}" oninput="setBENom(${i},'${ctx}',this.value,'adr')"></div>
+    </div>`}
+    <div class="be-grid g4" style="margin-top:8px;padding-top:8px;border-top:1px solid var(--gris-pale)">
+      <div class="be-f"><label>% Capital total</label><input type="number" value="${n.pct||0}" min="0" max="100" style="font-size:13px;font-weight:600" oninput="setBENom(${i},'${ctx}',parseFloat(this.value)||0,'pct')"></div>
+      <div class="be-f"><label>% Nue-propriété</label><input type="number" value="${n.np||0}" min="0" max="100" oninput="setBENom(${i},'${ctx}',parseFloat(this.value)||0,'np')"></div>
+      <div class="be-f"><label>% Usufruit</label><input type="number" value="${n.us||0}" min="0" max="100" oninput="setBENom(${i},'${ctx}',parseFloat(this.value)||0,'us')"></div>
+      <div class="be-f"><label>Date qualité BE</label><input type="date" value="${e(n.date_q||'')}" oninput="setBENom(${i},'${ctx}',this.value,'date_q')"></div>
+      <div class="be-f"><label>Mode détention</label><select onchange="setBENom(${i},'${ctx}',this.value,'det')"><option value="direct" ${n.det==='direct'?'selected':''}>Directe</option><option value="indirect" ${n.det==='indirect'?'selected':''}>Indirecte</option><option value="direct_indirect" ${n.det==='direct_indirect'?'selected':''}>Directe+Indirecte</option></select></div>
+      <div class="be-f"><label>Nature propriété</label><select onchange="setBENom(${i},'${ctx}',this.value,'prop')"><option value="pp" ${n.prop==='pp'?'selected':''}>Pleine propriété</option><option value="np" ${n.prop==='np'?'selected':''}>Nue-propriété</option><option value="us" ${n.prop==='us'?'selected':''}>Usufruit</option><option value="demembre" ${n.prop==='demembre'?'selected':''}>Démembrement</option></select></div>
+    </div>
+    ${n.ty==='pm'?`<div style="margin-top:8px;padding-top:8px;border-top:1px solid var(--gris-pale)"><div style="font-size:10px;font-weight:600;color:var(--gris);text-transform:uppercase;letter-spacing:.07em;margin-bottom:5px">Détenu par :</div>${(n.li||[]).map((l,j)=>`<div style="display:flex;gap:5px;align-items:center;background:var(--fond);padding:5px 7px;border-radius:var(--rs);margin-bottom:3px"><select style="flex:1;font-size:11px;padding:3px 5px;border:1px solid var(--gris-pale);border-radius:var(--rs)" onchange="setLiC(${i},'${ctx}',${j},parseInt(this.value))">${(ctx==='dos'?dosBENodes:gBENodes).filter(x=>x.id!==n.id).map(x=>`<option value="${x.id}" ${l.c===x.id?'selected':''}>${e(x.ty==='pp'?(x.pren?x.pren+' ':'')+x.nom:(x.nom||'PM'))}</option>`).join('')}</select><button class="btn btn-r btn-sm" onclick="delLi(${i},'${ctx}',${j})" style="font-size:10px;padding:2px 6px">×</button></div>`).join('')}<button class="btn btn-g btn-sm" onclick="addLi(${i},'${ctx}')" style="font-size:10px;margin-top:3px">+ Ajouter détenteur</button></div>`:''}
+  </div>`;
+}
+
+function setBENodeTy(i,ctx,val){const arr=ctx==='dos'?dosBENodes:gBENodes;arr[i].ty=val;arr[i].src='manuel';if(ctx==='dos'){renderDOSBENodes();}else{renderBEGlobal();}}
+function setBENom(i,ctx,val,field){const arr=ctx==='dos'?dosBENodes:gBENodes;arr[i][field]=val;arr[i].src='manuel';const d=DOS.find(x=>x.id===curDosId);if(ctx==='dos'&&d){d.be=dosBENodes;save();}}
+function setLiC(i,ctx,j,val){const arr=ctx==='dos'?dosBENodes:gBENodes;if(arr[i].li)arr[i].li[j].c=val;}
+function addLi(i,ctx){const arr=ctx==='dos'?dosBENodes:gBENodes;if(!arr[i].li)arr[i].li=[];arr[i].li.push({c:arr.find(x=>x.id!==arr[i].id)?.id||0});if(ctx==='dos')renderDOSBENodes();else renderBEGlobal();}
+function delLi(i,ctx,j){const arr=ctx==='dos'?dosBENodes:gBENodes;arr[i].li.splice(j,1);if(ctx==='dos')renderDOSBENodes();else renderBEGlobal();}
+function delBENodeDos(id){dosBENodes=dosBENodes.filter(n=>n.id!==id);dosBENodes.forEach(n=>{if(n.li)n.li=n.li.filter(l=>l.c!==id);});const d=DOS.find(x=>x.id===curDosId);if(d){d.be=dosBENodes;save();}renderDOSBENodes();}
+
+function calcBEArr(arr){
+  const allLi=new Set(arr.flatMap(n=>(n.li||[]).map(l=>l.c)));
+  const cibles=arr.filter(n=>n.ty==='pm'&&!allLi.has(n.id));
+  function getDet(nid,vis=new Set()){
+    if(vis.has(nid))return[];vis.add(nid);
+    const n=arr.find(x=>x.id===nid);if(!n)return[];
+    if(n.ty==='pp'){const pp=n.prop==='pp'?(n.pct||0)-(n.np||0):0;const np=(n.prop==='np'||n.prop==='demembre')?(n.pct||0):n.np||0;const us=(n.prop==='us'||n.prop==='demembre')?(n.us||0):0;return[{nom:(n.pren?n.pren+' ':'')+n.nom,pPP:pp,pNP:np,pUS:us,det:n.det,prop:n.prop,date_q:n.date_q||'',src:n.src||'manuel'}];}
+    const res={};(n.li||[]).forEach(l=>{const sub=getDet(l.c,new Set(vis));const f=(n.pct||0)/100;sub.forEach(s=>{if(!res[s.nom])res[s.nom]={...s,pPP:0,pNP:0,pUS:0};res[s.nom].pPP+=s.pPP*f;res[s.nom].pNP+=s.pNP*f;res[s.nom].pUS+=s.pUS*f;});});return Object.values(res);
+  }
+  let liste;
+  if(cibles.length>0){const r=getDet(cibles[0].id);const agg={};r.forEach(x=>{if(!agg[x.nom])agg[x.nom]={...x,pPP:0,pNP:0,pUS:0};agg[x.nom].pPP+=x.pPP;agg[x.nom].pNP+=x.pNP;agg[x.nom].pUS+=x.pUS;});liste=Object.values(agg);}
+  else{liste=arr.filter(n=>n.ty==='pp').map(n=>({nom:(n.pren?n.pren+' ':'')+n.nom,pPP:n.prop==='pp'?(n.pct||0)-(n.np||0):0,pNP:(n.prop==='np'||n.prop==='demembre')?(n.pct||0):n.np||0,pUS:(n.prop==='us'||n.prop==='demembre')?(n.us||0):0,det:n.det,prop:n.prop,date_q:n.date_q||'',src:n.src||'manuel'}));}
+  return liste.sort((a,b)=>(b.pPP+b.pNP+b.pUS)-(a.pPP+a.pNP+a.pUS));
+}
+
+function renderBEResult(liste,socNom,elId){
+  if(!liste||!liste.length){document.getElementById(elId).innerHTML='<div style="text-align:center;padding:20px;color:var(--gris-pale);font-size:12px">Aucune PP identifiée</div>';return;}
+  let h=`<div style="padding:8px 12px;border-bottom:1px solid var(--fond);font-size:11px;color:var(--gris)">Société : <strong>${e(socNom)}</strong></div>`;
+  liste.forEach(r=>{const tot=r.pPP+r.pNP;const dv=r.pPP+r.pUS;const ibe=tot>25||dv>25;
+    h+=`<div class="be-res-row"><div><div style="font-size:12px;font-weight:${ibe?600:400};color:${ibe?'var(--encre)':'var(--gris)'}">${e(r.nom)}</div>
+    <div style="font-size:10px;color:var(--gris);margin-top:2px;display:flex;gap:8px">${r.pPP>0?`<span>PP: ${r.pPP.toFixed(2)}%</span>`:''}${r.pNP>0?`<span>NP: ${r.pNP.toFixed(2)}%</span>`:''}${r.pUS>0?`<span>Usu: ${r.pUS.toFixed(2)}%</span>`:''}
+    <span style="color:var(--marine)">DV: ${dv.toFixed(2)}%</span>${r.date_q?`<span>BE depuis: ${fD(r.date_q)}</span>`:''}</div>
+    <div style="font-size:10px;color:${r.src==='auto'?'var(--vert)':'var(--bleu)'}">${r.src==='auto'?'◆ Auto extrait':'◆ Manuel'}</div></div>
+    <div style="text-align:right"><div class="be-pct" style="color:${ibe?'var(--encre)':'var(--gris)'}">${tot.toFixed(2)}%</div><div style="font-size:9px;color:var(--gris)">capital</div><span class="be-pill ${ibe?'y':'n'}">${ibe?'BE déclaré':'Non BE'}</span></div></div>`;
+  });
+  if(!liste.some(r=>r.pPP+r.pNP>25||r.pPP+r.pUS>25))h+=`<div class="al al-w" style="margin:8px">Aucune PP >25% — vérifier si le représentant légal doit être déclaré par défaut</div>`;
+  document.getElementById(elId).innerHTML=h;
+}
+
+function calcBEDos(){
+  const d=DOS.find(x=>x.id===curDosId);if(!d)return;
+  const liste=calcBEArr(dosBENodes);
+  dosBERes={soc:d.soc,liste};renderBEResult(liste,d.soc,'dp-be-res');
+  document.getElementById('dp-be-res').setAttribute('data-exp','1');
+  d.be=dosBENodes;save();
+  toast(liste.filter(r=>r.pPP+r.pNP>25||r.pPP+r.pUS>25).length+' BE identifié(s)');
+  addH('Calcul BE — '+d.soc);
+}
+
+function exportBEDos(){
+  const d=DOS.find(x=>x.id===curDosId);if(!d||!dosBERes)return;
+  const rows=[['Société','Bénéficiaire effectif','Capital PP (%)','Capital NP (%)','Usufruit (%)','Total capital (%)','Droits de vote (%)','Mode','Date qualité BE','Statut','Source']];
+  (dosBERes.liste||[]).forEach(r=>{const tot=r.pPP+r.pNP;const dv=r.pPP+r.pUS;rows.push([d.soc,r.nom,r.pPP.toFixed(2),r.pNP.toFixed(2),r.pUS.toFixed(2),tot.toFixed(2),dv.toFixed(2),r.det||'direct',r.date_q?fD(r.date_q):'—',tot>25||dv>25?'BE déclaré':'Non BE',r.src||'manuel']);});
+  dl2('data:text/csv;charset=utf-8,\uFEFF'+encodeURIComponent(rows.map(r=>r.map(c=>`"${c}"`).join(',')).join('\n')),`LEC_BE_${d.soc.replace(/\s/g,'_')}_${nd()}.csv`);
+  toast('Tableau BE exporté');
+}
+
+// ═══ CHECKLIST DANS LE DOSSIER ═══
+function renderDosChecklist(d){
+  const el=document.getElementById('dp-checklist');if(!el)return;
+  // Générer ou compléter la checklist selon la formalité
+  const ck=findCK(d.ty);
+  if(ck&&(!d.pi||!d.pi.length)){
+    // Dossier sans pièces : générer depuis JSS 2025
+    d.pi=[...ck.ob.map(l=>({l,st:'manquant',src:'JSS 2025 — obligatoire'})),...ck.co.map(l=>({l,st:'manquant',src:'JSS 2025 — conditionnel'}))];
+    save();
+  } else if(ck&&d.pi&&d.pi.length){
+    // Vérifier que toutes les pièces obligatoires sont présentes, ajouter les manquantes
+    ck.ob.forEach(l=>{if(!d.pi.find(p=>p.l===l))d.pi.push({l,st:'manquant',src:'JSS 2025 — obligatoire'});});
+    ck.co.forEach(l=>{if(!d.pi.find(p=>p.l===l))d.pi.push({l,st:'manquant',src:'JSS 2025 — conditionnel'});});
+    save();
+  }
+  const icons={recu:'✓',manquant:'!',signer:'✍',corriger:'✗',depose:'↑'};
+  const cls={recu:'ck-recu',manquant:'ck-manq',signer:'ck-signe',corriger:'ck-corriger',depose:'ck-depose'};
+  el.innerHTML=(d.pi||[]).map((p,i)=>`<div class="ck-row">
+    <div class="ck-ico ${cls[p.st]||'ck-manq'}">${icons[p.st]||'!'}</div>
+    <div class="ck-txt">${e(p.l)}<div class="ck-src">${e(p.src||'')}</div></div>
+    <select class="ck-sel" onchange="setPiSt(${d.id},${i},this.value)">
+      <option value="manquant" ${p.st==='manquant'?'selected':''}>Manquant</option>
+      <option value="recu" ${p.st==='recu'?'selected':''}>Reçu ✓</option>
+      <option value="signer" ${p.st==='signer'?'selected':''}>À signer</option>
+      <option value="corriger" ${p.st==='corriger'?'selected':''}>À corriger</option>
+      <option value="depose" ${p.st==='depose'?'selected':''}>Déposé ↑</option>
+    </select>
+    <button class="btn btn-r btn-sm" onclick="delPi(${d.id},${i})" style="font-size:10px;padding:2px 6px">×</button>
+  </div>`).join('')||'<div style="font-size:11px;color:var(--gris-pale)">Aucune pièce — renseignez la formalité dans le dossier</div>';
+
+  if(d.pi&&d.pi.length){const ck=CK_DATA[d.ty];if(ck?.ar){el.innerHTML+=`<div class="al al-w" style="margin-top:8px"><strong>Anti-rejet :</strong> ${e(ck.ar)}</div>`;}}
+}
+
+function setPiSt(did,idx,st){const d=DOS.find(x=>x.id===did);if(!d||!d.pi[idx])return;d.pi[idx].st=st;save();renderDosChecklist(d);}
+function delPi(did,idx){const d=DOS.find(x=>x.id===did);if(!d)return;d.pi.splice(idx,1);save();renderDosChecklist(d);}
+function addPiDos(){const v=prompt('Libellé de la pièce :');if(!v)return;const d=DOS.find(x=>x.id===curDosId);if(!d)return;if(!d.pi)d.pi=[];d.pi.push({l:v,st:'manquant',src:'Manuel'});save();renderDosChecklist(d);}
+
+// ═══ JAL ═══
+function renderJALDos(){
+  const d=DOS.find(x=>x.id===curDosId);if(!d)return;
+  const gu=d.gu||{};const g=k=>gu[k]?.val||'';
+  // Données du dossier - toutes extraites
+  const soc=d.soc&&d.soc!=='[À compléter]'?d.soc:(g('gu-denom')||'[DÉNOMINATION À RENSEIGNER]');
+  const fo=d.fo||g('gu-fo')||'[FORME JURIDIQUE]';
+  const cap=d.cap||g('gu-capital')||'[CAPITAL SOCIAL]';
+  const si=d.si||g('gu-siren')||'[SIREN]';
+  const gr=d.gr||g('gu-rcs')||'[GREFFE RCS]';
+  const sie=d.sie||g('gu-siege')||'[SIÈGE SOCIAL]';
+  const da=d.da||g('gu-date-acte')||'';
+  const de=d.de||g('gu-date-effet')||'';
+  const objet=g('gu-objet')||'[OBJET SOCIAL]';
+  const dirNom=g('gu-dir-nom')||'';
+  const dirPren=g('gu-dir-pren')||'';
+  const dirN=dirNom?(dirPren?dirPren+' '+dirNom:dirNom):(d.dir||'[NOM DU DIRIGEANT]');
+  const dirQ=g('gu-dir-qual')||'[QUALITÉ]';
+  const daFmt=da?fD(da):'[DATE ACTE]';
+  const deFmt=de?fD(de):'';
+
+  // Sélectionner auto le type JAL selon la formalité
+  const sel=document.getElementById('dp-jal-type');
+  if(sel&&sel.value==='diss'){// Ne pas changer si déjà sélectionné manuellement
+    if(d.ty.includes('Dissolution')&&!d.ty.includes('Clôture'))sel.value='diss';
+    else if(d.ty.includes('Clôture'))sel.value='cloture';
+  } else if(sel){
+    if(d.ty.includes('Dissolution')&&!d.ty.includes('Clôture'))sel.value='diss';
+    else if(d.ty.includes('Clôture'))sel.value='cloture';
+    else if((d.ty.includes('Constitution')||d.ty.includes('Immatriculation'))&&(d.fo==='SAS'||d.fo==='SASU'||d.ty.includes('SAS')))sel.value='const_sas';
+    else if((d.ty.includes('Constitution')||d.ty.includes('Immatriculation'))&&(d.fo==='SARL'||d.fo==='EURL'||d.ty.includes('SARL')))sel.value='const_sarl';
+    else if((d.ty.includes('Constitution')||d.ty.includes('Immatriculation'))&&(d.fo==='SCI'||d.ty.includes('SCI')))sel.value='const_sci';
+    else if(d.ty.includes('président')||d.ty.includes('gérant')||d.ty.includes('dirigeant')||d.ty.includes('administrateur'))sel.value='dir';
+    else if(d.ty.toLowerCase().includes('augmentation'))sel.value='aug';
+    else if(d.ty.includes('Transfert'))sel.value='transfert';
+    else if(d.ty.includes('Transformation'))sel.value='transfo';
+    else if(d.ty.includes('TUP'))sel.value='tup';
+    else if(d.ty.includes('Cession'))sel.value='cession';
+    else if(d.ty.includes('Modification'))sel.value='modif';
+  }
+  const jalTy=document.getElementById('dp-jal-type')?.value||'diss';
+  let txt='';
+
+  if(jalTy==='diss'){
+    txt=`Avis de dissolution
+
+${soc} — ${fo} au capital de ${cap}.
+Siège social : ${sie}.
+SIREN ${si} — RCS ${gr}.
+
+Par décision de l'assemblée générale mixte (extraordinaire et ordinaire) réunie le ${daFmt}, les associés ont décidé à l'unanimité la dissolution anticipée de la société et sa mise en liquidation amiable.
+
+Liquidateur désigné : ${dirN}, demeurant [ADRESSE LIQUIDATEUR], investi des pouvoirs les plus étendus pour réaliser l'actif, apurer le passif et arrêter les comptes de liquidation.
+
+Siège de la liquidation : ${sie}.
+
+Les actes et pièces relatifs à la liquidation seront déposés au Greffe du Tribunal de Commerce de ${gr}.
+
+Pour avis,
+${dirN}
+Liquidateur`;
+  }
+  else if(jalTy==='const_sas'){
+    txt=`Avis de constitution
+
+${soc}
+Société par Actions Simplifiée (SAS) au capital de ${cap}.
+Siège social : ${sie}.
+
+Objet social : ${objet}.
+Durée : 99 ans à compter de l'immatriculation.
+Président : ${dirN}.
+
+Immatriculation en cours au Registre du Commerce et des Sociétés de ${gr}.
+
+Pour avis,
+${dirN}
+Président`;
+  }
+  else if(jalTy==='const_sarl'){
+    txt=`Avis de constitution
+
+${soc}
+Société à Responsabilité Limitée (SARL) au capital de ${cap}.
+Siège social : ${sie}.
+
+Objet social : ${objet}.
+Durée : 99 ans à compter de l'immatriculation.
+Gérant : ${dirN}.
+
+Immatriculation en cours au Registre du Commerce et des Sociétés de ${gr}.
+
+Pour avis,
+${dirN}
+Gérant`;
+  }
+  else if(jalTy==='const_sci'){
+    txt=`Avis de constitution
+
+${soc}
+Société Civile Immobilière (SCI) au capital de ${cap}.
+Siège social : ${sie}.
+
+Objet social : ${objet}.
+Durée : 99 ans. Gérant : ${dirN}.
+
+Immatriculation en cours au Registre du Commerce et des Sociétés de ${gr}.
+
+Pour avis,
+${dirN}
+Gérant`;
+  }
+  else if(jalTy==='dir'){
+    txt=`Avis de modification
+
+${soc} — ${fo} au capital de ${cap}.
+SIREN ${si} — RCS ${gr}.
+
+Par décision du ${daFmt}, il a été procédé aux modifications suivantes :
+— Cessation des fonctions de [ANCIEN DIRIGEANT] en qualité de ${dirQ}${deFmt?' à compter du '+deFmt:''}.
+— Nomination de ${dirN} en qualité de ${dirQ}${deFmt?' à compter du '+deFmt:''}.
+
+Mention sera faite au Registre du Commerce et des Sociétés de ${gr}.
+
+Pour avis,
+${dirN}
+${dirQ}`;
+  }
+  else if(jalTy==='aug'){
+    txt=`Avis de modification
+
+${soc} — ${fo}.
+SIREN ${si} — RCS ${gr}.
+
+Par décision du ${daFmt}, les associés ont décidé d'augmenter le capital social.
+Capital avant augmentation : [ANCIEN CAPITAL].
+Capital après augmentation : ${cap}.
+
+Mention sera faite au Registre du Commerce et des Sociétés de ${gr}.
+
+Pour avis,
+${dirN}
+${dirQ}`;
+  }
+  else if(jalTy==='cloture'){
+    txt=`Avis de clôture de liquidation
+
+${soc} — ${fo} en liquidation.
+SIREN ${si} — RCS ${gr}.
+
+Par décision de l'assemblée générale réunie le ${daFmt}, les associés ont approuvé les comptes définitifs de liquidation, constaté la clôture des opérations de liquidation, donné quitus au liquidateur ${dirN} et prononcé la clôture de la liquidation.
+
+Résultat de liquidation : boni nul.
+
+La société sera radiée du Registre du Commerce et des Sociétés de ${gr}.
+
+Pour avis,
+${dirN}
+Liquidateur`;
+  }
+  else if(jalTy==='transfert'){
+    txt=`Avis de modification
+
+${soc} — ${fo} au capital de ${cap}.
+SIREN ${si} — RCS ${gr}.
+
+Par décision du ${daFmt}, le siège social a été transféré de :
+[ANCIEN SIÈGE SOCIAL]
+à :
+${sie}
+
+Mention sera faite au Registre du Commerce et des Sociétés de ${gr}.
+
+Pour avis,
+${dirN}
+${dirQ}`;
+  }
+  else if(jalTy==='transfo'){
+    txt=`Avis de modification
+
+${soc} — anciennement [ANCIENNE FORME JURIDIQUE].
+SIREN ${si} — RCS ${gr}.
+
+Par décision de l'assemblée générale extraordinaire réunie le ${daFmt}, la société a été transformée en ${fo}.
+
+Nouveau Président : ${dirN}.
+
+Les statuts modifiés et la décision de transformation ont été déposés au Greffe du Tribunal de Commerce de ${gr}.
+
+Pour avis,
+${dirN}
+Président`;
+  }
+  else if(jalTy==='tup'){
+    txt=`Avis de dissolution par transmission universelle de patrimoine
+
+${soc} — ${fo} au capital de ${cap}.
+SIREN ${si} — RCS ${gr}.
+Siège : ${sie}.
+
+Par décision de l'associé unique en date du ${daFmt}, dissolution sans liquidation par transmission universelle de patrimoine à l'associé unique, conformément à l'article 1844-5 du Code civil.
+
+Opposition possible auprès du Greffe du Tribunal de Commerce de ${gr} dans un délai de 30 jours.
+
+Pour avis.`;
+  }
+  else if(jalTy==='modif'){
+    txt=`Avis de modification
+
+${soc} — ${fo} au capital de ${cap}.
+SIREN ${si} — RCS ${gr}.
+
+Par décision du ${daFmt} : modification des statuts.
+
+Mention sera faite au Registre du Commerce et des Sociétés de ${gr}.
+
+Pour avis,
+${dirN}
+${dirQ}`;
+  }
+  else if(jalTy==='cession'){
+    txt=`Avis de cession
+
+${soc} — ${fo} au capital de ${cap}.
+SIREN ${si} — RCS ${gr}.
+
+Cession de parts/actions intervenue le ${daFmt}.
+
+Mention sera faite au Registre du Commerce et des Sociétés de ${gr}.
+
+Pour avis.`;
+  }
+  document.getElementById("dp-jal-out").textContent=txt||"Sélectionnez un type d'annonce légale.";
+}
+
+function saveJALText(){const el=document.getElementById('dp-jal-out');const d=DOS.find(x=>x.id===curDosId);if(d&&el){d.jal_txt=el.textContent||el.innerText;save();}}
+function saveJALTxt(){const el=document.getElementById('dp-jal-out');const d=DOS.find(x=>x.id===curDosId);if(d&&el){d.jal_txt=el.textContent||el.innerText;save();}}
+function clearJAL(){const el=document.getElementById('dp-jal-out');if(el)el.textContent='';const d=DOS.find(x=>x.id===curDosId);if(d){d.jal_txt='';save();}}
+function cpJALDos(){const txt=document.getElementById('dp-jal-out')?.textContent;if(txt)navigator.clipboard.writeText(txt).then(()=>toast('Annonce légale copiée — collez dans Busyplace ou Legal2Digital'));}
+
+// ═══ FACTURATION DOSSIER ═══
+function calcDPFact(){
+  const d=DOS.find(x=>x.id===curDosId);if(!d)return;
+  d.hon=parseFloat(document.getElementById('dp-hon').value)||0;
+  d.gr2=parseFloat(document.getElementById('dp-gr2').value)||0;
+  d.jal=parseFloat(document.getElementById('dp-jalf').value)||0;
+  d.aut=parseFloat(document.getElementById('dp-aut').value)||0;
+  d.nf=document.getElementById('dp-nf').value||'';
+  const tot=totHT(d);
+  _t('dp-tot-ht',tot.toLocaleString('fr-FR')+' €');
+  _t('dp-tot-ttc',(tot*1.2).toFixed(2)+' €');
+  save();
+}
+function saveFact(){calcDPFact();}
+
+// ═══ CHRONOLOGIE ═══
+function renderDPChrono(d){
+  const el=document.getElementById('dp-tl');if(!el)return;
+  const tl=d.tl||[];
+  el.innerHTML=TL_ETAPES.map((lbl,i)=>{
+    const done=tl.includes(i);
+    const next=i===tl.length;
+    const cls=done?'background:var(--vert);color:#fff':next?'background:var(--orange);color:#fff':'background:var(--gris-pale);color:var(--gris)';
+    const lcls=done?'text-decoration:line-through;color:var(--gris)':next?'color:var(--orange);font-weight:500':'color:var(--gris)';
+    return `<div style="display:flex;gap:10px;padding-bottom:9px;position:relative;cursor:pointer" onclick="toggleTL(${d.id},${i})">
+      ${i<TL_ETAPES.length-1?`<div style="position:absolute;left:10px;top:22px;bottom:0;width:1px;background:var(--gris-pale)"></div>`:''}
+      <div style="width:20px;height:20px;border-radius:50%;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:700;z-index:1;${cls}">${done?'✓':i+1}</div>
+      <div style="flex:1;padding-top:2px">
+        <div style="font-size:12px;${lcls}">${e(lbl)}</div>
+        <div style="font-size:10px;color:var(--gris)">${done?'Terminé — clic pour annuler':next?'Étape en cours — clic pour valider':'En attente'}</div>
+      </div>
+    </div>`;
+  }).join('');
+}
+
+function toggleTL(did,idx){
+  const d=DOS.find(x=>x.id===did);if(!d)return;
+  if(!d.tl)d.tl=[];
+  const i=d.tl.indexOf(idx);
+  if(i>=0)d.tl.splice(i,1);else d.tl.push(idx);
+  d.tl.sort((a,b)=>a-b);
+  addH(d.soc+' — étape "'+TL_ETAPES[idx]+'" '+(d.tl.includes(idx)?'cochée':'décochée'));
+  save();renderDPChrono(d);
+}
+
+// ═══ CHAT DOSSIER ═══
+async function sendChat(){
+  if(!apiKey){toast('Clé API requise — Paramètres');return;}
+  const d=DOS.find(x=>x.id===curDosId);if(!d)return;
+  const inp=document.getElementById('dp-chat-inp');const msgs=document.getElementById('dp-chat-msgs');const btn=document.getElementById('dp-chat-btn');
+  const q=inp.value.trim();if(!q)return;
+  inp.value='';btn.disabled=true;
+  msgs.innerHTML+=`<div class="chat-msg msg-u">${e(q)}</div>`;
+  msgs.innerHTML+=`<div class="ld" id="dp-ld"><span></span><span></span><span></span></div>`;
+  msgs.scrollTop=msgs.scrollHeight;
+  const gu9=d.gu||{};const gv9=k=>gu9[k]?.val||'';
+  const soc9=d.soc||'';const fo9=d.fo||gv9('gu-fo')||'';
+  const si9=d.si||gv9('gu-siren')||'';const gr9=d.gr||gv9('gu-rcs')||'';
+  const cap9=d.cap||gv9('gu-capital')||'';const sie9=d.sie||gv9('gu-siege')||'';
+  const obj9=gv9('gu-objet')||'';const da9=d.da||gv9('gu-date-acte')||'';
+  const de9=d.de||gv9('gu-date-effet')||'';
+  const dirN9=(gv9('gu-dir-pren')&&gv9('gu-dir-nom'))?(gv9('gu-dir-pren')+' '+gv9('gu-dir-nom')):(d.dir||'');
+  const dirQ9=gv9('gu-dir-qual')||'';
+  const assoc9=(d.be&&d.be.length)?d.be.map(b=>`${b.pren?b.pren+' ':''}${b.nom}: ${b.pct}% capital`).join(', '):'non renseignés';
+  const piManq9=(d.pi||[]).filter(p=>p.st==='manquant'||p.st==='corriger').map(p=>p.l).join(', ')||'aucune';
+  const sys=`Tu es la juriste de Legal Euro Corporate (Bella GHERARI-NADOTTI, 231 rue Saint-Honoré, 75001 Paris). Expert droit des sociétés français.
+
+DOSSIER ACTUEL :
+Société : ${soc9} (${fo9}) · SIREN : ${si9||'—'} · Greffe : ${gr9||'—'}
+Capital : ${cap9||'—'} · Siège : ${sie9||'—'} · Objet : ${obj9||'—'}
+Dirigeant : ${dirN9||'—'} (${dirQ9||'—'})
+Client : ${d.cli} · Formalité : ${d.ty} · Statut : ${ST[d.st]?.l}
+Date acte : ${da9?fD(da9):'—'} · Date effet : ${de9?fD(de9):'—'}
+Associés : ${assoc9}
+Instructions : ${d.inst||'—'}
+Pièces manquantes : ${piManq9}
+
+IMPORTANT - Si on te demande de rédiger l'annonce légale : rédige-la COMPLÈTE avec toutes les données ci-dessus. Commence directement par "Avis de [type]" sans introduction. Pour constitution SAS : dénomination, forme, capital, siège, objet, durée, Président, RCS. Pour dissolution : dénomination, forme, capital, SIREN, RCS, date AG, liquidateur nommé, siège liquidation, pouvoirs. Pour modification dirigeant : dénomination, forme, capital, SIREN, RCS, date décision, ancien/nouveau dirigeant, qualité. Termine par "Pour avis" et la qualité du signataire.
+
+Si on te demande de calculer les BE : analyse les associés, applique seuil 25% capital OU droits de vote, liste les BE avec leurs pourcentages.
+
+Si on te demande la checklist : liste les pièces obligatoires JSS 2025 pour ${d.ty}.
+
+Réponds en français, de façon précise et professionnelle.`;
+  try{
+    const resp=await fetch('/.netlify/functions/claude',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({apiKey,model:'claude-sonnet-4-5',max_tokens:1200,system:sys,messages:[{role:'user',content:q}]})});
+    const data=await resp.json();if(data.error)throw new Error(data.error.message);
+    const rep=data.content.find(c=>c.type==='text')?.text||'Pas de réponse.';
+    document.getElementById('dp-ld')?.remove();
+    // Détecter les commandes spéciales
+    const qLow=q.toLowerCase();
+    const isJAL=qLow.includes('annonce')&&(qLow.includes('rédige')||qLow.includes('redige')||qLow.includes('écris')||qLow.includes('ecris'));
+    const isBE=qLow.includes('bénéficiaire')||qLow.includes('beneficiaire')||qLow.includes(' be ');
+    if(isJAL){
+      const jalEl=document.getElementById('dp-jal-out');
+      if(jalEl){jalEl.textContent=rep;d.jal_txt=rep;save();}
+      msgs.innerHTML+=`<div class="chat-msg msg-a">Annonce légale rédigée — elle apparaît dans le bloc "Annonce légale" ci-dessus. Vous pouvez la copier pour Busyplace ou Legal2Digital.</div>`;
+    } else {
+      msgs.innerHTML+=`<div class="chat-msg msg-a">${e(rep)}</div>`;
+    }
+    msgs.scrollTop=msgs.scrollHeight;addH('Chat IA — '+d.soc);save();
+  }catch(err){document.getElementById('dp-ld')?.remove();msgs.innerHTML+=`<div class="chat-msg msg-a" style="color:var(--rouge)">Erreur : ${e(err.message)}</div>`;}
+  finally{btn.disabled=false;}
+}
+
+// ═══ CHECKLIST MODULE SÉPARÉ ═══
+function findCK(ty){
+  if(!ty)return null;
+  if(CK_DATA[ty])return CK_DATA[ty];
+  // Matching partiel
+  const k=Object.keys(CK_DATA).find(k=>ty.includes(k.substring(0,15))||k.includes(ty.substring(0,15)));
+  return k?CK_DATA[k]:null;
+}
+function renderCK(){
+  const ty=document.getElementById('ck-ty')?.value;const el=document.getElementById('ck-res');if(!el)return;
+  if(!ty){el.innerHTML='<div style="text-align:center;padding:40px;color:var(--gris-pale);font-size:12px">Sélectionnez une formalité</div>';return;}
+  const ck=findCK(ty);
+  if(!ck){el.innerHTML=`<div style="font-size:12px;color:var(--gris);padding:20px">Checklist pour <strong>${e(ty)}</strong> disponible sur demande. Les pièces peuvent varier selon la situation.</div>`;return;}
+  let h=`<div style="font-size:10px;font-weight:600;color:var(--marine);margin-bottom:10px;text-transform:uppercase;letter-spacing:.08em">${e(ty)} · ${e(ck.note||'JSS Guide Formalités 2025')}</div>`;
+  h+=`<div style="font-size:11px;font-weight:600;color:var(--rouge);text-transform:uppercase;letter-spacing:.07em;margin-bottom:6px">Pièces obligatoires</div>`;
+  h+=ck.ob.map(l=>`<div class="ck-row"><div class="ck-ico ck-manq">!</div><div class="ck-txt">${e(l)}</div><span style="font-size:9px;background:var(--rouge-pale);color:var(--rouge);padding:1px 7px;border-radius:10px;font-weight:600">OBLIGATOIRE</span></div>`).join('');
+  if(ck.co&&ck.co.length){
+    h+=`<div style="font-size:11px;font-weight:600;color:var(--orange);text-transform:uppercase;letter-spacing:.07em;margin:10px 0 6px">Pièces conditionnelles</div>`;
+    h+=ck.co.map(l=>`<div class="ck-row"><div class="ck-ico ck-signe">?</div><div class="ck-txt">${e(l)}</div><span style="font-size:9px;background:var(--orange-pale);color:var(--orange);padding:1px 7px;border-radius:10px;font-weight:600">CONDITIONNELLE</span></div>`).join('');
+  }
+  if(ck.ar)h+=`<div class="al al-w" style="margin-top:10px"><strong>Anti-rejet :</strong> ${e(ck.ar)}</div>`;
+  el.innerHTML=h;
+}
+
+// ═══ BE GLOBAL ═══
+function renderBEGlobal(){
+  const w=document.getElementById('be-nodes-g');if(!w)return;
+  w.innerHTML=gBENodes.map((n,i)=>renderBENodeHTML(n,i,'g')).join('');
+}
+function addBENode(){const id=gBECtr++;gBENodes.push({id,ty:'pp',nom:'',pren:'',ddn:'',lieu:'',nat:'Française',adr:'',siren:'',rcs:'',fo:'',pct:0,np:0,us:0,det:'direct',prop:'pp',date_q:'',src:'manuel',li:[]});renderBEGlobal();}
+function delBENodeG(id){gBENodes=gBENodes.filter(n=>n.id!==id);gBENodes.forEach(n=>{if(n.li)n.li=n.li.filter(l=>l.c!==id);});renderBEGlobal();}
+function resetBE(){gBENodes=[];gBERes=null;gBECtr=100;document.getElementById('be-soc-g').value='';renderBEGlobal();document.getElementById('be-res-g').innerHTML='<div style="text-align:center;padding:30px;color:var(--gris-pale);font-size:12px">Renseignez la structure et calculez</div>';document.getElementById('be-exp-g').style.display='none';}
+function calcBE(){
+  const soc=document.getElementById('be-soc-g')?.value||'Société cible';
+  const liste=calcBEArr(gBENodes);gBERes={soc,liste};
+  renderBEResult(liste,soc,'be-res-g');
+  document.getElementById('be-exp-g').style.display='flex';
+  toast(liste.filter(r=>r.pPP+r.pNP>25||r.pPP+r.pUS>25).length+' BE identifié(s)');
+}
+function exportBEG(){if(!gBERes)return;const{soc,liste}=gBERes;const rows=[['Société','BE','Cap PP (%)','Cap NP (%)','Usu (%)','Tot cap (%)','DV (%)','Mode','Date BE','Statut']];liste.forEach(r=>{const t=r.pPP+r.pNP;const dv=r.pPP+r.pUS;rows.push([soc,r.nom,r.pPP.toFixed(2),r.pNP.toFixed(2),r.pUS.toFixed(2),t.toFixed(2),dv.toFixed(2),r.det||'direct',r.date_q?fD(r.date_q):'—',t>25||dv>25?'BE déclaré':'Non BE']);});dl2('data:text/csv;charset=utf-8,\uFEFF'+encodeURIComponent(rows.map(r=>r.map(c=>`"${c}"`).join(',')).join('\n')),`LEC_BE_${gBERes.soc.replace(/\s/g,'_')}_${nd()}.csv`);toast('Tableau BE exporté');}
+function cpBEG(){if(!gBERes)return;const txt='TABLEAU BE — '+gBERes.soc+'\n\n'+gBERes.liste.filter(r=>r.pPP+r.pNP>25||r.pPP+r.pUS>25).map(r=>`• ${r.nom} : ${(r.pPP+r.pNP).toFixed(2)}% capital (PP: ${r.pPP.toFixed(2)}%${r.pNP>0?' / NP: '+r.pNP.toFixed(2)+'%':''}${r.pUS>0?' / Usu: '+r.pUS.toFixed(2)+'%':''}) · DV: ${(r.pPP+r.pUS).toFixed(2)}%${r.date_q?' · BE depuis: '+fD(r.date_q):''} — BE DÉCLARÉ`).join('\n');navigator.clipboard.writeText(txt).then(()=>toast('Tableau BE copié'));}
+
+// ═══ FACTURATION PAR MOIS ═══
+function renderFact(){
+  const el=document.getElementById('fact-mois');if(!el)return;
+  const mois={};DOS.forEach(d=>{const m=d.mois||'2026-05';if(!mois[m])mois[m]=[];mois[m].push(d);});
+  const ML={'2026-05':'Mai 2026','2026-06':'Juin 2026','2026-07':'Juillet 2026','2026-08':'Août 2026','2026-09':'Septembre 2026','2026-10':'Octobre 2026','2026-11':'Novembre 2026','2026-12':'Décembre 2026'};
+  let h='';
+  Object.keys(mois).sort().reverse().forEach(m=>{
+    const list=mois[m];const total=list.reduce((s,d)=>s+totHT(d),0);const af=list.filter(d=>d.st==='afacturer').reduce((s,d)=>s+totHT(d),0);
+    h+=`<div class="mois-card"><div class="mois-t"><span>${ML[m]||m}</span><span style="font-size:12px;font-weight:600;color:var(--orange)">${total.toLocaleString('fr-FR')} € HT · ${af.toLocaleString('fr-FR')} € à facturer</span></div>
+    <table style="width:100%;border-collapse:collapse"><thead><tr style="background:var(--fond)">
+      ${['Client','Société','Formalité','Statut','Hon.','Greffe','JAL','Autres','Total HT','Note'].map(h=>`<th style="padding:5px 9px;font-size:10px;text-align:left;color:var(--gris)">${h}</th>`).join('')}
+    </tr></thead><tbody>
+    ${list.map(d=>`<tr style="border-bottom:1px solid var(--fond);cursor:pointer" onclick="openDos(${d.id})">
+      <td style="padding:6px 9px;font-size:11px">${e(d.cli)}</td>
+      <td style="padding:6px 9px;font-size:11px;font-weight:500">${e(d.soc)}</td>
+      <td style="padding:6px 9px;font-size:10px;color:var(--gris);max-width:130px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${e(d.ty)}</td>
+      <td style="padding:6px 9px"><span class="bdg ${ST[d.st]?.c||'b-en'}">${ST[d.st]?.l||d.st}</span></td>
+      <td style="padding:6px 9px;font-size:11px;text-align:right">${d.hon?d.hon.toLocaleString('fr-FR')+' €':'—'}</td>
+      <td style="padding:6px 9px;font-size:11px;text-align:right">${d.gr2?d.gr2.toLocaleString('fr-FR')+' €':'—'}</td>
+      <td style="padding:6px 9px;font-size:11px;text-align:right">${d.jal?d.jal.toLocaleString('fr-FR')+' €':'—'}</td>
+      <td style="padding:6px 9px;font-size:11px;text-align:right">${d.aut?d.aut.toLocaleString('fr-FR')+' €':'—'}</td>
+      <td style="padding:6px 9px;font-size:12px;font-weight:600;text-align:right;color:var(--orange)">${totHT(d)?totHT(d).toLocaleString('fr-FR')+' €':'—'}</td>
+      <td style="padding:6px 9px;font-size:10px;color:var(--gris)">${e(d.nf||'')}</td>
+    </tr>`).join('')}
+    </tbody><tfoot><tr style="background:var(--orange-pale)">
+      <td colspan="8" style="padding:7px 9px;font-size:11px;font-weight:600;color:var(--orange)">TOTAL ${ML[m]||m}</td>
+      <td style="padding:7px 9px;font-size:13px;font-weight:700;text-align:right;color:var(--orange)">${total.toLocaleString('fr-FR')} €</td>
+      <td></td>
+    </tr></tfoot></table></div>`;
+  });
+  el.innerHTML=h||'<div style="text-align:center;padding:40px;color:var(--gris-pale)">Aucun dossier</div>';
+}
+function exportFactCSV(){const rows=[['Mois','Client','Société','Formalité','Statut','Hon.HT','Greffe','JAL','Autres','Total HT','TTC','Note']];DOS.forEach(d=>{const t=totHT(d);rows.push([d.mois,d.cli,d.soc,d.ty,ST[d.st]?.l||d.st,d.hon||0,d.gr2||0,d.jal||0,d.aut||0,t,(t*1.2).toFixed(2),d.nf||'']);});dl2('data:text/csv;charset=utf-8,\uFEFF'+encodeURIComponent(rows.map(r=>r.map(c=>`"${(c||'').toString().replace(/"/g,'""')}"`).join(',')).join('\n')),`LEC_fact_${nd()}.csv`);toast('Export CSV facturation');}
+
+// ═══ IMPORT DANS MODAL ═══
+async function handleImpFiles(files){
+  if(!files.length)return;
+  if(!apiKey){
+    document.getElementById("imp-result").innerHTML='<div class="al al-w">Clé API manquante — allez dans Paramètres</div>';
+    return;
+  }
+  const fileArr=Array.from(files);
+  document.getElementById('imp-files-list').innerHTML=fileArr.map(f=>`<div class="fi-item"><div style="font-size:16px">📄</div><div class="fi-nom">${e(f.name)}</div><span class="fi-st fi-wait" id="impst-${f.name.replace(/[^a-z0-9]/gi,'_')}">En attente</span></div>`).join('');
+  document.getElementById('imp-result').innerHTML='<div style="font-size:11px;color:var(--gris);padding:8px">Analyse en cours…</div>';
+
+  const SYS=`Tu es juriste expert en droit des sociétés français pour Legal Euro Corporate. Analyse ce document et extrait toutes les informations pour créer un dossier de formalité. Réponds UNIQUEMENT en JSON valide sans backticks :
+{"societe":{"denomination":null,"forme":null,"siren":null,"rcs":null,"capital":null,"siege":null,"objet":null},"dirigeants":[{"nom":null,"prenom":null,"qualite":null,"ddn":null,"adresse":null}],"associes":[{"nom":null,"prenom":null,"nb_parts":null,"pct_capital":null}],"operation":{"type_formalite":null,"categorie":0,"date_acte":null,"date_effet":null},"regime_fiscal":null,"regime_tva":null,"alertes":[{"niveau":"danger|warn|info","texte":""}],"resume":"","confiance":"haute|moyenne|faible"}`;
+
+  const f=fileArr[0];
+  try{
+    const b64=await f2b64(f);const ext=f.name.split('.').pop().toLowerCase();
+    let content2;
+    if(ext==='pdf')content2=[{type:'document',source:{type:'base64',media_type:'application/pdf',data:b64}},{type:'text',text:'Analyse ce document juridique.'}];
+    else content2=[{type:'image',source:{type:'base64',media_type:'image/'+ext.replace('jpg','jpeg'),data:b64}},{type:'text',text:'Analyse ce document.'}];
+    const resp=await fetch('/.netlify/functions/claude',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({apiKey,model:'claude-sonnet-4-5',max_tokens:2000,system:SYS,messages:[{role:'user',content:content2}]})});
+    const data=await resp.json();if(data.error)throw new Error(data.error.message);
+    const r=JSON.parse(data.content.find(c=>c.type==='text')?.text.replace(/```json|```/g,'').trim());
+    const s=r.societe||{};const op=r.operation||{};
+    // Remplir le formulaire
+    if(s.denomination)document.getElementById('f-soc').value=s.denomination;
+    if(s.forme){const foMap={SAS:'SAS',SASU:'SASU',SARL:'SARL',EURL:'EURL',SA:'SA',SCI:'SCI',SNC:'SNC',SCP:'SCP'};const fo=Object.keys(foMap).find(k=>s.forme.toUpperCase().includes(k));if(fo)document.getElementById('f-fo').value=fo;}
+    if(s.siren)document.getElementById('f-si').value=s.siren;
+    if(s.rcs)document.getElementById('f-gr').value=s.rcs;
+    if(s.capital)document.getElementById('f-cap').value=s.capital;
+    if(s.siege)document.getElementById('f-sie').value=s.siege;
+    if(r.dirigeants?.[0]?.nom){const dir=r.dirigeants[0];document.getElementById('f-dir').value=((dir.prenom||'')+' '+(dir.nom||'')).trim()+(dir.qualite?' ('+dir.qualite+')':'');}
+    if(op.date_acte)document.getElementById('f-da').value=op.date_acte;
+    if(op.date_effet)document.getElementById('f-de').value=op.date_effet;
+    if(op.type_formalite){const tyEl=document.getElementById('f-ty');if(tyEl){// Trouver la formalité correspondante
+      const opts=Array.from(tyEl.options);const match=opts.find(o=>o.value&&op.type_formalite&&(o.value.toLowerCase().includes(op.type_formalite.toLowerCase().substring(0,8))||op.type_formalite.toLowerCase().includes(o.value.toLowerCase().substring(0,8))));if(match){tyEl.value=match.value;onTy();}}}
+    if(op.categorie!==undefined&&op.categorie!==null)document.getElementById('f-cat').value=String(op.categorie);
+    // Sauvegarder les associés pour BE auto
+    if(r.associes&&r.associes.length)window._impAssocies=r.associes;
+    if(r.alertes&&r.alertes.length)window._impAlertes=r.alertes;
+    // Afficher résultat
+    let html='<div class="al al-v" style="margin-bottom:5px">✓ Formulaire pré-rempli — Confiance : '+e(r.confiance||'—')+'</div>';
+    if(r.resume)html+='<div style="font-size:11px;color:var(--gris);background:var(--fond);padding:7px 9px;border-radius:var(--rs)">'+(r.resume)+'</div>';
+    (r.alertes||[]).forEach(a=>{html+='<div class="al al-'+(a.niveau?.[0]||'i')+'" style="margin-top:4px">'+e(a.texte)+'</div>';});
+    document.getElementById('imp-result').innerHTML=html;
+    const stEl=document.getElementById('impst-'+f.name.replace(/[^a-z0-9]/gi,'_'));
+    if(stEl){stEl.textContent='Analysé';stEl.className='fi-st fi-ok';}
+    toast('Document analysé — formulaire pré-rempli');
+  }catch(err){
+    document.getElementById('imp-result').innerHTML='<div class="al al-d">Erreur analyse : '+e(err.message)+'</div>';
+    toast('Erreur analyse : '+err.message);
+  }
+}
+
+// ═══ MODAL DOSSIER ═══
+function openMDos(){
+  document.getElementById('eid').value='';document.getElementById('m-dos-t').textContent='Nouveau dossier';document.getElementById('del-btn').style.display='none';
+  ['f-soc','f-si','f-gr','f-cap','f-dir','f-sie','f-inst','f-no','f-nf','f-da','f-de'].forEach(id=>{const el=document.getElementById(id);if(el)el.value='';});
+  document.getElementById('f-fo').value='';document.getElementById('f-cat').value='0';document.getElementById('f-ty').value='';document.getElementById('f-st').value='entree';document.getElementById('f-mois').value='2026-05';
+  document.getElementById('f-hon').value='';document.getElementById('f-gr2').value='';document.getElementById('f-jal').value='';document.getElementById('f-aut').value='';
+  document.getElementById('si-ok').style.display='none';document.getElementById('si-err').style.display='none';document.getElementById('si-inp').value='';
+  document.getElementById('f-cli').value='';document.getElementById('cli-dl').innerHTML=CLI.map(c=>`<option value="${e(c.nom)}">`).join('');
+  document.getElementById('imp-files-list').innerHTML='';
+  document.getElementById('imp-result').innerHTML='';
+  window._impAssocies=null;window._impAlertes=null;
+  calcF();document.getElementById('m-dos').classList.add('open');
+}
+function editD(id){
+  const d=DOS.find(x=>x.id===id);if(!d)return;
+  document.getElementById('eid').value=id;document.getElementById('m-dos-t').textContent='Modifier le dossier';document.getElementById('del-btn').style.display='flex';
+  document.getElementById('f-soc').value=d.soc||'';document.getElementById('f-fo').value=d.fo||'';document.getElementById('f-si').value=d.si||'';document.getElementById('f-gr').value=d.gr||'';document.getElementById('f-cap').value=d.cap||'';document.getElementById('f-dir').value=d.dir||'';document.getElementById('f-sie').value=d.sie||'';document.getElementById('f-cli').value=d.cli||'';document.getElementById('f-cat').value=d.cat||0;document.getElementById('f-ty').value=d.ty||'';document.getElementById('f-st').value=d.st||'entree';document.getElementById('f-da').value=d.da||'';document.getElementById('f-de').value=d.de||'';document.getElementById('f-mois').value=d.mois||'2026-05';document.getElementById('f-hon').value=d.hon||'';document.getElementById('f-gr2').value=d.gr2||'';document.getElementById('f-jal').value=d.jal||'';document.getElementById('f-aut').value=d.aut||'';document.getElementById('f-nf').value=d.nf||'';document.getElementById('f-inst').value=d.inst||'';document.getElementById('f-no').value=d.no||'';
+  document.getElementById('si-ok').style.display='none';document.getElementById('si-err').style.display='none';
+  calcF();document.getElementById('m-dos').classList.add('open');
+}
+function onTy(){
+  const ty=document.getElementById('f-ty').value;const id=document.getElementById('eid').value;
+  if(ty&&GR[ty]&&!id){const g=GR[ty];document.getElementById('f-hon').value=g.hon||'';document.getElementById('f-gr2').value=g.gr||'';document.getElementById('f-jal').value=g.jal||'';document.getElementById('f-aut').value='';if(g.note)document.getElementById('f-nf').value=g.note;}
+  calcF();
+}
+function calcF(){const h=parseFloat(document.getElementById('f-hon')?.value)||0;const g2=parseFloat(document.getElementById('f-gr2')?.value)||0;const j=parseFloat(document.getElementById('f-jal')?.value)||0;const a=parseFloat(document.getElementById('f-aut')?.value)||0;const tot=h+g2+j+a;const el=document.getElementById('f-tot');if(el)el.value=tot?tot.toLocaleString('fr-FR')+' €':'';}
+function saveD(){
+  const soc=document.getElementById('f-soc').value.trim();if(!soc){toast('Dénomination obligatoire');return;}
+  const id=document.getElementById('eid').value;const existing=id?DOS.find(d=>d.id===parseInt(id)):null;
+  const ty=document.getElementById('f-ty').value;
+  const data={id:id?parseInt(id):Date.now(),soc,fo:document.getElementById('f-fo').value,si:document.getElementById('f-si').value.trim(),gr:document.getElementById('f-gr').value.trim(),cap:document.getElementById('f-cap').value.trim(),dir:document.getElementById('f-dir').value.trim(),sie:document.getElementById('f-sie').value.trim(),cli:document.getElementById('f-cli').value.trim(),cat:parseInt(document.getElementById('f-cat').value)||0,ty,st:document.getElementById('f-st').value,da:document.getElementById('f-da').value,de:document.getElementById('f-de').value,mois:document.getElementById('f-mois').value,hon:parseFloat(document.getElementById('f-hon').value)||0,gr2:parseFloat(document.getElementById('f-gr2').value)||0,jal:parseFloat(document.getElementById('f-jal').value)||0,aut:parseFloat(document.getElementById('f-aut').value)||0,nf:document.getElementById('f-nf').value.trim(),inst:document.getElementById('f-inst').value.trim(),no:document.getElementById('f-no').value.trim(),pi:existing?.pi||(ty&&CK_DATA[ty]?initPieces(ty):[]),gu:existing?.gu||{},be:existing?.be||[],notes:document.getElementById('f-no').value.trim()};
+  if(id){const i=DOS.findIndex(d=>d.id===parseInt(id));if(i>=0)DOS[i]=data;}else DOS.push(data);
+  // Intégrer les associés importés pour le BE
+  if(!id&&window._impAssocies&&window._impAssocies.length){
+    data.be=window._impAssocies.filter(a=>a.nom).map((a,i)=>({id:i+1,ty:'pp',nom:a.nom||'',pren:a.prenom||'',ddn:'',lieu:'',nat:'Française',adr:'',siren:'',rcs:'',fo:'',pct:parseFloat(a.pct_capital)||0,np:0,us:0,det:'direct',prop:'pp',date_q:'',src:'auto',li:[]}));
+    window._impAssocies=null;
+  }
+  if(!id&&window._impAlertes&&window._impAlertes.length){
+    data.ia_alertes=window._impAlertes;
+    window._impAlertes=null;
+  }
+  // Mettre à jour dans DOS si l'entrée existe déjà
+  const existIdx=DOS.findIndex(d=>d.id===data.id);
+  if(existIdx>=0)DOS[existIdx]=data;
+  addH((id?'Modification':'Création')+' : '+soc);save();closeMDos();renderDOS();toast(id?'Dossier mis à jour':'Dossier créé');
+  if(!id)openDos(data.id);
+  else if(curDosId===data.id){renderDosBandeau(data);renderDosBlocs(data);}
+}
+function delD(){const id=parseInt(document.getElementById('eid').value);if(!id||!confirm('Supprimer ce dossier ?'))return;const d=DOS.find(x=>x.id===id);DOS=DOS.filter(x=>x.id!==id);addH('Dossier supprimé : '+(d?.soc||''));save();closeMDos();if(curDosId===id){curDosId=null;retourDossiers();}renderDOS();toast('Dossier supprimé');}
+function closeMDos(){document.getElementById('m-dos').classList.remove('open');}
+document.getElementById('m-dos').addEventListener('click',function(ev){if(ev.target===this)closeMDos();});
+document.getElementById('m-cli').addEventListener('click',function(ev){if(ev.target===this)closeMCli();});
+
+// ═══ SIREN ═══
+let siT=null;
+function onSI(v){clearTimeout(siT);if(v.replace(/\D/g,'').length===9)siT=setTimeout(searchSI,700);}
+async function searchSI(){
+  const v=document.getElementById('si-inp').value.replace(/\D/g,'');if(v.length!==9){toast('SIREN : 9 chiffres requis');return;}
+  document.getElementById('si-ok').style.display='none';document.getElementById('si-err').style.display='none';
+  try{
+    const r=await fetch(`https://recherche-entreprises.api.gouv.fr/search?q=${v}&per_page=1`);
+    const data=await r.json();const res=data.results?.[0];
+    if(!res){document.getElementById('si-err').textContent='Société non trouvée';document.getElementById('si-err').style.display='block';return;}
+    const soc=res.nom_complet||'';const fo=res.nature_juridique_libelle||'';const gr=res.siege?.libelle_commune||'';
+    const sie=res.siege?.libelle_voie?`${res.siege.numero_voie||''} ${res.siege.type_voie||''} ${res.siege.libelle_voie||''}, ${res.siege.code_postal||''} ${gr}`.trim():'';
+    document.getElementById('f-soc').value=soc;
+    document.getElementById('f-fo').value=fo.includes('SAS')?'SAS':fo.includes('SARL')?'SARL':fo.includes('SCI')?'SCI':fo.includes('SA')?'SA':fo.slice(0,10);
+    document.getElementById('f-si').value=v;document.getElementById('f-gr').value=gr;document.getElementById('f-sie').value=sie;
+    if(res.capital)document.getElementById('f-cap').value=res.capital+' €';
+    let ok=`Trouvé : ${soc}${gr?' · RCS '+gr:''}`;
+    if(papKey){try{const pr=await fetch(`https://api.pappers.fr/v2/entreprise?siren=${v}&api_token=${papKey}`);const pd=await pr.json();const dir=pd.representants?.[0];if(dir){const nom=`${dir.prenom||''} ${dir.nom||''}`.trim();document.getElementById('f-dir').value=nom+(dir.qualite?' ('+dir.qualite+')':'');ok+=` · Dirigeant : ${nom}`;}}catch(err){}}
+    document.getElementById('si-ok').textContent=ok;document.getElementById('si-ok').style.display='block';
+    toast('Société trouvée — auto-rempli');addH('SIREN '+v+' — '+soc);
+  }catch(err){document.getElementById('si-err').textContent='Erreur — vérifiez le SIREN';document.getElementById('si-err').style.display='block';}
+}
+
+// ═══ PARAMS ═══
+function saveKeys(){const ka=document.getElementById('k-ant').value.trim();const kp=document.getElementById('k-pap').value.trim();if(ka){apiKey=ka;localStorage.setItem('lec_ak',ka);}if(kp){papKey=kp;localStorage.setItem('lec_pk',kp);}if(!ka&&!kp){toast('Aucune clé saisie');return;}toast('Clés API enregistrées');addH('Clés API mises à jour');save();}
+
+// ═══ EXPORTS ═══
+function exportCSV(){const rows=[['Client','Société','Forme','SIREN','Greffe','Catégorie','Formalité','Statut','Mois','Total HT','Date acte','Note','Instructions']];DOS.forEach(d=>rows.push([d.cli,d.soc,d.fo||'',d.si||'',d.gr||'',CATS[d.cat],d.ty,ST[d.st]?.l,d.mois,totHT(d),d.da||'',d.nf||'',d.inst||'']));dl2('data:text/csv;charset=utf-8,\uFEFF'+encodeURIComponent(rows.map(r=>r.map(c=>`"${(c||'').toString().replace(/"/g,'""')}"`).join(',')).join('\n')),`LEC_dossiers_${nd()}.csv`);toast('Export CSV');}
+function exportData(){dl2('data:application/json;charset=utf-8,'+encodeURIComponent(JSON.stringify({DOS,CLI,HIST,date:new Date().toISOString()},null,2)),`LEC_backup_${nd()}.json`);toast('Sauvegarde exportée');}
+
+// ═══ UTILS ═══
+function f2b64(f){return new Promise((res,rej)=>{const r=new FileReader();r.onload=()=>res(r.result.split(',')[1]);r.onerror=()=>rej(new Error('Lecture impossible'));r.readAsDataURL(f);});}
+function fD(s){if(!s)return'';try{return new Date(s).toLocaleDateString('fr-FR',{day:'2-digit',month:'long',year:'numeric'});}catch{return s;}}
+function fSz(b){if(b<1024)return b+'o';if(b<1048576)return Math.round(b/1024)+'Ko';return(b/1048576).toFixed(1)+'Mo';}
+function e(s){if(!s)return'';return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
+function nd(){return new Date().toISOString().slice(0,10);}
+function dl2(u,n){const a=document.createElement('a');a.href=u;a.download=n;a.click();}
+function _t(id,v){const el=document.getElementById(id);if(el)el.textContent=v;}
+function toast(m){const t=document.getElementById('toast');t.textContent=m;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),3000);}
+
+// ═══ SOCIÉTÉS ═══
+function renderSOC(){
+  const q=(document.getElementById('soc-q')?.value||'').toLowerCase();
+  const list=SOC.filter(s=>!q||(s.nom+s.fo+s.si+s.cli||'').toLowerCase().includes(q));
+  const el=document.getElementById('soc-grid');if(!el)return;
+  _t('nb-soc',SOC.length);
+  const cols=['background:var(--marine-pale);color:var(--marine)','background:var(--vert-pale);color:var(--vert)','background:var(--orange-pale);color:var(--orange)','background:var(--violet-pale);color:var(--violet)','background:#FEF3CD;color:#92600A','background:var(--bleu-pale);color:var(--bleu)'];
+  el.innerHTML=list.length?list.map((s,i)=>{
+    const nd=DOS.filter(d=>(d.soc||'').toLowerCase()===s.nom.toLowerCase()&&d.st!=='clos').length;
+    const av=s.nom.trim().split(' ').filter(Boolean);const initials=(av[0]?.[0]||'')+(av[av.length-1]?.[0]||'');
+    return `<div style="background:var(--blanc);border:1px solid var(--gris-pale);border-radius:var(--r);padding:13px 15px;cursor:pointer;transition:all .15s" onmouseover="this.style.borderColor='var(--orange)'" onmouseout="this.style.borderColor='var(--gris-pale)'" onclick="openSoc(${s.id})">
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px">
+        <div style="width:36px;height:36px;border-radius:50%;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:600;${cols[i%6]}">${e(initials.toUpperCase()||'?')}</div>
+        <div style="flex:1;min-width:0">
+          <div style="font-size:13px;font-weight:500;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${e(s.nom)}</div>
+          <div style="font-size:11px;color:var(--gris)">${e(s.fo||'—')} ${s.si?'· SIREN '+e(s.si):''}</div>
+        </div>
+        <button onclick="event.stopPropagation();editSoc(${s.id})" style="font-size:10px;padding:2px 8px;border-radius:var(--rs);border:1px solid var(--gris-pale);background:var(--blanc);cursor:pointer;color:var(--gris)">Modifier</button>
+      </div>
+      <div style="display:flex;gap:6px;flex-wrap:wrap">
+        ${s.cli?`<span style="font-size:10px;background:var(--fond);color:var(--gris);padding:2px 7px;border-radius:10px">👤 ${e(s.cli)}</span>`:''}
+        <span style="font-size:10px;background:var(--orange-pale);color:var(--orange);padding:2px 7px;border-radius:10px">${nd} dossier(s)</span>
+        ${s.gr?`<span style="font-size:10px;background:var(--marine-pale);color:var(--marine);padding:2px 7px;border-radius:10px">RCS ${e(s.gr)}</span>`:''}
+      </div>
+    </div>`;
+  }).join(''):'<div style="grid-column:1/-1;text-align:center;padding:40px;color:var(--gris-pale);font-size:12px">Aucune société — cliquez sur + Nouvelle société</div>';
+}
+function openSoc(id){
+  const s=SOC.find(x=>x.id===id);if(!s)return;
+  goV('dossiers');
+  document.getElementById('dos-q').value=s.nom;
+  renderDOS();
+}
+function openMSoc(){
+  document.getElementById('soc-eid').value='';document.getElementById('m-soc-t').textContent='Nouvelle société';document.getElementById('soc-del-btn').style.display='none';
+  ['sc-nom','sc-si','sc-gr','sc-cap','sc-sie','sc-obj','sc-cli','sc-tel','sc-em','sc-no'].forEach(id=>{const el=document.getElementById(id);if(el)el.value='';});
+  document.getElementById('sc-fo').value='';document.getElementById('sc-dc').value='';
+  document.getElementById('sc-cli-dl').innerHTML=CLI.map(c=>`<option value="${e(c.nom)}">`).join('');
+  document.getElementById('m-soc').classList.add('open');
+}
+function editSoc(id){
+  const s=SOC.find(x=>x.id===id);if(!s)return;
+  document.getElementById('soc-eid').value=id;document.getElementById('m-soc-t').textContent='Modifier la société';document.getElementById('soc-del-btn').style.display='flex';
+  document.getElementById('sc-nom').value=s.nom||'';document.getElementById('sc-fo').value=s.fo||'';document.getElementById('sc-si').value=s.si||'';document.getElementById('sc-gr').value=s.gr||'';document.getElementById('sc-cap').value=s.cap||'';document.getElementById('sc-dc').value=s.dc||'';document.getElementById('sc-sie').value=s.sie||'';document.getElementById('sc-obj').value=s.obj||'';document.getElementById('sc-cli').value=s.cli||'';document.getElementById('sc-tel').value=s.tel||'';document.getElementById('sc-em').value=s.em||'';document.getElementById('sc-no').value=s.no||'';
+  document.getElementById('sc-cli-dl').innerHTML=CLI.map(c=>`<option value="${e(c.nom)}">`).join('');
+  document.getElementById('m-soc').classList.add('open');
+}
+function closeMSoc(){document.getElementById('m-soc').classList.remove('open');}
+function saveSoc(){
+  const nom=document.getElementById('sc-nom').value.trim();if(!nom){toast('Dénomination obligatoire');return;}
+  const id=document.getElementById('soc-eid').value;
+  const data={id:id?parseInt(id):Date.now(),nom,fo:document.getElementById('sc-fo').value,si:document.getElementById('sc-si').value.trim(),gr:document.getElementById('sc-gr').value.trim(),cap:document.getElementById('sc-cap').value.trim(),dc:document.getElementById('sc-dc').value,sie:document.getElementById('sc-sie').value.trim(),obj:document.getElementById('sc-obj').value.trim(),cli:document.getElementById('sc-cli').value.trim(),tel:document.getElementById('sc-tel').value.trim(),em:document.getElementById('sc-em').value.trim(),no:document.getElementById('sc-no').value.trim()};
+  if(id){const i=SOC.findIndex(s=>s.id===parseInt(id));if(i>=0)SOC[i]=data;else SOC.push(data);}else SOC.push(data);
+  addH((id?'Modification':'Création')+' société : '+nom);save();closeMSoc();renderSOC();toast((id?'Société mise à jour':'Société créée'));
+}
+function delSoc(){
+  const id=parseInt(document.getElementById('soc-eid').value);if(!id||!confirm('Supprimer cette société ?'))return;
+  const s=SOC.find(x=>x.id===id);SOC=SOC.filter(x=>x.id!==id);addH('Société supprimée : '+(s?.nom||''));save();closeMSoc();renderSOC();toast('Société supprimée');
+}
+
+// ═══ SUIVI GREFFE ═══
+
+function renderSuiviGreffe(d){
+  const el=document.getElementById('dp-suivi-greffe');if(!el)return;
+  const sg=d.sg||{};
+  const stMap={en_cours:"En cours d'examen",accepte:'Accepté ✓',rejete:'Rejeté ✗',regularisation:'En régularisation'};
+  const stCol={en_cours:'var(--bleu)',accepte:'var(--vert)',rejete:'var(--rouge)',regularisation:'var(--orange)'};
+  let h='';
+  if(sg.rec||sg.dep)h+=`<div style="font-size:11px;color:var(--gris)">Récépissé : ${e(sg.rec||'—')} · Déposé le : ${sg.dep?fD(sg.dep):'—'}</div>`;
+  if(sg.st)h+=`<div style="font-size:12px;font-weight:600;color:${stCol[sg.st]||'var(--gris)'};margin-top:3px">${stMap[sg.st]||sg.st}${sg.ret?' — '+fD(sg.ret):''}</div>`;
+  if(sg.obs)h+=`<div style="font-size:11px;color:var(--gris);margin-top:3px">${e(sg.obs)}</div>`;
+  if(sg.dlim)h+=`<div style="font-size:11px;color:var(--orange);margin-top:3px">⏰ Date limite : ${fD(sg.dlim)}</div>`;
+  if(!h)h='<div style="font-size:11px;color:var(--gris-pale)">Aucun suivi greffe — cliquez sur Modifier</div>';
+  el.innerHTML=h;
+}
+function editSuiviGreffe(){
+  const d=DOS.find(x=>x.id===curDosId);if(!d)return;
+  const sg=d.sg||{};
+  document.getElementById('sg-rec').value=sg.rec||'';
+  document.getElementById('sg-dep').value=sg.dep||'';
+  document.getElementById('sg-st').value=sg.st||'';
+  document.getElementById('sg-ret').value=sg.ret||'';
+  document.getElementById('sg-obs').value=sg.obs||'';
+  document.getElementById('sg-dlim').value=sg.dlim||'';
+  document.getElementById('m-suivi').classList.add('open');
+}
+function saveSuiviGreffe(){
+  const d=DOS.find(x=>x.id===curDosId);if(!d)return;
+  d.sg={
+    rec:document.getElementById('sg-rec').value.trim(),
+    dep:document.getElementById('sg-dep').value,
+    st:document.getElementById('sg-st').value,
+    ret:document.getElementById('sg-ret').value,
+    obs:document.getElementById('sg-obs').value.trim(),
+    dlim:document.getElementById('sg-dlim').value
+  };
+  addH('Suivi greffe mis à jour — '+d.soc);save();
+  document.getElementById('m-suivi').classList.remove('open');
+  renderSuiviGreffe(d);toast('Suivi greffe enregistré');
+}
+
+// ═══ KBIS & RBE ═══
+function handleKbisRbe(files,type){
+  const d=DOS.find(x=>x.id===curDosId);if(!d||!files.length)return;
+  const f=files[0];
+  if(!d.docs)d.docs={};
+  d.docs[type]={nom:f.name,date:new Date().toLocaleDateString('fr-FR'),size:fSz(f.size)};
+  addH(type.toUpperCase()+' déposé — '+d.soc);save();renderKbisRbe(d);
+  toast(type.toUpperCase()+' enregistré — '+f.name);
+}
+function renderKbisRbe(d){
+  const el=document.getElementById('dp-kbis-rbe');if(!el)return;
+  const docs=d.docs||{};
+  let h='';
+  if(docs.kbis)h+=`<div style="display:flex;align-items:center;gap:8px;padding:6px 9px;background:var(--vert-pale);border-radius:var(--rs);margin-bottom:4px"><span>📄</span><div style="font-size:11px;font-weight:500;color:var(--vert);flex:1">Kbis : ${e(docs.kbis.nom)}</div><div style="font-size:10px;color:var(--gris)">${e(docs.kbis.date)}</div></div>`;
+  else h+='<div style="font-size:11px;color:var(--gris-pale);padding:3px 0">Kbis : aucun document déposé</div>';
+  if(docs.rbe)h+=`<div style="display:flex;align-items:center;gap:8px;padding:6px 9px;background:var(--vert-pale);border-radius:var(--rs)"><span>📄</span><div style="font-size:11px;font-weight:500;color:var(--vert);flex:1">RBE : ${e(docs.rbe.nom)}</div><div style="font-size:10px;color:var(--gris)">${e(docs.rbe.date)}</div></div>`;
+  else h+='<div style="font-size:11px;color:var(--gris-pale);padding:3px 0">RBE : aucun document déposé</div>';
+  el.innerHTML=h;
+}
+
+// ═══ GREFFES ═══
+const GREFFES=[
+{v:'Paris',d:'75',a:'1 quai de Corse, 75181 Paris Cedex 04',t:'01 44 32 52 52',e:'greffe.tc-paris@justice.fr',h:'Lun-Ven 9h-16h30',dl:'3-5 j'},
+{v:'Bobigny',d:'93',a:'Av. Président Allende, 93000 Bobigny',t:'01 48 95 27 27',e:'greffe.tc-bobigny@justice.fr',h:'Lun-Ven 9h-16h',dl:'5-8 j'},
+{v:'Créteil',d:'94',a:'1 rue du Dr Calmette, 94000 Créteil',t:'01 49 56 92 92',e:'greffe.tc-creteil@justice.fr',h:'Lun-Ven 9h-16h',dl:'5-8 j'},
+{v:'Nanterre',d:'92',a:'179 av. Joliot Curie, 92020 Nanterre',t:'01 55 17 27 27',e:'greffe.tc-nanterre@justice.fr',h:'Lun-Ven 9h-16h',dl:'5-8 j'},
+{v:'Versailles',d:'78',a:'Palais de Justice, 78000 Versailles',t:'01 39 54 24 24',e:'greffe.tc-versailles@justice.fr',h:'Lun-Ven 9h-16h',dl:'5-8 j'},
+{v:'Evry',d:'91',a:"Bd de l'Euromed, 91000 Evry",t:'01 69 91 85 00',e:'greffe.tc-evry@justice.fr',h:'Lun-Ven 9h-16h',dl:'5-8 j'},
+{v:'Pontoise',d:'95',a:'Place de la Préfecture, 95300 Pontoise',t:'01 34 43 34 43',e:'greffe.tc-pontoise@justice.fr',h:'Lun-Ven 9h-16h',dl:'5-8 j'},
+{v:'Marseille',d:'13',a:'12 square Belsunce, 13001 Marseille',t:'04 91 15 48 00',e:'greffe.tc-marseille@justice.fr',h:'Lun-Ven 9h-16h',dl:'5-10 j'},
+{v:'Lyon',d:'69',a:'Place Aristide Briand, 69001 Lyon',t:'04 72 60 72 60',e:'greffe.tc-lyon@justice.fr',h:'Lun-Ven 9h-16h',dl:'5-8 j'},
+{v:'Toulouse',d:'31',a:'2 rue des Marchands, 31000 Toulouse',t:'05 62 73 73 73',e:'greffe.tc-toulouse@justice.fr',h:'Lun-Ven 9h-16h',dl:'5-8 j'},
+{v:'Nice',d:'06',a:'7 rue du Gal Ferrié, 06000 Nice',t:'04 92 17 79 79',e:'greffe.tc-nice@justice.fr',h:'Lun-Ven 9h-16h',dl:'5-8 j'},
+{v:'Bordeaux',d:'33',a:'Place de la République, 33000 Bordeaux',t:'05 56 99 23 23',e:'greffe.tc-bordeaux@justice.fr',h:'Lun-Ven 9h-16h',dl:'5-8 j'},
+{v:'Nantes',d:'44',a:'3 quai Duguesclin, 44000 Nantes',t:'02 40 41 95 95',e:'greffe.tc-nantes@justice.fr',h:'Lun-Ven 9h-16h',dl:'5-8 j'},
+{v:'Strasbourg',d:'67',a:'Place du Château, 67000 Strasbourg',t:'03 88 41 43 43',e:'greffe.tc-strasbourg@justice.fr',h:'Lun-Ven 9h-16h',dl:'5-8 j'},
+{v:'Montpellier',d:'34',a:'1 rue Delphin Blanc, 34000 Montpellier',t:'04 67 60 26 26',e:'greffe.tc-montpellier@justice.fr',h:'Lun-Ven 9h-16h',dl:'5-8 j'},
+{v:'Rennes',d:'35',a:'Place du Parlement, 35000 Rennes',t:'02 99 30 16 16',e:'greffe.tc-rennes@justice.fr',h:'Lun-Ven 9h-16h',dl:'5-8 j'},
+{v:'Lille',d:'59',a:'1 bd Louis XIV, 59000 Lille',t:'03 20 55 66 66',e:'greffe.tc-lille@justice.fr',h:'Lun-Ven 9h-16h',dl:'5-8 j'},
+{v:'Grenoble',d:'38',a:'Place Firmin Gautier, 38000 Grenoble',t:'04 76 40 36 36',e:'greffe.tc-grenoble@justice.fr',h:'Lun-Ven 9h-16h',dl:'5-8 j'},
+{v:'Aix-en-Provence',d:'13',a:'Place de Verdun, 13100 Aix',t:'04 42 91 91 91',e:'greffe.tc-aix@justice.fr',h:'Lun-Ven 9h-16h',dl:'5-8 j'},
+{v:'Toulon',d:'83',a:'Av. du 15ème Corps, 83000 Toulon',t:'04 94 46 14 14',e:'greffe.tc-toulon@justice.fr',h:'Lun-Ven 9h-16h',dl:'5-8 j'},
+{v:'Caen',d:'14',a:'Place Fontette, 14000 Caen',t:'02 31 29 82 82',e:'greffe.tc-caen@justice.fr',h:'Lun-Ven 9h-16h',dl:'5-8 j'},
+{v:'Rouen',d:'76',a:'Place du Maréchal Foch, 76000 Rouen',t:'02 35 52 01 01',e:'greffe.tc-rouen@justice.fr',h:'Lun-Ven 9h-16h',dl:'5-8 j'},
+{v:'Dijon',d:'21',a:'30 rue du Palais, 21000 Dijon',t:'03 80 73 27 27',e:'greffe.tc-dijon@justice.fr',h:'Lun-Ven 9h-16h',dl:'5-8 j'},
+{v:'Clermont-Ferrand',d:'63',a:'41 bd Gergovia, 63000 Clermont',t:'04 73 42 25 25',e:'greffe.tc-clermont@justice.fr',h:'Lun-Ven 9h-16h',dl:'5-8 j'},
+{v:'Poitiers',d:'86',a:'Place du Mal Leclerc, 86000 Poitiers',t:'05 49 60 78 78',e:'greffe.tc-poitiers@justice.fr',h:'Lun-Ven 9h-16h',dl:'5-8 j'},
+{v:'Tours',d:'37',a:'1 rue de la Sellerie, 37000 Tours',t:'02 47 33 38 38',e:'greffe.tc-tours@justice.fr',h:'Lun-Ven 9h-16h',dl:'5-8 j'},
+{v:'Orleans',d:'45',a:'Place Gambetta, 45000 Orléans',t:'02 38 77 78 78',e:'greffe.tc-orleans@justice.fr',h:'Lun-Ven 9h-16h',dl:'5-8 j'},
+{v:'Reims',d:'51',a:'Place Myron Herrick, 51100 Reims',t:'03 26 50 48 48',e:'greffe.tc-reims@justice.fr',h:'Lun-Ven 9h-16h',dl:'5-8 j'},
+{v:'Metz',d:'57',a:'3 rue de la Bibliothèque, 57000 Metz',t:'03 87 56 20 20',e:'greffe.tc-metz@justice.fr',h:'Lun-Ven 9h-16h',dl:'5-8 j'},
+{v:'Nancy',d:'54',a:'42 rue Saint-Dizier, 54000 Nancy',t:'03 83 17 22 22',e:'greffe.tc-nancy@justice.fr',h:'Lun-Ven 9h-16h',dl:'5-8 j'},
+{v:'Ajaccio',d:'2A',a:'Bd Paoli, 20000 Ajaccio',t:'04 95 11 13 13',e:'greffe.tc-ajaccio@justice.fr',h:'Lun-Ven 9h-16h',dl:'8-12 j'},
+{v:'Bastia',d:'2B',a:'Place du Donjon, 20200 Bastia',t:'04 95 32 96 96',e:'greffe.tc-bastia@justice.fr',h:'Lun-Ven 9h-16h',dl:'8-12 j'},
+{v:'Annecy',d:'74',a:'8 rue des Marquisats, 74000 Annecy',t:'04 50 33 67 67',e:'greffe.tc-annecy@justice.fr',h:'Lun-Ven 9h-16h',dl:'5-8 j'},
+{v:'Chambery',d:'73',a:'Place du Palais de Justice, 73000 Chambéry',t:'04 79 33 93 93',e:'greffe.tc-chambery@justice.fr',h:'Lun-Ven 9h-16h',dl:'5-8 j'},
+{v:'Pau',d:'64',a:'6 bd de la Paix, 64000 Pau',t:'05 59 84 45 45',e:'greffe.tc-pau@justice.fr',h:'Lun-Ven 9h-16h',dl:'5-8 j'},
+{v:'Bayonne',d:'64',a:'Place de la Liberté, 64100 Bayonne',t:'05 59 46 70 70',e:'greffe.tc-bayonne@justice.fr',h:'Lun-Ven 9h-16h',dl:'5-8 j'},
+{v:'Brest',d:'29',a:'17 rue Colbert, 29200 Brest',t:'02 98 34 16 16',e:'greffe.tc-brest@justice.fr',h:'Lun-Ven 9h-16h',dl:'5-8 j'},
+{v:'Le Mans',d:'72',a:'10 rue de la Préfecture, 72000 Le Mans',t:'02 43 24 45 45',e:'greffe.tc-lemans@justice.fr',h:'Lun-Ven 9h-16h',dl:'5-8 j'},
+{v:'Angers',d:'49',a:'Place Kennedy, 49100 Angers',t:'02 41 81 43 43',e:'greffe.tc-angers@justice.fr',h:'Lun-Ven 9h-16h',dl:'5-8 j'},
+{v:'Limoges',d:'87',a:'Bd Victor Hugo, 87000 Limoges',t:'05 55 11 14 14',e:'greffe.tc-limoges@justice.fr',h:'Lun-Ven 9h-16h',dl:'5-8 j'},
+{v:'Amiens',d:'80',a:'14 rue R. de Luzarches, 80000 Amiens',t:'03 22 92 64 64',e:'greffe.tc-amiens@justice.fr',h:'Lun-Ven 9h-16h',dl:'5-8 j'},
+{v:'Perpignan',d:'66',a:'Bd du Conflent, 66000 Perpignan',t:'04 68 35 46 46',e:'greffe.tc-perpignan@justice.fr',h:'Lun-Ven 9h-16h',dl:'5-8 j'},
+{v:'Avignon',d:'84',a:'25 rue Agricol Perdiguier, 84000 Avignon',t:'04 90 14 63 63',e:'greffe.tc-avignon@justice.fr',h:'Lun-Ven 9h-16h',dl:'5-8 j'},
+{v:'Besancon',d:'25',a:'1 rue Mégevand, 25000 Besançon',t:'03 81 65 80 80',e:'greffe.tc-besancon@justice.fr',h:'Lun-Ven 9h-16h',dl:'5-8 j'},
+{v:'Saint-Etienne',d:'42',a:'2 rue Barrouin, 42000 Saint-Étienne',t:'04 77 43 52 52',e:'greffe.tc-saintetienne@justice.fr',h:'Lun-Ven 9h-16h',dl:'5-8 j'},
+{v:'Colmar',d:'68',a:'Place de la Cathédrale, 68000 Colmar',t:'03 89 24 59 59',e:'greffe.tc-colmar@justice.fr',h:'Lun-Ven 9h-16h',dl:'5-8 j'},
+{v:'Mulhouse',d:'68',a:'Place de la République, 68100 Mulhouse',t:'03 89 66 87 87',e:'greffe.tc-mulhouse@justice.fr',h:'Lun-Ven 9h-16h',dl:'5-8 j'},
+{v:'Valenciennes',d:'59',a:'Av. de la Victoire, 59300 Valenciennes',t:'03 27 22 56 56',e:'greffe.tc-valenciennes@justice.fr',h:'Lun-Ven 9h-16h',dl:'5-8 j'},
+{v:'Dunkerque',d:'59',a:'1 rue Gantois, 59140 Dunkerque',t:'03 28 58 67 67',e:'greffe.tc-dunkerque@justice.fr',h:'Lun-Ven 9h-16h',dl:'5-8 j'},
+];
+
+function renderGreffes(){
+  const q=(document.getElementById('gref-q')?.value||'').toLowerCase();
+  const list=GREFFES.filter(g=>!q||(g.v+g.d+g.e).toLowerCase().includes(q));
+  const el=document.getElementById('gref-grid');if(!el)return;
+  el.innerHTML=list.map(g=>`<div style="background:var(--blanc);border:1px solid var(--gris-pale);border-radius:var(--r);padding:12px 14px;cursor:pointer;transition:border-color .15s" onmouseover="this.style.borderColor='var(--orange)'" onmouseout="this.style.borderColor='var(--gris-pale)'" onclick="navigator.clipboard.writeText('${g.e}').then(()=>toast('Email copié : ${g.e}'))">
+    <div style="display:flex;align-items:center;gap:8px;margin-bottom:5px">
+      <div style="font-size:14px;font-weight:600;color:var(--encre)">${e(g.v)}</div>
+      <span style="font-size:10px;background:var(--marine-pale);color:var(--marine);padding:1px 7px;border-radius:10px;font-weight:600">Dept. ${e(g.d)}</span>
+    </div>
+    <div style="font-size:11px;color:var(--gris);margin-bottom:2px">📍 ${e(g.a)}</div>
+    <div style="font-size:11px;color:var(--gris);margin-bottom:2px">📞 ${e(g.t)}</div>
+    <div style="font-size:11px;color:var(--bleu);margin-bottom:5px">✉ ${e(g.e)}</div>
+    <div style="display:flex;gap:5px">
+      <span style="font-size:9px;background:var(--fond);color:var(--gris);padding:1px 6px;border-radius:10px">🕐 ${e(g.h)}</span>
+      <span style="font-size:9px;background:var(--marine-pale);color:var(--marine);padding:1px 6px;border-radius:10px">⏱ ${e(g.dl)}</span>
+    </div>
+    <div style="font-size:9px;color:var(--gris-pale);margin-top:4px">Clic = copier l'email</div>
+  </div>`).join('');
+}
+
+// ═══ INIT ═══
+try{
+  if(apiKey)document.getElementById('k-ant').placeholder='Clé configurée ✓';
+  if(papKey)document.getElementById('k-pap').placeholder='Clé configurée ✓';
+  upAll();renderDOS();renderAcc();
+}catch(err){
+  console.error('Erreur init LEC:',err);
+}
+</script>
+</body>
+</html>
